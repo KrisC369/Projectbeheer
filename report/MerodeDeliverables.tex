@@ -11,9 +11,14 @@ Dit EDG-diagram is hetzelfde als wat er in de opgave getoond werd, met als toevo
 library-component. Deze component zal verder ook invloed hebben op de OET zoals besproken in de \ref{sec:oet}.
 \inclimg{0.60}{0}{LibraryEDG}{EDG for the library}
 \subsection{Object Event Table}
+In deze sectie wordt de Object event table besproken. Per event wordt er in deze tabel weergegeven
+welke types van acties er worden uitgevoerd op verschillende objecten. (Deze acties zijn met de letters
+C, M en E letters afgekort weergegeven voor Create, modify en End.)
 \label{sec:oet}
 \input{oet}
 \subsection{Life cycles}
+In deze sectie worden de lifecycles besproken voor de objecten in de voorgaande Merode modellen.
+Deze life cycles worden voorgesteld in toestandsdiagramma en bepalen de toestanden waarin een bepaald object kan geraken door middel van het afvuren van bepaalde events op deze objecten.
 \inclimg{0.55}{0}{CopyLC}{Lifecycle for Copy}
 \inclimg{0.75}{0}{LoanLC}{Lifecycle for Loan}
 \inclimg{0.75}{0}{MemberLC}{Lifecycle for Member}
@@ -21,5 +26,6 @@ library-component. Deze component zal verder ook invloed hebben op de OET zoals 
 \inclimg{0.75}{0}{LibraryLC}{Lifecycle for Reservation}
 
 \subsection{Precondities}
+In deze sectie worden enkele precondities besproken waaraan bepaalde events moeten voldoen alvorens te vuren.
 \subsection{Acties}
-
+In deze sectie worden bepaalde acties besproken die gepaard gaan met het afvuren van bepaalde events.
