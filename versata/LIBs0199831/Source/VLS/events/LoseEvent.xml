@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!DOCTYPE DataObject SYSTEM "DataObject.dtd">
+<DataObject
+	DTDVersion="05.06.00"
+	SurrId="0721350391.Administrator.0011"
+	CodedValuesList="False"
+	ImageReference=" "
+	IsRemoteAccessible="False"
+	UseQuotedIdentifiers="True"
+	XdaConnector="SQL"
+	SuperClass="DataObject"
+	LockMode="AllApplicableAttributes"
+	>
+	<Attributes>
+		<Attribute
+			Name="PKLoseEvent"
+			PreventUserUpdates="True"
+			ValueRequired="True"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="AutoNumber"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="TimeStamp"
+			PreventUserUpdates="False"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Date"
+			/>
+			<Derivation
+				DerivationType="Default"
+				>
+				<DefaultValue><![CDATA[date()]]></DefaultValue>
+			</Derivation>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="FKLoan"
+			PreventUserUpdates="True"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+	</Attributes>
+	<Indexes></Indexes>
+	<SingularCaption><![CDATA[*]]></SingularCaption>
+	<PluralCaption><![CDATA[*]]></PluralCaption>
+	<VLSDeployment
+		DeploySecurityInfo="False"
+	/>
+	<Constraints>
+		<Constraint
+			Name="Loan 1"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKLoan"
+			>
+			<Condition><![CDATA[getLoan().getLoanState()=1]]></Condition>
+			<ErrorMessage><![CDATA[This loan is not active.]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="Copy 1"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKLoan"
+			>
+			<Condition><![CDATA[getLoan().getCopy().getCopyState()=3 OR getLoan().getCopy().getCopyState()=4]]></Condition>
+			<ErrorMessage><![CDATA[The copy does not exist anymore]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="Member 1"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKLoan"
+			>
+			<Condition><![CDATA[getLoan().getMember().getMemberState()=1]]></Condition>
+			<ErrorMessage><![CDATA[Invalid member]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="Copy 2"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKLoan"
+			>
+			<Condition><![CDATA[getLoan().getCopy().getCurrentReservations()=0]]></Condition>
+			<ErrorMessage><![CDATA[Pending reservations still remain]]></ErrorMessage>
+		</Constraint>
+	</Constraints>
+	<Actions>
+		<Action
+			Name="loseCopy"
+			>
+			<ActionToPerform><![CDATA[getLoan().getCopy().setCopyState(6)]]></ActionToPerform>
+			<Condition><![CDATA[ Inserting ]]></Condition>
+			<Description><![CDATA[]]></Description>
+		</Action>
+		<Action
+			Name="loseLoan"
+			>
+			<ActionToPerform><![CDATA[getLoan().setLoanState(3)]]></ActionToPerform>
+			<Condition><![CDATA[ Inserting ]]></Condition>
+			<Description><![CDATA[]]></Description>
+		</Action>
+	</Actions>
+</DataObject>

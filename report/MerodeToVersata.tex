@@ -1,0 +1,115 @@
+\documentclass[a4paper]{article}
+%%------IMPORTS--------------------------------
+\usepackage[dutch]{babel}
+\usepackage[
+bookmarks=true,
+bookmarksnumbered=false,
+bookmarksopen=false,
+breaklinks=false,
+linkcolor=black,
+citecolor=black,
+urlcolor=blue,
+pdfborder={0 0 0},
+backref=false,
+colorlinks=true]{hyperref}
+\usepackage{color}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage{mdwlist}
+%\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{stfloats}
+\usepackage{parskip} %nieuwe paragraaf niet indenteren maar wel lijn tussen laten. [OPTIONAL] 
+\usepackage{verbatim}
+\usepackage{listings} %srcCode
+\usepackage{graphicx} % figuren
+\usepackage{ctable} % tabellen
+\usepackage{float}
+%%------CONFIGURATION-------------------------
+% color definition
+\definecolor{dkgreen}{rgb}{0,0.6,0} 
+% color definition
+\definecolor{gray}{rgb}{0.5,0.5,0.5} 
+% syntax hlighting for Matlab
+\lstset{language=Matlab,
+   keywords={break,case,catch,continue,else,elseif,end,for,function,
+      global,if,otherwise,persistent,return,switch,try,while},
+   basicstyle=\ttfamily,
+   keywordstyle=\color{blue},
+   commentstyle=\color{red},
+   stringstyle=\color{dkgreen},
+   numbers=left,
+   numberstyle=\tiny\color{gray},
+   stepnumber=1,
+   numbersep=10pt,
+   backgroundcolor=\color{white},
+   tabsize=4,
+   showspaces=false,
+   showstringspaces=false}
+%\graphicspath{{../Afbeeldingen/}} % path to graphicspath
+
+%\makeatletter
+%\renewcommand\paragraph{%
+%   \@startsection{paragraph}{4}{0mm}%
+%      {-\baselineskip}%
+%      {.5\baselineskip}%
+%      {\normalfont\normalsize\bfseries}}
+%\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+%                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+ %                                    {0.0001pt \@plus .2ex}%
+%                                     {\normalfont\normalsize\bfseries}}
+%\makeatother
+
+%%------NEW_COMMANDS--------------------------
+% use "\appsrc{srcfile.m}" for listing matlab src-code
+\newcommand{\appsrc}[1] {\subsection*{#1}
+ \lstinputlisting{./#1} }
+% use "\inclimg{0.75}{90}{filename}{The caption for the image}" for inserting image
+\newcommand{\inclimg}[4] {
+\begin{figure}[H]
+\centerline{\includegraphics[scale={#1},angle={#2}]{{#3}.pdf}
+}
+\caption{{#4}}
+\label{fig:#3}
+\end{figure}
+}
+
+%%------BEGIN_DOC-----------------------------
+%%------HEADER--------------------------------
+\title{
+\huge{
+Projectbeheer en geavanceerde processen in softwareontwikkeling.\\[1em]
+Ontwikkeling volgens MDA\\
+}
+\Large{Professoren: Jan Wirix}
+}
+
+\author{
+\Large Kristof Coninx\\
+%\Large Co-auth
+}
+\date{\today}
+\pdfinfo{
+	/Title		(Title)	
+	/Author		(Kristof Coninx)
+	/Subject	(Subject)
+	/Keywords	(Keywords)
+}
+\begin{document}
+\maketitle\thispagestyle{empty}
+\clearpage
+\tableofcontents\thispagestyle{empty}
+\clearpage
+\listoffigures\thispagestyle{empty}
+\clearpage
+
+%%------CONTENT-------------------------------
+%\section{Overzicht} %Example
+\include{MerodeDeliverables}
+\include{TransformatieM2V}
+\include{TransformatieE2UI}
+\include{Toepasbaarheid}
+
+\end{document}

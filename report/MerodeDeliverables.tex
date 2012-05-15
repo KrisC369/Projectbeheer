@@ -1,0 +1,25 @@
+\section{Merode Deliverables}
+In deze sectie worden de merode deliverables besproken waarvan gewerkt wordt om tot 
+een oplossing te komen binnen het versata framework. Deze deliverables zijn voornamelijk
+ge\"inspireerd door het voorbeeld in hoofdstuk 7 van de merode documentatie.
+Hier en daar zijn er echter wel enkele aanpassingen en/of uitbreidingen doorgevoerd.
+
+Zo is er ook een library object toegevoegd om de member en copy klassen in een context te plaatsen. Verder werd ook de object event tabel uitgebreid met events voor het aanmaken en vernietigen van library objecten. 
+Tenslotte werd ook de life cycle van het copy object wat uitgebreid om een moeilijker scenario te illustreren bij de omzetting van deze modellen binnen het versata framework.
+\subsection{Existence Dependency Graph}
+Dit EDG-diagram is hetzelfde als wat er in de opgave getoond werd, met als toevoeging de
+library-component. Deze component zal verder ook invloed hebben op de OET zoals besproken in de \ref{sec:oet}.
+\inclimg{0.60}{0}{LibraryEDG}{EDG for the library}
+\subsection{Object Event Table}
+\label{sec:oet}
+\input{oet}
+\subsection{Life cycles}
+\inclimg{0.55}{0}{CopyLC}{Lifecycle for Copy}
+\inclimg{0.75}{0}{LoanLC}{Lifecycle for Loan}
+\inclimg{0.75}{0}{MemberLC}{Lifecycle for Member}
+\inclimg{0.75}{0}{ReservationLC}{Lifecycle for Reservation}
+\inclimg{0.75}{0}{LibraryLC}{Lifecycle for Reservation}
+
+\subsection{Precondities}
+\subsection{Acties}
+

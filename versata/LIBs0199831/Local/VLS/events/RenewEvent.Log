@@ -1,0 +1,36 @@
+***************** Data Object Validator Run (5/14/2012, at 12:39:03 AM) ***************
+
+
+
+Data Object: RenewEvent
+
+==============================================================================
+
+  Relation Loan(Loan)-RenewEvent(RenewEvent):
+
+Loan.PKLoan and RenewEvent.FKLoan do not have compatible data types for an enforced relationship.
+
+
+
+
+
+
+
+***************** Data Object Validator Run (5/14/2012, at 12:39:58 AM) ***************
+
+
+
+Data Object: RenewEvent
+
+==============================================================================
+
+  Relation Loan(Loan)-RenewEvent(RenewEvent):
+
+Loan.PKLoan and RenewEvent.FKLoan do not have compatible data types for an enforced relationship.
+
+
+
+
+
+
+

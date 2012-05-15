@@ -1,0 +1,5 @@
+\(Copy\)\" = \(\)\"
+\(Copy\)\- = \(\)\-
+"CodedValuesList[ ]*\=[ ]*\"Copy\"" = "CodedValuesList\=\"\""
+"DataObjectName[ ]*\=[ ]*\"Copy\"" = "DataObjectName\=\"\""
+"BusinessObject[ ]*\=[ ]*\"Copy\"" = "BusinessObject\=\"\""

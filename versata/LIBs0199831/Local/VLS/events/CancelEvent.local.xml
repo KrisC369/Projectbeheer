@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE DataObjectLocal SYSTEM "DataObjectLocal.dtd">
+<DataObjectLocal
+	DTDVersion="00.00.00"
+	>
+	<DatabaseServerDeployment
+		SchemaName="dbo"
+		DatabaseName="tempdb"
+		ConnectionString="ODBC;DSN=tempdb;UID=sa;PWD=********;APP=Versata Logic Suite 5.5 - Weblogic 8.1 Edition;WSID=THETYS;DATABASE=tempdb;Regional=Yes"
+		DatabaseType="SQL Server"
+	/>
+	<VLSDeployment
+		ConnectionSurrId="15D11FD"
+		DeployMachineName="THETYS"
+	/>
+</DataObjectLocal>

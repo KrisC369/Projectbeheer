@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE DataObject SYSTEM "DataObject.dtd">
+<DataObject
+	DTDVersion="05.06.00"
+	SurrId="0721350391.Administrator.0007"
+	CodedValuesList="False"
+	ImageReference=" "
+	IsRemoteAccessible="False"
+	UseQuotedIdentifiers="True"
+	XdaConnector="SQL"
+	SuperClass="DataObject"
+	LockMode="AllApplicableAttributes"
+	>
+	<Attributes>
+		<Attribute
+			Name="PKSellEvent"
+			PreventUserUpdates="True"
+			ValueRequired="True"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="AutoNumber"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="FKCopy"
+			PreventUserUpdates="True"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="TimeStamp"
+			PreventUserUpdates="False"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Date"
+			/>
+			<Derivation
+				DerivationType="Default"
+				>
+				<DefaultValue><![CDATA[date()]]></DefaultValue>
+			</Derivation>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+	</Attributes>
+	<Indexes></Indexes>
+	<SingularCaption><![CDATA[*]]></SingularCaption>
+	<PluralCaption><![CDATA[*]]></PluralCaption>
+	<VLSDeployment
+		DeploySecurityInfo="False"
+	/>
+	<Constraints>
+		<Constraint
+			Name="copy 1"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKCopy"
+			>
+			<Condition><![CDATA[getCopy().getCopyState()=2]]></Condition>
+			<ErrorMessage><![CDATA[This item cannot be sold now.]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="copy 2"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKCopy"
+			>
+			<Condition><![CDATA[getCopy().getCurrentReservations()=0]]></Condition>
+			<ErrorMessage><![CDATA[There are reservations pending.]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="copy 3"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKCopy"
+			>
+			<Condition><![CDATA[getCopy().getCurrentLoans()=0]]></Condition>
+			<ErrorMessage><![CDATA[This item has loans pending.]]></ErrorMessage>
+		</Constraint>
+	</Constraints>
+</DataObject>

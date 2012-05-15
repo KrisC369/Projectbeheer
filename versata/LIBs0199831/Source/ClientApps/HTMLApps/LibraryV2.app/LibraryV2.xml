@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE Application SYSTEM "Application.dtd">
+<Application
+	SurrId="0721006193.Administrator.0004"
+	TargetLanguage="HTML"
+	DefaultLogonUserId="sa"
+	ExecutionEnvironment="Browser"
+	AppletHeight="575"
+	AppletWidth="725"
+	ClassId="9D9F0DE9-1BC3-44F0-8B88-4D264CCDDB4F"
+	SuppressDefaultLoginScreen="False"
+	InitialFramesetPage="FramesetPage"
+	StartupPageFrameName="Startup"
+	InitialFrameNameForStartupTrans="Display"
+	AppRepositoryVersion="05.06.01"
+	DeploySecurityInfo="False"
+	DTDVersion="05.06.00"
+	>
+	<ServerLocation><![CDATA[<localVLSServer>]]></ServerLocation>
+	<ApplicationArchetypesFolder><![CDATA[PDXSystemHTMLArchetypes]]></ApplicationArchetypesFolder>
+	<!-- APPLICATION FORMS -->
+	<Forms>
+		<Form>StartupPage</Form>
+		<Form>pLibrary</Form>
+		<Form>pMember</Form>
+		<Form>pCopy</Form>
+	</Forms>
+	<SourceFiles>
+	</SourceFiles>
+</Application>

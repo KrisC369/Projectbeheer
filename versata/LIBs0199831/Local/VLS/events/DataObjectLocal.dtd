@@ -1,0 +1,20 @@
+<!ELEMENT DataObjectLocal (VLSDeployment | DatabaseServerDeployment)* >
+<!ATTLIST DataObjectLocal
+	DTDVersion CDATA #REQUIRED
+>
+
+<!ELEMENT VLSDeployment EMPTY>
+<!ATTLIST VLSDeployment
+      ConnectionSurrId CDATA #IMPLIED
+      DeployMachineName CDATA #IMPLIED
+>
+
+<!ELEMENT DatabaseServerDeployment EMPTY>
+<!ATTLIST DatabaseServerDeployment
+      ConnectionString CDATA #IMPLIED
+      DatabaseType CDATA #IMPLIED
+      DatabaseName CDATA #IMPLIED
+      IsDeployed (True|False) #IMPLIED
+      SchemaName CDATA #IMPLIED
+>
+

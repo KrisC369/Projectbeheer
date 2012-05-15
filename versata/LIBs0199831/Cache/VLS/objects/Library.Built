@@ -1,0 +1,13 @@
+[General]
+XMLDateTime=2012-05-09 23:31:51
+BOCustomImpl=2012-05-05 21:10:06
+BORule=2012-05-13 22:31:03
+BOBaseImpl=2012-05-13 22:31:03
+[Relationship]
+REL_Library-Member=2012-05-05 21:04:20
+REL_Library-Copy=2012-05-05 21:04:56
+REL_Library-CreateEvent=2012-05-09 23:57:35
+REL_Library-DestroyEvent=2012-05-09 23:57:47
+[SourceDO]
+Member=2012-05-13 21:16:30
+Copy=2012-05-13 16:49:21

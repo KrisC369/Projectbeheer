@@ -1,0 +1,62 @@
+***************** Data Object Dependency Check Run for Copy (5/13/2012, at 4:44:32 PM) ***************
+
+
+
+(A):  Dependent Data Objects
+
+==============================================================================
+
+  
+
+  
+
+
+
+  1) Data Object is a Parent of Copy in REL_Library-Copy.
+
+  2) Data Object is a Child of Copy in REL_Copy-Reservation.
+
+  3) Data Object is a Child of Copy in REL_Copy-Loan.
+
+  4) Data Object is a Child of Copy in REL_Copy-AcquireEvent.
+
+  5) Data Object is a Child of Copy in REL_Copy-LoseEvent.
+
+  6) Data Object is a Child of Copy in REL_Copy-SellEvent.
+
+  7) Data Object is a Child of Copy in REL_Copy-ReserveEvent.
+
+
+
+(B):  Dependent Query Objects
+
+==============================================================================
+
+  
+
+  No Query Object is dependent on Copy.
+
+
+
+(C):  Dependent Application Forms
+
+==============================================================================
+
+  
+
+  1)  ClientApps -> HTMLApps\LibraryV1\pCopy
+
+  2)  ClientApps -> HTMLApps\LibraryV1\pLibrary
+
+  3)  ClientApps -> HTMLApps\LibraryV1\pLoan
+
+  4)  ClientApps -> HTMLApps\LibraryV1\pReservation
+
+  5)  ClientApps -> HTMLApps\LibraryV2\pCopy
+
+  6)  ClientApps -> HTMLApps\LibraryV2\pLibrary
+
+
+
+
+

@@ -1,0 +1,173 @@
+*********** Stack Dump at 5/5/2012 8:50:57 PM *******************
+Error Text: 2904: An  Attribute by this name already exists for this Data Object.
+Versata Error Message
+Stack ->>>
+mnuAdd_Click busRules
+addColumnsClick busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/5/2012 9:02:25 PM *******************
+Error Text: 3489: Attribute: 'PKReservation' is AutoNumber.Sum or count rules cannot be supported on such Attributes.
+
+Computation type will be set to None.
+Versata Error Message
+Stack ->>>
+cmbCompType_Change busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:09 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:10 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:11 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:12 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:12 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:12 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:13 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:13 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:14 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:14 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/10/2012 12:01:14 AM *******************
+Error Text: Division by zero
+
+VisBldr:setInterimProgress:1
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/11/2012 1:09:43 AM *******************
+Error Text: 3999: Invalid name for the Action.
+Versata Error Message
+Stack ->>>
+tabBusRuleType_Click busRules
+mnuSave_Click busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/11/2012 1:09:46 AM *******************
+Error Text: 3999: Invalid name for the Action.
+Versata Error Message
+Stack ->>>
+tabBusRuleType_Click busRules
+mnuSave_Click busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/11/2012 1:09:48 AM *******************
+Error Text: 3999: Invalid name for the Action.
+Versata Error Message
+Stack ->>>
+tabBusRuleType_Click busRules
+mnuSave_Click busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/11/2012 1:10:04 AM *******************
+Error Text: 3999: Invalid name for the Action.
+Versata Error Message
+Stack ->>>
+tabBusRuleType_Click busRules
+mnuSave_Click busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/11/2012 1:10:08 AM *******************
+Error Text: 3999: Invalid name for the Action.
+Versata Error Message
+Stack ->>>
+mnuSave_Click busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/11/2012 1:10:15 AM *******************
+Error Text: 3999: Invalid name for the Action.
+Versata Error Message
+Stack ->>>
+tabBusRuleType_Click busRules
+mnuSave_Click busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/13/2012 1:27:18 AM *******************
+Error Text: Automation error
+The object invoked has disconnected from its clients. 
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/13/2012 3:21:48 PM *******************
+Error Text: 3485: There are no parent relationships from which to derive replicate values.
+Versata Error Message
+Stack ->>>
+loadUserExtProperties busRules
+cmbCompType_Change busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/14/2012 12:26:00 AM *******************
+Error Text: 3999: Invalid name for the Action.
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+

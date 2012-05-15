@@ -1,0 +1,2 @@
+References=
+VLSComponentsClassPath=C:/projects/LIBs0199831/Lib/VLS/

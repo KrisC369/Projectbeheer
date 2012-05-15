@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE DataObject SYSTEM "DataObject.dtd">
+<DataObject
+	DTDVersion="05.06.00"
+	SurrId="0721350391.Administrator.0009"
+	CodedValuesList="False"
+	ImageReference=" "
+	IsRemoteAccessible="False"
+	UseQuotedIdentifiers="True"
+	XdaConnector="SQL"
+	SuperClass="DataObject"
+	LockMode="AllApplicableAttributes"
+	>
+	<Attributes>
+		<Attribute
+			Name="PKReserveEvent"
+			PreventUserUpdates="True"
+			ValueRequired="True"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="AutoNumber"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="FKReservation"
+			PreventUserUpdates="True"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="TimeStamp"
+			PreventUserUpdates="False"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Date"
+			/>
+			<Derivation
+				DerivationType="Default"
+				>
+				<DefaultValue><![CDATA[date()]]></DefaultValue>
+			</Derivation>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+	</Attributes>
+	<Indexes></Indexes>
+	<SingularCaption><![CDATA[*]]></SingularCaption>
+	<PluralCaption><![CDATA[*]]></PluralCaption>
+	<VLSDeployment
+		DeploySecurityInfo="False"
+	/>
+	<Constraints>
+		<Constraint
+			Name="Reservation 1"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKReservation"
+			>
+			<Condition><![CDATA[getReservation().getReservationState()=1]]></Condition>
+			<ErrorMessage><![CDATA[Reservation wrong state.]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="Copy 1"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKReservation"
+			>
+			<Condition><![CDATA[getReservation().getCopy().getCopyState()=4]]></Condition>
+			<ErrorMessage><![CDATA[illegal State Copy]]></ErrorMessage>
+		</Constraint>
+	</Constraints>
+	<Actions>
+		<Action
+			Name="cancelCopy"
+			>
+			<ActionToPerform><![CDATA[getReservation().getCopy().setCopyState(3)]]></ActionToPerform>
+			<Condition><![CDATA[ Inserting ]]></Condition>
+			<Description><![CDATA[]]></Description>
+		</Action>
+		<Action
+			Name="cancelReservation"
+			>
+			<ActionToPerform><![CDATA[getReservation().setReservationState(3)]]></ActionToPerform>
+			<Condition><![CDATA[ inserting]]></Condition>
+			<Description><![CDATA[]]></Description>
+		</Action>
+	</Actions>
+</DataObject>

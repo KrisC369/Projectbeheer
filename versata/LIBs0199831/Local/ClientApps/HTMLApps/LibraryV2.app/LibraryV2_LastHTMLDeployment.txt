@@ -1,0 +1,7 @@
+SourceFolder:C:\projects\LIBs0199831\Source\ClientApps\HTMLApps\\LibraryV2.app,FileSpecification:*.gif;*.jpg;*.jpeg;*.js;*.au;*.css;*.wav,Recursive:True,Destination:WebServer
+SourceFolder:C:\projects\LIBs0199831\Source\ClientApps\HTMLApps\\LibraryV2.app,FileSpecification:Images\*.*,Recursive:False,Destination:WebServer
+SourceFolder:C:\projects\LIBs0199831\Source\ClientApps\HTMLApps\\LibraryV2.app,FileSpecification:login*.htm*;timeout.htm*,Recursive:False,Destination:WebServer
+SourceFolder:C:\projects\LIBs0199831\Lib\ClientApps\HTMLApps\LibraryV2.app,FileSpecification:LibraryV2Servlet.class,Recursive:True,Destination:Servlet
+SourceFolder:C:\projects\LIBs0199831\Lib\ClientApps\HTMLApps\LibraryV2.app,FileSpecification:LibraryV2BaseServlet.class,Recursive:True,Destination:Servlet
+SourceFolder:C:\projects\LIBs0199831\Lib\ClientApps\HTMLApps\LibraryV2.app,FileSpecification:*.class,Recursive:True,Destination:VLSComponents
+SourceFolder:C:\projects\LIBs0199831\Source\ClientApps\HTMLApps\\LibraryV2.app,FileSpecification:*.htm*,Recursive:False,Destination:VLSComponentsApp

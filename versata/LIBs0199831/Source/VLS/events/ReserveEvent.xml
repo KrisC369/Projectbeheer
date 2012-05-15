@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!DOCTYPE DataObject SYSTEM "DataObject.dtd">
+<DataObject
+	DTDVersion="05.06.00"
+	SurrId="0721350391.Administrator.0008"
+	CodedValuesList="False"
+	ImageReference=" "
+	IsRemoteAccessible="False"
+	UseQuotedIdentifiers="True"
+	XdaConnector="SQL"
+	SuperClass="DataObject"
+	LockMode="AllApplicableAttributes"
+	>
+	<Attributes>
+		<Attribute
+			Name="PKReserveEvent"
+			PreventUserUpdates="True"
+			ValueRequired="True"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="AutoNumber"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="FKReservation"
+			PreventUserUpdates="True"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="FKCopy"
+			PreventUserUpdates="False"
+			ValueRequired="True"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="FKMember"
+			PreventUserUpdates="False"
+			ValueRequired="True"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+	</Attributes>
+	<Indexes></Indexes>
+	<SingularCaption><![CDATA[*]]></SingularCaption>
+	<PluralCaption><![CDATA[*]]></PluralCaption>
+	<VLSDeployment
+		DeploySecurityInfo="False"
+	/>
+	<Constraints>
+		<Constraint
+			Name="Copy 1"
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKCopy"
+			>
+			<Condition><![CDATA[getCopy().getCopyState()=3]]></Condition>
+			<ErrorMessage><![CDATA[Illegal state copy]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="Member 1 "
+			ConditionType="AcceptWhen"
+			ErrorAttribute="FKMember"
+			>
+			<Condition><![CDATA[getMember().getMemberState()=1]]></Condition>
+			<ErrorMessage><![CDATA[Illegal state Member]]></ErrorMessage>
+		</Constraint>
+		<Constraint
+			Name="Copy 2"
+			ConditionType="RejectWhen"
+			ErrorAttribute="FKCopy"
+			>
+			<Condition><![CDATA[getCopy().getCurrentLoans()=0]]></Condition>
+			<ErrorMessage><![CDATA[Illegal state copy]]></ErrorMessage>
+		</Constraint>
+	</Constraints>
+	<Actions>
+		<Action
+			Name="reserveCopy"
+			>
+			<ActionToPerform><![CDATA[getCopy().setCopyState(4)]]></ActionToPerform>
+			<Condition><![CDATA[ Inserting ]]></Condition>
+			<Description><![CDATA[]]></Description>
+		</Action>
+	</Actions>
+</DataObject>
