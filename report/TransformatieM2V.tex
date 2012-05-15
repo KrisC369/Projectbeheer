@@ -8,7 +8,28 @@ De omzetting van het EDG diagram naar een oplossing binnen versata wordt besprok
 \label{sec:OET}
 Bij het omzetten van de merode modellen naar een oplossing binnen het versata framework, vertrekken we van de object-event-table. Deze tabel zal gebruikt worden om de versata objecten te construeren.
 Voor elke kolom van de tabel wordt er een versata business object aangemaakt. 
-Deze objecten zullen als het ware de datacontainers zijn voor de domein elementen die ze voorstellen. Deze objecten worden ook voorzien van attributen die relevant kunnen zijn voor deze context. Deze attributen worden niet expliciet in 
+Deze objecten zullen als het ware de datacontainers zijn voor de domein elementen die ze voorstellen. Deze objecten worden ook voorzien van attributen die relevant kunnen zijn voor deze context. Deze attributen worden niet expliciet in de merode documentatie vermeld, maar kunnen zelf nog toegevoegd worden waar nodig.
+
+Verder worden de objecten die aangemaakt worden in versata studio ook nog voorzien van: 
+\begin{itemize}
+	\item Primary key: Unieke primaire sleutel voor elk object.
+	\item Foreign key: Verwijzing naar de primaire sleutels van elk object waar dit object een relatie mee heeft.
+	\item Afleidende velden: Attributen die het aantal relaties tellen of een som maken. Deze objecten dienen te worden aangemaakt wanneer nodig in een voorheen besproken constraint.
+	\item ObjectState: Een teller die bijhoudt in welke toestand een object zich bevindt.
+\end{itemize}
+
+Voor elke rij in de OET (events) worden event object aangemaakt in versata studio. Deze objecten verschillen volgens versata niet per definitie van business objecten, maar worden in onze context wel op een andere manier gebruikt. Voor elke mogelijke event worden er dus event objecten aangemaakt. 
+Bij deze objecteventen kunnen immers constraints en acties worden gespecifieerd die de beperkingen en handelingen die gepaard gaan bij een event, voorstellen.
+
+Een bepaald subtype van deze event objecten, namelijk de create events zorgen echter ook voor de aanmaak van hun parent-object (wanneer natuurlijk aan alle precondities is voldaan).
+Verder hebben deze event objecten de volgende eigenschappen(/velden).
+\begin{itemize}
+	\item Primary key: Unieke primaire sleutel voor elk event object.
+	\item Foreign key: Voor elk object waarop deze event een handeling uitvoert.
+	\item Attributes: Voor een create event object, een attribuut veld voor elk te isntanti\"eren veld in het aan te maken parent object.
+\end{itemize}
+
+Het is mogelijk om nog meer informatie bij te houden in deze event objecten zoals tijdstip van uitvoeren of de initiator van het event. Dit is echter niet strikt noodzakelijk en kan mogelijk gezien worden als administratieve keuze die gemaakt moet worden.
 \subsection{Life cycles}
 \label{sec:Life_cycles}
 \subsection{Precondities}
