@@ -1,0 +1,23 @@
+\BOOKMARK [1][-]{section.1}{Understanding the architecture}{}
+\BOOKMARK [1][-]{section.2}{Privacy analysis}{}
+\BOOKMARK [2][-]{subsection.2.1}{Data Flow Diagram}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Mapping of threats to DFD}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Threat elicitation}{section.2}
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Assumptions}{subsection.2.3}
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Threats}{subsection.2.3}
+\BOOKMARK [4][-]{section*.4}{T01 - Linking Alarm configuration data to user data}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.13}{T02 - Information disclosure of customer usage history}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.22}{T03 - Spoofing an internal user of ReMeS by falsifying credentials}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.31}{T04 - Spoofing a user of ReMeS because of weak credential storage. }{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.40}{T05 - Linkability of requests sent to external UIS}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.49}{T06 - Information disclosure internal process}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.58}{T07 - Side channel information disclosure internal process}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.67}{T08 - Non-compliance of employees}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.76}{T09 - Missing user consents}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.85}{T10 - Non-compliance management}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.94}{T11 - User unawareness}{subsubsection.2.3.2}
+\BOOKMARK [4][-]{section*.103}{T12 - content inaccuracy}{subsubsection.2.3.2}
+\BOOKMARK [2][-]{subsection.2.4}{Prioritization of threats}{section.2}
+\BOOKMARK [3][-]{subsubsection.2.4.1}{High priority}{subsection.2.4}
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Medium priority}{subsection.2.4}
+\BOOKMARK [3][-]{subsubsection.2.4.3}{Low priority}{subsection.2.4}

@@ -1,0 +1,41 @@
+\select@language {english}
+\contentsline {figure}{\numberline {1}{\ignorespaces {Full domain model with colored components.}\relax }}{15}{figure.caption.3}
+\contentsline {figure}{\numberline {2}{\ignorespaces {Use Case Diagram for ReMeS System.}\relax }}{20}{figure.caption.4}
+\contentsline {figure}{\numberline {3}{\ignorespaces {The ReMeS component diagram first decomposition.}\relax }}{42}{figure.caption.111}
+\contentsline {figure}{\numberline {4}{\ignorespaces {The Incoming Gateway after decomposition}\relax }}{45}{figure.caption.116}
+\contentsline {figure}{\numberline {5}{\ignorespaces {The Scheduler for Incoming Measurement Trames after decomposition}\relax }}{47}{figure.caption.121}
+\contentsline {figure}{\numberline {6}{\ignorespaces {The Scheduler for Incoming Alarm Trames after decomposition}\relax }}{48}{figure.caption.126}
+\contentsline {figure}{\numberline {7}{\ignorespaces {The Data Storage component after decomposition}\relax }}{50}{figure.caption.131}
+\contentsline {figure}{\numberline {8}{\ignorespaces {The Watchdog after decomposition}\relax }}{52}{figure.caption.136}
+\contentsline {figure}{\numberline {9}{\ignorespaces {The Trame Handler after decomposition}\relax }}{53}{figure.caption.141}
+\contentsline {figure}{\numberline {10}{\ignorespaces {The Buffer after decomposition}\relax }}{54}{figure.caption.146}
+\contentsline {figure}{\numberline {11}{\ignorespaces {The DB Request Handler after decomposition}\relax }}{55}{figure.caption.151}
+\contentsline {figure}{\numberline {12}{\ignorespaces {The decomposition of ReMeS after the second iteration}\relax }}{58}{figure.caption.156}
+\contentsline {figure}{\numberline {13}{\ignorespaces {The Scheduler for Outgoing Trames after decomposition}\relax }}{60}{figure.caption.161}
+\contentsline {figure}{\numberline {14}{\ignorespaces {The User Notification component after decomposition}\relax }}{62}{figure.caption.166}
+\contentsline {figure}{\numberline {15}{\ignorespaces {The Outgoing Gateway after decomposition}\relax }}{63}{figure.caption.171}
+\contentsline {figure}{\numberline {16}{\ignorespaces {The Invoice Manager after decomposition}\relax }}{64}{figure.caption.176}
+\contentsline {figure}{\numberline {17}{\ignorespaces {The User Interaction after decomposition}\relax }}{67}{figure.caption.185}
+\contentsline {figure}{\numberline {18}{\ignorespaces {The Scheduler for Consumption Prediction Requests after decomposition}\relax }}{69}{figure.caption.190}
+\contentsline {figure}{\numberline {19}{\ignorespaces {The Computation of Consumption Prediction component after decomposition}\relax }}{69}{figure.caption.193}
+\contentsline {figure}{\numberline {20}{\ignorespaces {The context diagram for ReMeS.}\relax }}{72}{figure.caption.195}
+\contentsline {figure}{\numberline {21}{\ignorespaces {The final architectural diagram for ReMeS.}\relax }}{73}{figure.caption.196}
+\contentsline {figure}{\numberline {22}{\ignorespaces {The component diagram of the final version of the outgoing gateway component.}\relax }}{76}{figure.caption.197}
+\contentsline {figure}{\numberline {23}{\ignorespaces {The final version of the ReMeS system deployment diagram.}\relax }}{77}{figure.caption.198}
+\contentsline {figure}{\numberline {24}{\ignorespaces {The sequence diagram for the user profile creation scenario.}\relax }}{79}{figure.caption.199}
+\contentsline {figure}{\numberline {25}{\ignorespaces {The sequence diagram for the association of the device to the profile.}\relax }}{80}{figure.caption.200}
+\contentsline {figure}{\numberline {26}{\ignorespaces {The sequence diagram for manually setting the meter value for a device. }\relax }}{80}{figure.caption.201}
+\contentsline {figure}{\numberline {27}{\ignorespaces {The sequence diagram for sending the initial measurement to ReMeS.}\relax }}{81}{figure.caption.202}
+\contentsline {figure}{\numberline {28}{\ignorespaces {The sequence diagram for reconfiguring the transmission frequency. }\relax }}{82}{figure.caption.203}
+\contentsline {figure}{\numberline {29}{\ignorespaces {The sequence diagram for configuring the alarm notification recipient. }\relax }}{83}{figure.caption.204}
+\contentsline {figure}{\numberline {30}{\ignorespaces {The sequence diagram for remotely configuring the remote device.. }\relax }}{85}{figure.caption.205}
+\contentsline {figure}{\numberline {31}{\ignorespaces {The sequence diagram for sending a measurement trame under normal circumstances. }\relax }}{86}{figure.caption.206}
+\contentsline {figure}{\numberline {32}{\ignorespaces {The sequence diagram for performing individual data analysis requests. }\relax }}{87}{figure.caption.207}
+\contentsline {figure}{\numberline {33}{\ignorespaces {The sequence diagram for performing production planning analysis. }\relax }}{87}{figure.caption.208}
+\contentsline {figure}{\numberline {34}{\ignorespaces {The sequence diagram for receiving an alarm trame. }\relax }}{88}{figure.caption.209}
+\contentsline {figure}{\numberline {35}{\ignorespaces {The sequence diagram for detecting an anomaly. }\relax }}{89}{figure.caption.210}
+\contentsline {figure}{\numberline {36}{\ignorespaces {The sequence diagram for removing a remote module from a customer account. }\relax }}{90}{figure.caption.211}
+\contentsline {figure}{\numberline {37}{\ignorespaces {The sequence diagram for creating a new invoice. }\relax }}{91}{figure.caption.212}
+\contentsline {figure}{\numberline {38}{\ignorespaces {The sequence diagram for receiving a confirmation that a bill was paid. }\relax }}{92}{figure.caption.213}
+\contentsline {figure}{\numberline {39}{\ignorespaces {The Level 0 DFD diagram for ReMeS.}\relax }}{94}{figure.caption.214}
+\contentsline {figure}{\numberline {40}{\ignorespaces {The Level 1 DFD diagram for ReMeS.}\relax }}{95}{figure.caption.215}

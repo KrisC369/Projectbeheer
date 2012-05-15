@@ -1,0 +1,29 @@
+
+
+\paragraph{T02 - Information disclosure of customer usage history}
+% the attributes noted with an asterix (*) are obligated
+    \subparagraph{Summary:} An authenticated internal user can access personal usage history of any customer he wants.
+    \subparagraph{Primary mis-actor:} Unskilled insider
+    \subparagraph{Basic path:}
+    \begin{enumerate}
+        \item[bf1.]{The misactor authenticates himself (by using his own credentials or by spoofing another valid user).}
+        \item[bf2.]{The misactor gains indirect access to the database and is able to perform queries about certain certain contents.}
+    \end{enumerate}
+    \subparagraph{Consequence:}
+	Confidential usage history data and personal data is exposed to the authenticated user (researcher or operator). This way an unauthorised user can access information that is not supposed to be available to said user.
+
+    \subparagraph{Reference to threat tree node(s):} ID\_ds9, ID\_ds2
+    \subparagraph{Parent threat tree(s):} ID\_ds
+    \subparagraph{DFD element(s):}7.1 Database
+    \subparagraph{Remarks:}
+    \begin{enumerate}
+        \item[r1.] This threat is only applicable to the general database (7.1) because the alarm configuration database is not accessible via non automated entities. 
+        \item[r2.] Spoofing a user is considered a precondition of this threat. By spoofing another user, different contents in the database is made accessible to the user.
+	\item[r3.] Although access control is installed for the data stores as explained in assumption \ref{it:ass4} and that only internal users (e.g.employees) have access to the data stores (assumption \ref{it:ass14}, 
+the protection scheme can be circumvented as specified in ID\_ds9 by internal employees spoofing other types of employees and thus gaining other access rights. See threat T03.
+	\item[r4.] We assume the data store itself is sufficiently protected which eliminates unencrypted data, side channel attacks (ID\_ds4), extra-monitor access (ID\_ds3) and bad storage management (ID\_ds5) (assumption \ref{it:ass4}).
+
+    \end{enumerate}
+
+
+

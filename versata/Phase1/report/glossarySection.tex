@@ -1,0 +1,57 @@
+\section{Glossary}
+In this glossary section, some non trivial domain elements will be furtherly explained.
+The elements will be explained per domain component.
+\subsection{Main Metering (Blue)}
+\subsubsection{Module}
+The Module represents the remote measurement modules and the remote valve control modules.
+These modules are installed on Meters and valves respectively. These modules are also powered by a Power source. This can either be a battery or the electricity network provided by the utility network described in the Utility Company section.
+\subsubsection{Valve}
+The valve the valve control module is installed on, is part of the main metering component and not part of the utility company component. This is because the valve control and valve itself are often delivered in one single component by the people in charge of the metering. 
+The context for usage of this element lies not with the Utility Company. 
+\subsubsection{Data Trame}
+The data trame entity is an entity that is used to communicate with modules. There is an hierarchy of trames in existence that is structured on the type of trame. 
+As such there is an information trame, an alarm trame and a configuration trame. 
+\subsubsection{Contact Information}
+The contact information entity represents the information that a module is configured to have about who to notify in case of an emergency.
+\subsubsection{Consumer}
+The consumer represents the person or company that uses or consumes the services offered by utility companies. This consumer inhabits a building,
+whether it be a personal home residence or perhaps a company facility.
+\subsubsection{Contract}
+When a utility company provides services (in the form of either gas, electricity or water) a contract is signed between the utility company and the consumer. 
+This contract holds all the information about the details, terms, conditions and duration of the agreement between consumer and provider. 
+\subsection{Utility Company (Orange)}
+\subsubsection{Meter}
+The Meter is an entity representing the physical meter a utility company installs on various locations in the utility network to monitor the consumption of utility resources. These meters are installed with or without remote measurement modules. 
+\subsubsection{Utility Network}
+The utility network entity represents the different utility networks in the domain. It is a high level representation of 
+the gas, electricity and water networks on a large scale. The networks have collections of valves and meters that are installed in various locations in the network. 
+In the functional requirements analysis section, the term utility network interface point will occur. This term is merely a description of a location 
+where a valve or a meter can be installed in a network.
+\subsubsection{Utility Information System}
+The utility Information System is an existing information system that is present in all utility companies. Each utility company has such a system for storing contact information and contracts of customers. 
+\subsection{Anomalies (Red)}
+\subsubsection{Problem}
+The problem entity represents a problem such as a possible leak. This problem can be detected by the remote monitoring module. When a problem is detected,
+an alarm will be triggered with an appropriate response. The possible problems the remote monitoring module can detect at this moment are a gas leak and a water leak,
+depending on what utility network the monitoring module is installed. A problem also has a timestamp, indicating when the problem was detected.
+\subsubsection{Alarm}
+Whenever a problem is detected, an alarm will be triggered for this problem. An alarm has an appropriate response which will be the response of the monitor module. A monitor
+module responds to an alarm. Each alarm also has a priority. A gas leak has a higher priority as a water leak for example. 
+\subsubsection{Response}
+Each problem has an appropriate response. Responses will also receive the same priority as the alarm of the problem that causes them. Possible responses are valve control, where the monitor module
+will instruct the valve control to close the valve, user notification, where the monitor module will inform the user from its contactinformation about the alarm, and EMS gas
+notification, where the monitor module will alert the Emergency Services about a gas leak. This last response can only be used in case that the problem is a gas leak.
+\subsubsection{Priorities}
+A response and an alarm have a priority. Connected alarms and responses have the same priority. A priority is an instance to indicate how fast an alarm must be dealt with or how
+fast the response must be executed. Possible priorities are ASAP and Informative.
+\subsection{Other External Parties (Green)}
+\subsubsection{Emergency Call Center}
+An emergency call center is a center someone or something can call in case of emergency. The monitor module uses this call center through a EMS gas notification when a gas
+leak is detected. The monitor module will contact the emergency call center, notifying the authorities about the gas leak. The emergency call center will respond to this call by 
+dispatching one or more gas leak experts who will inspect the gas leak.
+\subsubsection{Communication Channel}
+A communication channel is an external communication channel that the remote module will use to send or receive data trames. To use this communication channel, there has to be made an
+agreement with a telecom company about the services it can offer. Without this contract the remote modules won't be able to use the external communication channel. A communication channel
+can be a wifi connection, a gprs connection or a SMS service.
+\subsubsection{Technician}
+A technician can be a regular plumber who knows how to remove and install remote modules. This plumber or techician has to be certified to install or deinstall certain modules.

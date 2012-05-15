@@ -1,0 +1,105 @@
+\section{Scenarios}
+This section will handle the behavioral discussion for the ReMeS system. This section will illustrate, 
+using a set of preset scenarios, how the system and its architecture support the fulfillment 
+of these scenarios.
+\subsection{Notes}
+In a number of diagrams the auth() function call is used to authorise a user for an operation. 
+However, in the diagrams the auth() function call is passed only an authentication token object.
+In reality this function call would need an authentication token and an object representing the 
+operation that an actor wishes to execute in order to successfully authenticate that actor.
+
+Another point of attention are the representation of the function calls made to the data storage instance. These calls are described and shown on a very high level of abstraction. Representing these interaction in a more detailed manner would very quickly lead to unnecessarily complex diagrams. Therefor this more simple approach is used.
+In reality also a query would be passed as an argument to execute operations on a database in stead of just the information that is needed for the operation (which is done in the sequence diagrams here).
+\subsection{User profile creation}
+\inclimg{0.40}{0}{../SD-UserProfileCreation}{The sequence diagram for the user profile creation scenario.}
+The user profile creation scenario is mainly handled by the user interaction component. 
+In the sequence diagram only the UIview component is shown. In a real scenario, this component would be divided
+in separate views for normal users and operators. Further decomposition of this module was not warranted in the
+ADD phase. Even though it is not shown in the sequence diagram, the operator must first login into the application controller.
+It is also not shown that when the operator calls the createUser() method, the application controller will first check
+if the current user is authorized to execute this action.
+\subsection{User profile association with remote monitoring module}
+\inclimg{0.40}{0}{../SD-ProfileAssociation}{The sequence diagram for the association of the device to the profile.}
+This scenario illustrates that the functionality for association of a device with a user profile is provided.
+However the notification of the UIS is not foreseen. At least not in an elegant manner.
+Due to the late addition of the components in charge for communication with the UIS, this functional requirement
+was overseen.
+Again the UIView an actor can use will be tailored to the actual type of actor. 
+\subsection{Installation and initialization}
+\inclimg{0.40}{0}{../SD-UpdateMeterManual}{The sequence diagram for manually setting the meter value for a device. }
+\inclimg{0.40}{0}{../SD-SendInitialMeasurement}{The sequence diagram for sending the initial measurement to ReMeS.}
+The scenario of installing a remote module at a remote location can be split up into two parts in order to discuss
+this behavior. The first functionality lies with the operator actually manually setting the initial meter setting
+through the user interface he presumably access through the web browser of his mobile unit. Again, in this sequence
+diagram it is not shown that the operator has to login into the application controller and that the checkRights()
+method is called by the Application controller.
+
+The second behavior, which is described in the second sequence diagram, shows how the initial measurement is sent to
+the ReMeS system and how it is passed along the system until it is stored and until the device is marked as active.
+The sequence diagram also show the function calls to some components returning immediately. This is done on purpose 
+to indicate that messages are being passed (through the use of a buffering mechanism) to other components in a way such
+that the sender doesn't have to wait for other operations to complete. Each component has it's own responsibilities and 
+thus, only adhere to their own operations. 
+\subsection{Transmission frequency reconfiguration}
+\inclimg{0.40}{0}{../SD-TransmissionFreqReconfiguration}{The sequence diagram for reconfiguring the transmission frequency. }
+The transmission frequency reconfiguration scenario is almost completely handled by the User interaction component of the system.
+This system diagram shows that the complete functionality of the scenario is provided by our system.
+\subsection{Troubleshooting}
+The scenario described in this section mainly describes interaction between actors in the problem domain.
+For the ReMeS system under development, this scenario does not bring much new functionality to describe. 
+Therefor we didn't explicitly work out this example since the result would be too similar too other scenarios.
+\subsection{Alarm notification recipient configuration}
+\inclimg{0.40}{0}{../SD-AlarmNotifyRecipient}{The sequence diagram for configuring the alarm notification recipient. }
+This scenario is very similar to the transmission frequency reconfiguration scenario. It is also almost completely handled by the
+User interaction component of the system. The only difference is that the service request executer will communicate with the
+Data storage component instead of the Scheduler for outgoing trames. The full functionality of the scenario is provided by the system.
+\subsection{Remote control}
+\inclimg{0.40}{90}{../SD-RemoteControl}{The sequence diagram for remotely configuring the remote device.. }
+The first part of the scenario Remote control is the installation and activation of a remote control module. Unfortunately there is
+no functionality in the current ReMeS system to activate a remote control module. Only remote monitoring modules are activated automatically.
+It is possible to activate a remote control module through the User interaction component. That way, an operator can do this.
+The second part of the scenario is configuring the water control module. This part is very similar to the scenario Alarm notification
+recipient configuration. A customer must use the Application controller to select the desired configuration profile.
+\subsection{Normal measurement data transmission}
+\inclimg{0.40}{0}{../SD-MeasurementDataTransmission}{The sequence diagram for sending a measurement trame under normal circumstances. }
+This sequence diagram shows that the Incoming gateway will send an acknowledgement through the Scheduler for outgoing trames to the
+remote device. The Incoming gateway will forward the measurement trame to the Scheduler for incoming measurement trames. This component
+will do all required tasks to store the measurement in the Data storage. The Data storage component will also call the Anomaly detection
+component. This is not shown in the sequence diagram because it isn't in this scenario.
+\subsection{Individual data analysis}
+\inclimg{0.40}{0}{../SD-DataAnalysis}{The sequence diagram for performing individual data analysis requests. }
+When the Data storage component receives a new measurement to store, it will call the anomaly detector to compute individual consumption
+profiles. These profiles can be used to determine potential leaks or anomalies. The complete scenario is covered by the design of ReMeS.
+\subsection{Utility production planning analysis}
+\inclimg{0.40}{0}{../SD-UtilityProdPlanning}{The sequence diagram for performing production planning analysis. }
+Utility production plannings can be requested through the Application control Component (or through the UIView component). Since utility
+companies will probably want to automate these requests, we provided an interface they can use without going through the UIView component.
+If a utility production planning is requested, this request will be added to the Scheduler for consumption prediction requests. When the
+computation of the prediction is finished, it will be returned to the caller. This scenario is also completely covered by our design.
+\subsection{Information exchange towards the UIS}
+This scenario indicates the regular information exchange between UIS and ReMeS. This functionality is available in the architectural design but only at such an high level so that creating sequence diagrams to illustrate this, would result in a fairly trivial diagram. These modules were not decomposed very deeply and that is why it is not possible at the moment to show a much more detailed view of this behavioral aspect of the design.
+\subsection{Alarm data transmission: remote monitoring module}
+\inclimg{0.40}{0}{../SD-AlarmTransmission}{The sequence diagram for receiving an alarm trame. }
+When an alarm trame arrives at the Incoming gateway component. This trame will be delegated to the Scheduler for incoming alarm trames. This
+component will send the required notifications to the correct modules, people and emergency services. Since we didn't know how we should contact
+the emergency services through an automated method, we used the SMS service to notify the emergency services. Keep in mind that in the sequence
+diagram, all the delegations made by the Scheduler for incoming alarm trames are executed concurrently.
+\subsection{Alarm data transmission: ReMeS}
+\inclimg{0.40}{0}{../SD-AlarmTransmissionReMeS}{The sequence diagram for detecting an anomaly. }
+This scenario is also completely covered by the ReMeS system. When the anomaly detector detects an anomaly, it will call the User notifier component
+to send a message to the appropriate customer. The customer can also login into the UIView to give feedback about the detected anomaly. The customer
+can give positive feedback (the anomaly was indeed a leak) or negative feedback (the anomaly was a false positive).
+\subsection{Remote control module de-activation}
+\inclimg{0.40}{0}{../SD-DeactivateModule}{The sequence diagram for removing a remote module from a customer account. }
+This scenario is again very similar to the Alarm notification recipient configuration scenario. This action is available through the
+Application controller. One needs to login first before removing the remote module from the Data storage.
+\subsection{New bill creation}
+\inclimg{0.35}{90}{../SD-BillCreation}{The sequence diagram for creating a new invoice. }
+Creating a bill is fully implemented in our ReMeS system. The only part that is different from the Bill Creation scenario is that ReMeS does
+not automatically creates a bill, but that an operator must initiate the operation. The created bill will be sent to a third party billing
+service and to the utility providing company. The created bill will also be stored in the Data storage component.
+\subsection{Bill payment is received}
+\inclimg{0.40}{0}{../SD-BillPaymentReceived}{The sequence diagram for receiving a confirmation that a bill was paid. }
+Finally, this scenario is again very similar to the Alarm notification recipient configuration scenario. This action is available through
+the Application controller which provides an interface that the 3rd party billing service can use to notify ReMeS that a certain bill is
+paid.

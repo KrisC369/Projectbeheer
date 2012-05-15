@@ -1,0 +1,29 @@
+
+
+\paragraph{T01 - Linking Alarm configuration data to user data}
+% the attributes noted with an asterix (*) are obligated
+    \subparagraph{Summary:} The administrator or another insider with administrator rights is able to access both the alarm configuration database and 
+the general database and will be able to link these two together. Access control to both these databases limit the type of requests a user can issue on any database but administrator rights are transitive to all other types of users.
+    \subparagraph{Primary mis-actor:} Moderately skilled insider who is able to execute and manipulate his own access rights.
+    \subparagraph{Basic path:}
+    \begin{enumerate}
+        \item[bf1.]{The misactor invokes the rights of a user with valid access to the alarm configuration database }
+        \item[bf2.]{The misactor retrieves information from the alarm configuration database}
+        \item[bf3.]{The misactor invokes the rights of a user with valid access to the general database}
+	\item[bf4.]{The misactor retrieves information from the general database}
+	\item[bf5.]{The misactor links both sets of data (e.g. based on a shared foreign key)}
+    \end{enumerate}
+    \subparagraph{Consequence:} The combined sets of data contain possibly sensitive personal data such as emergency notification telephone numbers. This poses an actual privacy threat when the misactor sells this information to interested parties, such as criminal organisations.
+
+    \subparagraph{Reference to threat tree node(s):} L\_ds2, L\_e6.
+    \subparagraph{Parent threat tree(s):} L\_ds, L\_e.
+    \subparagraph{DFD element(s):} 7.14 Alarm configuration database, 7.1 Database 
+    \subparagraph{Remarks:}
+    \begin{enumerate}
+         \item[r1.] The L\_ds1 requirement of weak access is only fulfilled when the misactor has
+	the access rights of the root of the access right hierarchy. In all other instances this precondition is not met due to the installed access control for regular users. These root users will have the ability to circumvent the installed access control in some particular situations. 
+         \item[r2.] The linkability of entity leaf node L\_e6, indicating linkability based on a device's temporary ID, inspired to this data store linkability threat.
+     \end{enumerate}
+
+
+

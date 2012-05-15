@@ -1,0 +1,51 @@
+\subsubsection{IUserInteraction}
+\label{sec:IUserInteraction}
+\paragraph{Interface Identity}
+This interface is provided by the Application controller component. The main
+	use of this interface is interaction with users outside the ReMeS system.
+\paragraph{Resources Provided}
+This interface has a wide variety of methods. Some of them are listed below.
+\begin{itemize}
+	\item{boolean login(AuthToken authToken)}\\
+	A method to login into the Application controller.
+	\item{void createBill(AuthToken authToken, UserInfo userInfo)}\\
+	A method to request a new bill creation.
+	\item{void giveFeedback(AuthToken authToken, Feedback feedback)}\\
+	A method the customer can use to give feedback to a detected anomy by ReMeS.
+	\item{void setAlarmRec(AuthToken authToken, UtilityType type, Recipient[] recipients)}\\
+	A method the customer can use to set the recipients for certain alarms.
+	\item{ConsumptionPrediction reqPrediction(AuthToken authToken, PredictionType type)}\\
+	A method to request a new consumption prediction.
+	\item{void createUser(AuthToken authToken, UserInfo userInfo)}\\
+	A method to create a new user in the system.
+	\item{void freqReconfig(AuthToken authToken, FreqProfile newFreq)}\\
+	A method to reconfigure the frequency that a remote measurement module sends trames with.
+\end{itemize}
+This list of methods is incomplete. The IUserInteraction interface contains all kinds of methods for
+	a user to interact with the system.
+\paragraph{Data Type Definitions}
+\begin{itemize}
+	\item AuthToken\\
+	The specific piece of information that can authenticate a user.
+	\item UserInfo\\
+	Data type that contains information of a user.
+	\item Feedback\\
+	Data type that contains the feedback of a customer. This feedback can be positive or negative.
+	\item UtilityType\\
+	The type of utility (gas, water, power).
+	\item Recipient\\
+	Data type that contains information on who to contact and how to contact that person.
+	\item ConsumptionPrediction\\
+	A computed consumption prediction.
+	\item PredictionType\\
+	The type of the requested consumption prediction. This structure contains the utility
+		and the timeframe.
+	\item FreqProfile\\
+	Data type that contains information on the frequency that a remote measurement module sends trames with.
+\end{itemize}
+\paragraph{Exception Definitions}
+\begin{itemize}
+	\item UnauthorizedException\\
+	This exception can be thrown by all methods of this interface (except for the login method). This exception
+		is thrown when the requested method cannot be executed by the user.
+\end{itemize}

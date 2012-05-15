@@ -1,0 +1,29 @@
+
+% place the number of the misuse cases in the corresponding field(s).
+% indicate the not examined threats with an "X"
+% at the bottom: list the total number of uncovered threats per LINDDUN category
+% + list the examined number of threats per LINDDUN category
+
+\begin{table}[h!]
+\begin{center}
+\caption{ \label{table:LINDDUN_mapping_MUCs}}
+\begin{tabular}{p{2.3cm} p{9cm} p{0.2cm} p{0.2cm} p{0.2cm} p{0.2cm}p{0.2cm} p{0.2cm} p{0.2cm} }
+\toprule[1pt]
+& Threat target & L & I & N & D & D & U & N \\
+\midrule[0.5pt]
+Data Store &  Social network DB & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ &  & $\times$ \\
+\midrule[0.5pt]
+Data Flow  &  User data stream (user -- portal) & $\times$ & $\times$ & $\times$& $\times$ & $\times$ & & $\times$ \\
+           &  Service data stream (portal -- service) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+           &  DB data stream (service -- DB)& $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+\midrule[0.5pt]
+Process & Portal & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Social network service & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+\midrule[0.5pt]
+Entity & User & $\times$ & $\times$ & & &  & $\times$ & \\
+\bottomrule[1pt]
+\end{tabular}
+\end{center}
+
+\end{table}
+

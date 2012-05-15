@@ -1,0 +1,69 @@
+%voila... hier typen
+\subsubsection{Assumptions}
+This section discusses the different assumptions that were made. This includes general assumptions about the system (e.g. the data flow between X and Y is considered encrypted), and decisions and observations (e.g. Non repudiation is not considered a threat for this system). The reasoning behind each assumption and decision is also included.
+
+These numbered assumptions will also be referenced to quite a lot in the threat elicitation section.
+\begin{enumerate}
+	\item \label{it:ass1} All internal processes can only be compromised by internal threats.
+			We consider the back-end capable of protecting these internal
+			processes from outsider threats. Therefor we will consider only
+			one process, representing all internal processes, since the same
+			threats apply to all of them.
+	\item \label{it:ass2} Likewise to the previous assumption, all data flows between the
+			internal processes are also considered as one data flow, since
+			those threats apply to all of them. Like the previous assumption,
+			data flows between internal processes are only vulnerable to internal
+			threats.
+	\item \label{it:ass3}Other dataflows (not between internal processes) are not grouped to
+			one dataflow, since different threats may apply. Since these flows
+			are not only between internal processes, the back-end cannot guarantee
+			protection of these flows.
+	\item \label{it:ass4}We assume that the data stores are encrypted and have a layer of access control
+			installed. This leads us to trusting the data stores and as such, we will only
+			consider one data store to represent all the stores. The data stores also have access control
+			installed. This access control ensures that certain processes/entities only have access to the
+			bare minimum amount of information needed for that process/entity. Queries requesting more
+			information than a process or entity is allowed to have are blocked by this control.
+			Since the data stores are encrypted
+			very well and there is access control installed, identifiability and linkability are not an issue with our data stores
+			(except for the administrator who has all access rights).
+	\item \label{it:ass5}No non-repudiation threats exist in our system. Our system stores
+			utility usages and creates invoices based upon these usages. This
+			means our system components do not need plausible deniability.
+	\item \label{it:ass6}Detectability also is not a pressing concern in our system. The privacy
+			concerns of this system are all focused on the data itself, not on the
+			detectability of it.
+	\item \label{it:ass7}Non-compliance is an important threat in our system. However, this threat
+			is not specific for a component of our system, but poses to the system
+			as a whole. We will therefor not make a distinction between the different
+			DFD elements for this threat.
+	\item \label{it:ass8}The only dataflow between entities and internal processes that is susceptible to
+			linkability and identifiability threats is the data flow between the external UIS service and
+			the UIS portal process. Linking the company contacted with internal
+			data flows might reveal personal information of a customer such as his
+			utility provider. Since we allready assumed that the internal components are shielded off from
+			the outside world and their threats, we can assume that linkability and identifiability are not an issue
+			for the internal data flows of our system.
+	\item \label{it:ass9}We assume that the data flows between external entities and internal processes
+			are SSL-encrypted. We will also assume that trames sent via sms/gprs are
+			also using an encrypted channel, provided by the service provider.
+	\item \label{it:ass10}The only entities that directly add data to the system are the consumer and
+			the remote device. Therefor we can assume that content unawareness is not a threat to the
+			other entities.
+	\item \label{it:ass11}The remote devices are preprogrammed to only send useful data. We can assume
+			that content unawareness is not a threat for the remote device entity.
+	\item \label{it:ass12} The identifiability of the entities \textit{consumer} is considered to be a threat. 
+			The other entities all use a unique identifier and have no possible need to hide their identities. 
+	\item \label{it:ass13} Information disclosure of data not meant to be accessed by certain internal users is not an issue because of the access control to the data stores, mentioned in assumption \ref{it:ass4}. 
+Every user is able to access only specific views of the data store needed to execute their function.
+	\item \label{it:ass14} We assume that the portals for employees are only accessible from inside the company network and not via the internet. 
+This limits the threats to unauthorized access to customer or researcher functions from outside the system.
+	\item \label{it:ass15} The authentication system is assume to be well implemented and secure.
+	\item \label{it:ass16} The authentication credentials are also assumed to be stored securely on the server side.
+	\item \label{it:ass17} Internal processes are not susceptible to corruption as we assume processes are implemented
+correctly and input is suficiently validated, and memory access is dealt with as well.
+	\item \label{it:ass18} Side channel attacks on data flows are not considered as they are highly-unlikely to occur
+because they take a lot of analysis and the extracted information is not in correspondence of
+the effort.
+
+\end{enumerate}

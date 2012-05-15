@@ -1,0 +1,37 @@
+\subsubsection{Bad Signal Alarm}
+
+\paragraph{Use Case Name}
+Bad Signal Alarm
+\paragraph{Primary actor}
+Remote monitoring module: The module that works with a remote connection.
+\paragraph{Interested Parties}
+ReMeS technician: Sometimes a ReMeS technician must go on site to solve the problem with a remote module. \\
+ReMeS operator: If a remote monitoring module hasn't been repaired within a certain period of time, a ReMeS operator must call and help the client to repair the problem. \\
+Client: A client will be notified and will try to fix the problem with the bad signal of the remote module.
+\paragraph{Preconditions}
+The client has a remote monitoring module installed
+\paragraph{Normal Flow}
+\begin{enumerate}
+	\item ReMeS detects that a remote monitoring module hasn't sent any data for a certain period of time.
+	\item ReMeS creates an alarm.
+	\item ReMeS notifies the client and the ReMeS call center about this alarm.
+	\item The client solves the problem with the module.
+\end{enumerate}
+
+\paragraph{Alternative Flow}
+\begin{enumerate}
+	\item[4a.] The client is unable to solve the problem.
+	\begin{enumerate}
+		\item[4a1.] A ReMeS operator contacts the client.
+		\item[4a2.] The ReMeS operator tries to look for the problem and its resolution.
+	\end{enumerate}
+	\item[4b.] The client and the ReMeS operator are unable to solve the problem.
+	\begin{enumerate}
+		\item[4b1.] A ReMeS technician is dispatched to the user.
+		\item[4b2.] The ReMeS technician solves the problem with the remote monitoring module.
+	\end{enumerate}
+\end{enumerate}
+
+
+\paragraph{Postcondition}
+The bad signal problems with the remote module are now solved.

@@ -1,0 +1,71 @@
+\subsubsection{Av2: Availability of the webportal}
+Because of a failure of our servers or because of a failure of the hosting service ReMeS uses,
+it is possible that the webportal where users can access their own information is not available
+all the time. There can also be a failure in the communication channel between the hosting service
+and the user. This communication channel is typically managed by an internet provider.
+\begin{itemize}
+	\item \textbf{Source:} internal or external. If ReMeS rents a hosting service, the source is external.
+							If ReMeS manages it's own servers, the source will be internal. In case of a 
+							combination, the source will be internal and external.
+	\item \textbf{Stimulus:}
+		\begin{itemize}
+			\item There is a failure in our servers or in the hosting service and nobody can access the webportal.
+			\item There is a failure in the communication channel provided by our (or the webhosting's) internet provider.
+			\item There is a failure in the communication channel provided by the user's internet provider. We will not consider this case since ReMeS has no SLA with this provider.
+		\end{itemize}
+	\item \textbf{Artifact:} our servers or the servers of a webhosting service, external communication channel provided by an internet provider.
+	\item \textbf{Environment:} normal execution
+	\item \textbf{Response:} 
+		\begin{itemize}
+			\item Prevention:
+				\begin{itemize}
+					\item In case that ReMeS rents a webhosting service, the ReMeS company has negotiated a Service-Level Agreement (SLA) with the
+							webhosting service. This SLA states that the webservers are available in 99\% of the time. They also ensure an average
+							response time of 100 milliseconds.
+					\item In case that ReMeS manages its own servers, ReMeS hires technicians who
+							maintain and improve the servers so they won't crash frequently. Also ReMeS will have
+							multiple servers so that in case 1 of the servers crashes, another one will
+							take over its jobs.
+					\item The ReMeS company has a SLA with the internet provider ensuring maximal availability of
+							the external communication channel. The SLA ensures that the internet connection is available in 99\% of the time. They also ensure
+							an average response time of 80 milliseconds.
+				\end{itemize}
+			\item Detection:
+				\begin{itemize}
+					\item In many cases the downtimes of the server are announced. These downtimes are needed for
+							maintenance or other upgrades.
+					\item If a system goes down, it will typically send a notification to subscribed watchdog systems. These
+							watchdog systems will notify the server administrator about the problem.
+					\item It is very unlikely that all components of the system crash at the same time (without sending a notification to subscribed watchdog systems). When one component
+							crashes, another component that uses this one will notice that there is no longer a connection
+							possible to this component. It will then notify the server administrator about the problem.
+					\item In the case that all components crash at the same time (without sending a notification to subscribed watchdog systems), the webportal of our ReMeS operators will
+							also fail. The ReMeS operators will notify the server administrator in this case.
+				\end{itemize}
+			\item Resolution:
+				In any case, the server administrator gets notified of the problem. The server administrator (and eventually other technicians) will
+					try to reboot the servers and locate the error. In case that the servers won't reboot, they will have to locate and
+					repare the error before rebooting the servers.
+		\end{itemize}
+	\item \textbf{Response measure:}
+		
+		\begin{itemize}
+			\item Detection time
+				\begin{itemize}
+					\item When all components crash at the same time without sending a notification to subscribed watchdog systems, a ReMeS operator will notice this rather fast, unless
+							there is no ReMeS operator working at that time (ie at night). Therefor the maximum time for a detection of the problem will be 12 hours. We remind that the chance
+							that this case happens is very very slim.
+					\item In any other case, the watchdog system or another component will detect the loss of connection very fast. The maximum time for detection of the problem will be 30 seconds.
+				\end{itemize}
+			\item Notification time
+				Notifying the server administrator about the problem when the problem gets detected will take maximum 5 minutes. The server administrator must be available every time of every day, even
+				at night. If the server administrator is unavailable for some period of time, he/she must provide a new contact person with atleast the same knowledge about the system.
+			\item Resolution time
+				\begin{itemize}
+					\item If the server administrator (and eventually other technicians) can reboot the servers, the resolution time will be maximum 60 minutes (providing time for the administrator to
+							get to the location of the servers). Locating and reparing the error will take more time, but as long as the servers keep running, this isn't a problem.
+					\item In the case that rebooting the server is impossible, the downtime could take up to 24 hours. Remember that not necessarily all servers are down. It is very more
+							likely that some servers are still up and running who can take over the job of the crashed server(s). In that case the users won't even notice the crashed server.
+				\end{itemize}
+		\end{itemize}
+\end{itemize}

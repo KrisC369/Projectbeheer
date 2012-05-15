@@ -1,0 +1,61 @@
+%hier typen...
+\subsection{Prioritization of threats}
+This section provides a list of the threats (ID + title) of the previous section. The order is based on the threat's risk (likelihood * impact). The distinction was made between high, medium, and low risk and,  within each category, the threats are also ordered according to their risk.
+Finally, an explanation will be given of why the threats were ordered in this particular way.
+
+\subsubsection{High priority}
+The threat that was given the highest priority is T02 - Information disclosure of customer usage history. The main reason for this choice is the fact 
+that is one of the more significant threats to the privacy of the customers. This threat is also very difficult to deal with. 
+Other threats that were labeled as high priority threats include the threats about spoofing an internal user of ReMeS. Motivated attackers
+wishing to exploit this threat could cause ReMeS harm in name and function. This should, evidently, be avoided at all cost.
+
+
+%T02 high priority want privacy en niet simpel vermeden
+%de rest high priority want spoofing users is vuil
+%T02 boven T03 en T04, want privacy zeer belangrijk en T04, T03 moet toch al zeer skilled insider zijn met onze beveiliging (likelyhood)
+\begin{itemize}
+\item T02 - Information disclosure of customer usage history
+\item T03 - Spoofing an internal user of ReMeS by falsifying credentials
+\item T04 - Spoofing a user of ReMeS because of weak credential storage.
+\end{itemize}
+
+
+\subsubsection{Medium priority}
+The threats that were labeled as being of medium priority are placed in this category because of the fact that some form of trust
+has been put in the employees of ReMeS. Misuse of this trust will have serious consequences for the misactors and this should 
+be incentive enough to mitigate the threat for these specific cases. Other than that, the medium priority threats could be mitigated
+further or avoided altogether without too much trouble from the ReMeS side.
+%bij T12 is juiste informatie belanrijk om rekeningen op te sturen, maar niet high priority, want kan simpel vermeden/opgelost worden
+%de rest is belangrijk, want het gaat om privacy van customers, maar medium want we vertrouwen employees en/of simpel vermeden
+
+\begin{itemize}
+\item T11 - User unawareness
+\item T09 - Missing user consents
+
+\item T01 - Linking Alarm configuration data to user data
+\item T10 - Non-compliance management
+\item T12 - content inaccuracy
+\end{itemize}
+
+\subsubsection{Low priority}
+Due to the fact that some level of trust is put in our employees, some threats are of a low priority. The list below contains
+threats that are just rather unlikely to occur because of the nature of the consequences for the misactors or the fact
+that the trouble that a misactor has to go through to exploit such a threat is not worth the merit of the exploit. (e.g.
+side channel information disclosure of internal processes).
+
+
+%Since we put some trust in our employees, we can put threats in low priority. Linkability of requests sent to the external UIS
+%has an even lower priority since the chance of this threat happening is very very low. This because the attacker must know what
+%bill is being made during the attack.
+
+%low want we vertrouwen employees blabla
+%bij T05 omdat de kans hierop enorm klein is
+
+%T08 boven 07 en 06 want misactor van T08 is elke employee, terwijl 07 skilled insider is en 06 enkel authorized insider
+
+\begin{itemize}
+\item T08 - Non-compliance of employees
+\item T07 - Side channel information disclosure internal process
+\item T06 - Information disclosure internal process
+\item T05 - Linkability of requests sent to external UIS
+\end{itemize}

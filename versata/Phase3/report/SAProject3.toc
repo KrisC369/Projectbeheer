@@ -1,0 +1,120 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Understanding the architecture}{3}{section.1}
+\contentsline {section}{\numberline {2}Privacy analysis}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Data Flow Diagram}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Mapping of threats to DFD}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Threat elicitation}{9}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Assumptions}{9}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Threats}{10}{subsubsection.2.3.2}
+\contentsline {paragraph}{T01 - Linking Alarm configuration data to user data}{10}{section*.4}
+\contentsline {subparagraph}{Summary:}{10}{section*.5}
+\contentsline {subparagraph}{Primary mis-actor:}{10}{section*.6}
+\contentsline {subparagraph}{Basic path:}{10}{section*.7}
+\contentsline {subparagraph}{Consequence:}{10}{section*.8}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{10}{section*.9}
+\contentsline {subparagraph}{Parent threat tree(s):}{10}{section*.10}
+\contentsline {subparagraph}{DFD element(s):}{11}{section*.11}
+\contentsline {subparagraph}{Remarks:}{11}{section*.12}
+\contentsline {paragraph}{T02 - Information disclosure of customer usage history}{11}{section*.13}
+\contentsline {subparagraph}{Summary:}{11}{section*.14}
+\contentsline {subparagraph}{Primary mis-actor:}{11}{section*.15}
+\contentsline {subparagraph}{Basic path:}{11}{section*.16}
+\contentsline {subparagraph}{Consequence:}{11}{section*.17}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{11}{section*.18}
+\contentsline {subparagraph}{Parent threat tree(s):}{11}{section*.19}
+\contentsline {subparagraph}{DFD element(s):}{11}{section*.20}
+\contentsline {subparagraph}{Remarks:}{11}{section*.21}
+\contentsline {paragraph}{T03 - Spoofing an internal user of ReMeS by falsifying credentials}{12}{section*.22}
+\contentsline {subparagraph}{Summary:}{12}{section*.23}
+\contentsline {subparagraph}{Primary mis-actor:}{12}{section*.24}
+\contentsline {subparagraph}{Basic path:}{12}{section*.25}
+\contentsline {subparagraph}{Consequence:}{12}{section*.26}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{12}{section*.27}
+\contentsline {subparagraph}{Parent threat tree(s):}{12}{section*.28}
+\contentsline {subparagraph}{DFD element(s):}{12}{section*.29}
+\contentsline {subparagraph}{Remarks:}{12}{section*.30}
+\contentsline {paragraph}{T04 - Spoofing a user of ReMeS because of weak credential storage. }{12}{section*.31}
+\contentsline {subparagraph}{Summary:}{12}{section*.32}
+\contentsline {subparagraph}{Primary mis-actor:}{12}{section*.33}
+\contentsline {subparagraph}{Basic path:}{13}{section*.34}
+\contentsline {subparagraph}{Consequence:}{13}{section*.35}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{13}{section*.36}
+\contentsline {subparagraph}{Parent threat tree(s):}{13}{section*.37}
+\contentsline {subparagraph}{DFD element(s):}{13}{section*.38}
+\contentsline {subparagraph}{Remarks:}{13}{section*.39}
+\contentsline {paragraph}{T05 - Linkability of requests sent to external UIS}{13}{section*.40}
+\contentsline {subparagraph}{Summary:}{13}{section*.41}
+\contentsline {subparagraph}{Primary mis-actor:}{13}{section*.42}
+\contentsline {subparagraph}{Basic path:}{13}{section*.43}
+\contentsline {subparagraph}{Consequence:}{13}{section*.44}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{13}{section*.45}
+\contentsline {subparagraph}{Parent threat tree(s):}{14}{section*.46}
+\contentsline {subparagraph}{DFD element(s):}{14}{section*.47}
+\contentsline {subparagraph}{Remarks:}{14}{section*.48}
+\contentsline {paragraph}{T06 - Information disclosure internal process}{14}{section*.49}
+\contentsline {subparagraph}{Summary:}{14}{section*.50}
+\contentsline {subparagraph}{Primary mis-actor:}{14}{section*.51}
+\contentsline {subparagraph}{Basic path:}{14}{section*.52}
+\contentsline {subparagraph}{Consequence:}{14}{section*.53}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{14}{section*.54}
+\contentsline {subparagraph}{Parent threat tree(s):}{14}{section*.55}
+\contentsline {subparagraph}{DFD element(s):}{14}{section*.56}
+\contentsline {subparagraph}{Remarks:}{14}{section*.57}
+\contentsline {paragraph}{T07 - Side channel information disclosure internal process}{14}{section*.58}
+\contentsline {subparagraph}{Summary:}{15}{section*.59}
+\contentsline {subparagraph}{Primary mis-actor:}{15}{section*.60}
+\contentsline {subparagraph}{Basic path:}{15}{section*.61}
+\contentsline {subparagraph}{Consequence:}{15}{section*.62}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{15}{section*.63}
+\contentsline {subparagraph}{Parent threat tree(s):}{15}{section*.64}
+\contentsline {subparagraph}{DFD element(s):}{15}{section*.65}
+\contentsline {subparagraph}{Remarks:}{15}{section*.66}
+\contentsline {paragraph}{T08 - Non-compliance of employees}{15}{section*.67}
+\contentsline {subparagraph}{Summary:}{15}{section*.68}
+\contentsline {subparagraph}{Primary mis-actor:}{15}{section*.69}
+\contentsline {subparagraph}{Basic path:}{15}{section*.70}
+\contentsline {subparagraph}{Consequence:}{15}{section*.71}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{15}{section*.72}
+\contentsline {subparagraph}{Parent threat tree(s):}{15}{section*.73}
+\contentsline {subparagraph}{DFD element(s):}{15}{section*.74}
+\contentsline {subparagraph}{Remarks:}{16}{section*.75}
+\contentsline {paragraph}{T09 - Missing user consents}{16}{section*.76}
+\contentsline {subparagraph}{Summary:}{16}{section*.77}
+\contentsline {subparagraph}{Primary mis-actor:}{16}{section*.78}
+\contentsline {subparagraph}{Basic path:}{16}{section*.79}
+\contentsline {subparagraph}{Consequence:}{16}{section*.80}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{16}{section*.81}
+\contentsline {subparagraph}{Parent threat tree(s):}{16}{section*.82}
+\contentsline {subparagraph}{DFD element(s):}{16}{section*.83}
+\contentsline {subparagraph}{Remarks:}{16}{section*.84}
+\contentsline {paragraph}{T10 - Non-compliance management}{16}{section*.85}
+\contentsline {subparagraph}{Summary:}{16}{section*.86}
+\contentsline {subparagraph}{Primary mis-actor:}{16}{section*.87}
+\contentsline {subparagraph}{Basic path:}{17}{section*.88}
+\contentsline {subparagraph}{Consequence:}{17}{section*.89}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{17}{section*.90}
+\contentsline {subparagraph}{Parent threat tree(s):}{17}{section*.91}
+\contentsline {subparagraph}{DFD element(s):}{17}{section*.92}
+\contentsline {subparagraph}{Remarks:}{17}{section*.93}
+\contentsline {paragraph}{T11 - User unawareness}{17}{section*.94}
+\contentsline {subparagraph}{Summary:}{17}{section*.95}
+\contentsline {subparagraph}{Primary mis-actor:}{17}{section*.96}
+\contentsline {subparagraph}{Basic path:}{17}{section*.97}
+\contentsline {subparagraph}{Consequence:}{17}{section*.98}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{17}{section*.99}
+\contentsline {subparagraph}{Parent threat tree(s):}{17}{section*.100}
+\contentsline {subparagraph}{DFD element(s):}{17}{section*.101}
+\contentsline {subparagraph}{Remarks:}{18}{section*.102}
+\contentsline {paragraph}{T12 - content inaccuracy}{18}{section*.103}
+\contentsline {subparagraph}{Summary:}{18}{section*.104}
+\contentsline {subparagraph}{Primary mis-actor:}{18}{section*.105}
+\contentsline {subparagraph}{Basic path:}{18}{section*.106}
+\contentsline {subparagraph}{Consequence:}{18}{section*.107}
+\contentsline {subparagraph}{Reference to threat tree node(s):}{18}{section*.108}
+\contentsline {subparagraph}{Parent threat tree(s):}{18}{section*.109}
+\contentsline {subparagraph}{DFD element(s):}{18}{section*.110}
+\contentsline {subparagraph}{Remarks:}{18}{section*.111}
+\contentsline {subsection}{\numberline {2.4}Prioritization of threats}{19}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}High priority}{19}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Medium priority}{19}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Low priority}{19}{subsubsection.2.4.3}

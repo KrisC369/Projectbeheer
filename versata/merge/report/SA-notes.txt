@@ -1,0 +1,306 @@
+Scheduler for incoming trames
+	UCx: Know type of trame			v
+	Send Measurement			
+		Send acknowledgement		delegate
+	Send alarm				v
+		localize routing logic
+		-> Message router pattern
+
+--------------------------------------------------------------------------------
+
+Scheduler for incoming measurement trames
+	• UC8’: Send measurement
+	• AV1: Measurement database failure
+		Store 3 hours of measurements.
+		=> Use buffer with redundancy :replicated component group
+	• AV2: Missing measurements
+		Monitor and detect missing measurements
+		=> use Heartbeat and stuff
+	• P2: Anomaly detection
+		- Strategy for processing: TODO ADD TO DIAGRAM (L3)
+		– UCy: 	Know the mode
+			Switch the mode
+			=> Use pub/sub, will be used in other components.
+
+--------------------------------------------------------------------------------		
+		
+Scheduler for incoming alarm trames
+	• UC11: Operate actuator remotely
+		close the actuator
+	• UC9: Notify customer
+		uses this use case, but does not solve it
+	• UC13: Send alarm
+		ReMeS stores the alarm trame and processes it (whole use case)
+	• P1: Timely closure of valves
+		priority queue, whole QAS
+		
+--------------------------------------------------------------------------------
+
+Scheduler for outgoing trames
+	• UC7: Send trame to remote device
+		partially: constructing the trame and determines the comm channel
+	• P1: Timely closure of valves
+		send the control trame to close the valve
+		
+--------------------------------------------------------------------------------
+
+User notification
+	• UC9: notify customer
+		partially: constructs the notification and determines the comm channel
+	• UC10: detect anomaly
+		notifies user
+	• UC13: send alarm
+		notifies user
+		
+--------------------------------------------------------------------------------
+
+Outgoing gateway
+	• UC7: sen trame to remote device
+		partially: sends the trame
+	• UC9: notify customer
+		partially: sends the trame
+	
+--------------------------------------------------------------------------------
+
+Database Request Handler
+	• P3: priority queue
+
+--------------------------------------------------------------------------------	
+
+
+
+--------------------------------------------------------------------------------
+
+--note: todo add other functionality to diagrams
+
+--------------------------------------------------------------------------------
+
+Storage of (Measurement) data
+UCs:
+	Send Measurement
+		- Look up customer data						v
+		- Store measurement ^ 						v
+		- Process trame							v
+	Anomaly Detection
+		- New measurement: fetch history				v
+		- > Run an.det. algo.						v'
+		- Notify alarm recipients.					delegate
+	Notify Customers: 
+		- Look up channel they use.	| => To outgoing scheduler	v+delegate
+		- Construct and send message.	|
+	Know the mode: 
+		- Normal vs overload mode.					v
+QAS:
+	Availability: 1: Backup
+		> Notify when going down.					v
+		> Detect failure autonomously.					delegate
+	Performance: 2: AnDet: 
+		- Different modes (see UC)
+		- Multiple instances -> Load balancing				delegate
+	Performance 3:
+ 		- Strategy for processing :             |=> Done in scheduler 
+		  V	- FIFO				|
+		  V	- SLA prior.			|
+		- No starvation							delegate
+---------------------------------------------------------------------------------
+
+FULLY COMPLETED REQUIREMENTS:
+UC7
+UC8
+UC9
+UC10
+UC13
+UC15
+AV1
+AV2
+P1
+P2
+P3
+M1
+
+TODOS:
+
+UC1, UC2, UC3, UC4, UC5, UC6, UC11, UC12, UC14, UC16, UC17 gaan allemaal in de user interface
+AV3: low priority
+M1)
+M2)> skip 
+M3)
+
+UIS
+
+VRAGEN:
+
+- ook een diagram van level 1 zoals in slides
+- diep genoege level opdeling?
+- ook requirements die niet in de QAS zijn?
+- UMLet ok?
+
+COMPONENT NAMEN:
+L0:
+ReMeS
+L1:
+Incoming gateway									v
+Scheduler for incoming alarm trames					v
+Scheduler for outgoing trames						v
+Watchdog											v
+Scheduler for incoming measurement trames			v
+Computation of consumption prediction				v
+Scheduler for consumption prediction requests		v
+User interaction									v
+User notification									v
+Data storage										v
+Outgoing gateway									v
+Invoice manager										v
+Other functionality									
+L2:
+Computation of consumption prediction:				x
+- Consumption prediction algorithm					
+Data storage:										v
+- Anomaly detector									
+- DB request handler								
+- Measurement processor								
+- Event channel										
+- User profile DB									
+- Measurement DB									
+- Remote device configuration DB					
+- Invoice and billing DB							
+Scheduler for incoming alarm trames:				v
+- Trame handler										
+- Buffer											
+- Scheduler											
+Incoming gateway:									v
+- Message router									
+- Acknowledgement handler							
+Scheduler for incoming measurement trames:			v
+- Trame handler
+- Buffer
+- Event channel
+- Scheduler
+Invoice manager:									v
+- UIS communicator
+- 3th party billing service communicator
+- Invoice generator
+- Event channel
+Outgoing gateway:									x, maar ok
+- Request handler
+- Message constructor
+- Network broker
+Scheduler for outgoing trames:						v
+- Request handler
+- Buffer
+- Trame constructor
+Outgoing gateway: (upgraded version)				v
+- Request handler
+- Buffer
+- ... message constructor
+- ... network broker
+Scheduler for consumption prediction requests:		v
+- Request handler
+- Buffer
+- Scheduler
+User interaction:									v
+- Service request executer
+- Authorization checker
+- UIView
+- Application controller
+- Event channel
+User notification:									v
+- Request handler
+- Buffer
+- Notification constructor
+Watchdog:											v
+- Event channel
+- Active loop
+- Heartbeat table
+L3:
+Scheduler for incoming measurement trames:			v
+- Buffer:											v
+	+ Buffer frontend								v
+	+ Buffer implementation							v
+- Trame handler:									v
+	+ Input router									v
+	+ Active loop									v
+	+ Latest heartbeat table						v	
+Data storage										v
+- DB request handler:								v
+	+ Request handler								v
+	+ Buffer										v
+	+ Request cache									v
+	+ Parallel process scheduler					v
+
+INTERFACE NAMEN
+IScheduler:							v
+- scheduleTrame()
+IDatabase:							v
+- create()
+- update()
+- get()
+- remove()
+IAcknowledgementHandler:			v
+- acknowledge()
+- handleAck()
+ITrameSender:						v
+- sendTrame()
+IUserNotifier:						v
+- notifyUser()
+ISender:							v
+- sendSMS()
+- sendGprs()
+- sendTcpIp()
+ICompute:							v
+- computePrediction()
+IPredictionScheduler:				v
+- requestPrediction()
+IMeasProc:							v
+- procNewMeas()
+IAnomalyDetector:					v
+- detectAnomaly()
+IBuffer:							v
+- addToBuffer()
+- getFromBuffer()
+ISubscribable:						v
+- subscribeToTopic()
+- sendEvent()
+IPublishable:						v
+- publishMessage()
+IUIS:								v
+- getCustomerInfo()
+- sendInvoice()
+IBillSender:						v
+- sendInvoice()
+IInvoiceGenerator:					v
+- generateInvoice()
+IBroker:							v
+- send()
+IUserInteraction:					v
+- dammmmnnnn
+IExecuter:							v
+- dammmnnnnn (zonder authToken)
+IAuthenticator:						v
+- checkRights()
+- auth()
+IHeartbeatTable:					v
+- iterate()
+IHeartbeat:							v
+- updateHeartbeat()
+IReqCache:							v
+- updateCache()
+
+
+
+
+
+TODO VERSLAG:
+
+
+				ctrl+f 3th
+
+TODO DIAGRAMMEN:
+Logger, not shown. => "needs to be logged?"
+
+TODO TIJD TEVEEL:
+DB => db access layer vermelden
+check: active loop => pattern active object in add
+IHeartbeat -> IBuffer?
+Consumption predictions => strategy?
+AV3?

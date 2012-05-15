@@ -1,0 +1,19 @@
+\subsubsection{IAcknowledgementHandler}
+\paragraph{Interface Identity}
+The only component that provides this interface is the Acknowledgement handler.
+\paragraph{Resources Provided}
+\begin{itemize}
+	\item{void acknowledge(Trame incomingTrame)}\\
+	This method should be called when for a certain incoming trame, an acknowledgement should be
+		returned to the sender. This method will be used to send acknowledgements of measurement
+		and alarm trames.
+	\item{void handleAck()}\\
+	This method should be called when an acknowledgement is received. The Acknowledgement handler
+		will store this acknowledgement in the Data storage.
+\end{itemize}
+\paragraph{Data Type Definitions}
+\begin{itemize}
+	\item Trame\\
+	The incoming trame that should be acknowledged.
+\end{itemize}
+\paragraph{Exception Definitions}

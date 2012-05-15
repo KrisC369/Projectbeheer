@@ -1,0 +1,31 @@
+\subsubsection{Log in}
+\paragraph{Use Case Name}
+Log in to ReMeS.
+\paragraph{Primary Actor}
+ReMeS Client: The client who wants to login. \\
+ReMeS System: The system who handles the procedure.
+\paragraph{Interested Parties}
+ReMeS: Is interested in the people who login to their service.
+\paragraph{Normal System Flow}
+\begin{enumerate}
+	\item The system asks for username and password.
+	\item The customer provides username and password.
+	\item The provided username exists.
+	\item The supplied password for the username is correct.
+	\item The system loads the preferences of the customer.
+\end{enumerate}
+
+\paragraph{Alternate System flow}
+\begin{enumerate}
+	 \item[3a.] The username doesn't exist.
+	\begin{enumerate}
+		 \item[3a1.] The customer decides to try again. GOTO step 1.
+	\end{enumerate}
+	\item[4a.] The password is incorrect.
+	\begin{enumerate}
+		 \item[4a1.] The customer decides to try again. GOTO step 1.
+	\end{enumerate}
+\end{enumerate}
+
+\paragraph{Outcome (post condition)}
+The Customer is logged into the store.

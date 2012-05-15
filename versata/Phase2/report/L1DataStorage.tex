@@ -1,0 +1,69 @@
+\subsubsection{Data Storage}
+In this section, the data storage component will be decomposed.
+\paragraph{Architectural drivers}
+\begin{itemize}
+	\item \textbf{UC8': } Send measurement\\
+	ReMeS looks up the customer associated with the device sending the measurement, processes and stores the measurement in his consumption record.
+	\item \textbf{UC10: } Detect anomaly\\
+	ReMeS checks measurements for anomalies.
+	If anomalies are found, the appropriate recipients need to be notified and possibly actuators need to be operated remotely. For the detection of anomalies, also all of the measurement history needs to be fetched from the database.
+	\item \textbf{AV1: } Measurement database failure\\
+	If the database fails, it should do so gracefully and not impact other services for the time being. All concerning components need to be notified when going down.
+	\item \textbf{P2: } Anomaly Detection\\
+	There are different modi to be considered: A normal mode and an overload mode.
+	Multiple instances need to handle the load that has to be processed for load balancing purposes.
+	All requests need to be handled eventually. No starvation can occur while processing requests.	
+	\item \textbf{P3: } Requests to the measurement database\\
+	In normal modus, the database processes the incoming requests first-in, first-out.
+	If the system fails to comply to the specific deadlines listed below, it goes into overload modus in which requests are handled in the order that returns the system to normal modus the fastest, thereby taking into account the SLA with the customer and the origin of the request.
+It should be possible to return a stale cached version when in overloaded modus.	
+	\item \textbf{UCy: } Know the modus\\
+	As previously indicated this module needs to be aware of the modus of operation, and possibly be able to change that modus.
+\end{itemize}
+\paragraph{Tactics}
+\begin{itemize}
+	\item{Performance}
+	\begin{itemize}
+		\item{Resource arbitration}\\
+		A scheduling policy will need to be applied in order to address the case of scheduling requests while keeping in mind the different priorities and origins of the requests.
+		\item{Resource Management}\\
+		In order to address the case of load balancing, at least some form of concurrency needs to be effected. These last two tactics take precedent over any other tactics that may conflict because of the priority assigned to the quality attributes from which these tactics where chosen.
+	\end{itemize}
+	\item{Availability}
+	\begin{itemize}
+		\item{Fault detection}\\
+		In order to address the graceful failure of different components in the system, said failure needs to be detected before it can be addressed. 
+This however will be done by the watchdog component described in higher levels. 
+It is merely mentioned here as a tactic because this component will probably be heavily influenced.
+	\end{itemize}
+\end{itemize}
+\paragraph{Architectural Patterns}
+\begin{itemize}
+	\item{Active object} \\
+In order to implement and use the different tactics to decompose this module, certain patterns were (re)used. 
+This architecture relies quite heavily on the active object pattern. 
+These active objects will, again, be implemented as commands which will be scheduled by a command processor. 
+The choice of reusing the active object implementation makes it possible to pass along commands as service requests in a more easy and general way, improving performance (not needed to convert messages all the time) and improving extendability.
+	\item{Publish/Subscribe}\\
+	The publish/Subscribe (or Pub/Sub) pattern is reused to provide components of a mechanism to know and if needed, let other components know of a change in modus. 
+For ease of explanation, the event channel is shown as a new component, but actually, this component is the same component as shown in other decompositions. 
+Each component in the ReMeS system that uses an event channel, actually uses the same event channel.
+\end{itemize}
+\inclimg{0.50}{0}{L2DataStorage}{The Data Storage component after decomposition}
+
+\paragraph{Verification and refinement of drivers}
+For this decomposition, UC8(Send Measurement) has been completely addressed. 
+UC10(Detect anomaly) has been addressed but the functionality of notifying alarm recipients has been delegated outside this component.
+UCy has also been completely addressed. As for the detection of failures as described in Av1, this functionality has been delegated to an outside component (watchdog).
+Only P2 and P3 (the major drivers) are only partially addressed and need to be explained further in a lower level decomposition although even in this level the structures for addressing these drivers have already been implemented.
+
+\textbf{DB Request Handler}
+\begin{itemize}
+	\item \textbf{P3: } Requests to the measurement database
+\end{itemize} 
+
+\textbf{Anomaly detector}
+\begin{itemize}
+	\item \textbf{P2: } Anomaly detection
+	\item \textbf{P3: } Requests to the measurement database
+\end{itemize} 

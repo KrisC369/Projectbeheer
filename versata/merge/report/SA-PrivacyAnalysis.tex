@@ -1,0 +1,35 @@
+\section{Privacy analysis}
+\subsection{Data Flow Diagram}
+
+The data flow diagrams (DFD) depicted in figures \ref{fig:DFD-Level0} and \ref{fig:DFD-Level1} are based on the client-server view of the ReMeS system.
+
+This section should contain the DFD diagram + an explanation of the decisions you made.
+\inclimg{0.75}{0}{DFD-Level0}{The Level 0 DFD diagram for ReMeS.}
+\inclimg{0.45}{0}{DFD-Level1}{The Level 1 DFD diagram for ReMeS.}
+
+The DFD slightly varies from the original client-server view, as the following decisions were made: 
+\begin{enumerate}
+	\item All frontend components were decomposed into an external entity and the actual process. 
+	\item The price rate notifier is not depicted in the client-server view, and is assumed to be part of the UIS web component.
+	\item The UIS web service entity represents the UIS component that actually uses the ReMeS interface to communicate and not the offered web service to the UIS component.
+	\item The authentication component is missing from the diagrams because it is assumed that the session token is sent from the users to the portal for each request.
+	\item The Data processor component and the anomaly detector component were combined to one process: Data processor, 
+because the additional process would not introduce any more information about or threats to the system.
+	\item The \textit{Store query} represents an insert request to the database of some sorts, while the \textit{Read query}
+represents a retrieval query for the database. 
+If just \textit{Query} is used, it is assumed that the flow will contain both read and insert requests.
+\end{enumerate}
+
+\subsection{Mapping of threats to DFD}
+
+This section gives an overview of the different threats that exist for each DFD element.
+The DFD element names are represented in the DFD of the previous section!
+This table is split up in to different sections for data stores, data flows, processes and entities.
+
+
+\input{mapping_run}
+
+\newpage
+After making different assumptions about the system and analysing the possible threats further, a lot of possible threats were ruled out.
+The final threat table can be seen in the following figure. In this table only the actually handled threats are represented.
+\input{mapping_run_2}

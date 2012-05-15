@@ -1,0 +1,32 @@
+\subsubsection{New Bill Creation}
+
+\paragraph{Use Case Name}
+New Bill Creation
+\paragraph{Primary actor}
+ReMeS: ReMeS will have to create new bills at certain fixed points.
+\paragraph{Interested Parties}
+Client: The client of the utility company will want to know how its bills are created. \\
+Utility company: The utility company will want to keep track of the bills that it still need to receive. \\
+Third party payment service: The third party payment service will want to know what bills it needs to keep track of.
+\paragraph{Preconditions}
+The utility company has chosen to let ReMeS handle its bill creations.
+\paragraph{Normal Flow}
+\begin{enumerate}
+	\item ReMeS has received enough measurement data
+	\item ReMeS creates a bill for the client
+	\item ReMeS notifies the utility company and the third party payment service 
+			about the creation of the bill.
+	\item The bill is sent to the client.
+\end{enumerate}
+
+% \paragraph{Alternative Flow}
+% \begin{enumerate}
+	% TODO is er wel een alternative flow?
+	% \item[2a.] 
+	% \begin{enumerate}
+		% \item[2a1.] 
+	% \end{enumerate}
+% \end{enumerate}
+
+\paragraph{Postcondition}
+A bill is created for the client to pay for the utilities he/she consumed.

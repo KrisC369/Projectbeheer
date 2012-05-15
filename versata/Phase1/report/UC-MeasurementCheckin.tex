@@ -1,0 +1,25 @@
+\subsubsection{Measurement Check-in}
+
+\paragraph{Use Case Name}
+Measurement check-in data transmission
+\paragraph{Primary actor}
+The remote measurement module: Measures the data and initiates the check-in.\\
+ReMeS system: receives the data.
+\paragraph{Interested Parties}
+Utility company: Is interested in the data gathered.
+\paragraph{Preconditions}
+The module is powered (either by battery or electricity net).
+\paragraph{Normal Flow}
+\begin{enumerate}
+	\item The use case starts when the module is powered on or when this use case has been completed.
+	\item The module reads the preset configuration for the desired interval.
+	\item The module sets a timer matching the interval.
+	\item The set timer expires 
+	\item The module sends a trame containing the measurement data to the ReMeS system.
+	\item The ReMeS system receives and stores the measurement data from the module.
+\end{enumerate}
+
+\paragraph{Alternative Flow}
+None
+\paragraph{Postcondition}
+The measurement is sent to and stored at the ReMeS System in specified intervals.

@@ -1,0 +1,70 @@
+\section{Domain Analysis}
+\subsection{Domain components}
+To make it more easy to process and discuss the domain model for remote metering, the domain can be decomposed
+into different components. The diagram itself has been provided in full, but the different components
+can be discerned by their color. 
+
+The blue color marks the main component of the remote metering domain. This entails the elements representing the modules 
+and the people using them. These component is quite tightly coupled to the next component depicted in orange.
+
+The orange color marks the utility companies and all elements that are directly related to the utility companies.
+
+The red color marks the anomaly-component. All domain elements that have to do with anomalies, problems, alarms and such, 
+are part of this component.
+
+The green color represents the final component and marks all elements which are related to other external parties 
+not related to the immediate metering domain. These elements include external experts, telecommunications providers and such. 
+
+NOTE: According to a teaching assistant, the domain model should also contain type information for the attributes of entities in the domain model.
+ Therefor we provided type information in the domain model. We are, however, of the opinion that the domain model is not the place to include type information and would not have done so if not directed by a TA. 
+Type information for attributes is, in our opinion, more a solution oriented aspect instead of a problem oriented aspect.
+\subsection{Domain model diagram}
+\inclimg{0.45}{90}{domainModelUpdated.jpg}{Full domain model with colored components.}
+\subsection{Additional Domain Constraints}
+In this section some extra domain constraints will be specified in the formal OCL. It was not possible to directly model this information in the domain model, so therefor the following OCL constraints were created.
+\begin{lstlisting}
+context	Consumer: 
+	self.canBeContactedAt.Address = self.inhabits.Address
+
+context Monitor module inv:
+	self.location = self.EMSGasNotification.location
+
+context	Monitor module inv:
+	self.detects.oclIsKindOf(Gas Leak) implies 
+	self.Response.asSet()->includes(EMSGasNotification)
+
+context Monitor module inv:
+	self.respondsTo.hasPriority.oclIsKindOf(self.Response.hasPriority)
+
+context Monitor module inv:
+	not self.detects.asSet()->isEmpty() implies
+	not self.respondsTo.asSet()->isEmpty
+
+context Utility company inv:
+	self.oclIsKindOf(Water company) implies 
+	self.manages.oclIsKindOf(Water network)
+
+context Utility company inv:
+	self.oclIsKindOf(Elektricity company) implies 
+	self.manages.oclIsKindOf(elektricity network)
+
+context Utility company inv:
+	self.oclIsKindOf(Gas company) implies 
+	self.manages.oclIsKindOf(Gas network)
+
+context Contract inv:
+	self.SignDate < self.EndDate
+
+context Alarm inv: 
+	self.Duration > 0
+
+context Module inv:
+	self.oclIsKindOf(Valve control Module) implies
+	(self.isPoweredBy.oclIsKindOf(Battery) and 
+	self.isPoweredBy.oclIsKindOf(Electricity network))
+	
+context Utility network inv: 
+	self.Load < self.MaxLoad
+
+\end{lstlisting}
+

@@ -1,0 +1,36 @@
+\subsubsection{Remote Control Module De-activation}
+
+\paragraph{Use Case Name}
+Remote Control Module De-activation
+\paragraph{Primary actor}
+ReMeS Technician: A technician who removes the remote control module \\
+Client: A client who needs his/her remote control module removed.
+\paragraph{Interested Parties}
+None
+\paragraph{Preconditions}
+The client must have a remote control module installed. The appointment for the technician is verified and 
+the client has been reminded of the appointment.
+\paragraph{Normal Flow}
+\begin{enumerate}
+	\item A ReMeS technician arrives at the location where the module is installed.
+	\item The technician removes the remote control module from the utility net interface.
+	\item The technician notifies ReMeS that the remote control module has been removed.
+	\item ReMeS updates his information that the remote control module is no longer active.
+	\item The technician finalizes the paperwork and asks for a signature.
+\end{enumerate}
+
+\paragraph{Alternative Flow}
+\begin{enumerate}
+	\item[1a.] There is nobody at the location where the module is installed who can grant access to the technician.
+	\begin{enumerate}
+		\item[1a1.] The technician notifies ReMeS that a new appointment must be made.
+		\item[1a2.] The technician starts a new assignment.
+		\item[1a3.] ReMeS requests the client to make a new appointment.
+		\item[1a4.] The client makes a new appointment.
+		\item[1a5.] The client is charged a fee for missing the appointment.
+		\item[1a6.] Goto step 1.
+	\end{enumerate}
+\end{enumerate}
+
+\paragraph{Postcondition}
+The remote control module is removed from the location.

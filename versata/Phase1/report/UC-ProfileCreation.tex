@@ -1,0 +1,36 @@
+\subsubsection{Create user profile}
+
+\paragraph{Use Case Name}
+Create user Profile
+\paragraph{Primary Actor}
+A potential client: Whenever someone wants to join ReMeS, the future client first needs to request an account.\\
+ReMeS call center employee: Whenever a potential client calls to request a new profile, the ReMeS operator needs to send an empty contract to the potential client.
+\paragraph{Interested Parties}
+Utility Company: The utility company of which the potential new client of ReMeS is a client of.
+\paragraph{Preconditions}
+The person in question can not already be a client of ReMeS.
+\paragraph{Normal Flow}
+\begin{enumerate}
+	\item A person calls the ReMeS call center and requests the contract for becoming a residential client to be sent to his
+	home address.
+	\item A contract is sent to the provided home address.
+	\item The person fills in the contract and sends it back to ReMeS.
+	\item The person is added to the ReMeS system as a residential user.
+	\item A confirmation letter is sent to the new user's home address by regular mail. 
+	\item The new client receives a letter containing an authentication token consisting of a user name and password. 
+\end{enumerate}
+
+\paragraph{Alternative Flow}
+\begin{enumerate}
+
+	\item[4a.] The person filled in the wrong information and the contract is not valid. 
+	\begin{enumerate}
+		\item[4a1.] The person is sent a letter explaining that there was a problem processing his request.
+				The person is also sent a new contract to be filled in.
+		\item[4a2.] Goto step 3. 
+	\end{enumerate}
+	
+\end{enumerate}
+
+\paragraph{Postcondition}
+The person in question is now a client of ReMeS and can login with his personal user name and password.

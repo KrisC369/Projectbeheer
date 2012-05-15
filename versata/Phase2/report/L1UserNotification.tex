@@ -1,0 +1,48 @@
+%\subsection{Level 1}
+\subsubsection{User notification}
+\paragraph{Architectural drivers}
+This component will manage outgoing customer notifications. It wont prioritize
+	any requests. The component handles the request First-in-First-out (FIFO).
+The component will construct the messages and determine which communication channel
+		to use.
+\begin{itemize}
+	\item \textbf{UC9': Notify customer}
+	Whenever ReMeS wants to send a notification to a customer, ReMeS should
+		address this component.
+	\item \textbf{UC13': Send alarm}
+	When ReMeS receives an alarm trame, the customer needs to be notified (if
+		the customer has indicated this in his profile).
+\end{itemize}
+
+
+\paragraph{Tactics}
+\begin{itemize}
+	\item Performance
+	\begin{itemize}
+		\item Resource arbitration\\
+		Different scheduling policies can be used. Currently the FIFO scheduling policy is used in this component.
+	\end{itemize}
+\end{itemize}
+
+
+\paragraph{Architectural Patterns}
+\begin{itemize}
+	\item Message Translator \\
+	To construct the notification to send to the remote device, we opted for
+		a message translator pattern. This pattern allows us to create standard
+		user notifications such as "Gas leak detected in your home."
+	\item Active Object \\
+	The active object pattern allows us to insert new user notification requests in a scheduler. The scheduler can
+		then decide which requests to handle first.  Currently the scheduler will handle
+		the requests FIFO.
+	\item Proxy \\
+	To increase the modifiability of the internal working of this component we chose
+		to use the explicit interface pattern. The interface that we see outside the
+		component will simply delegate it's methods to an internal component.
+\end{itemize}
+\inclimg{0.40}{0}{L2UserNotification}{The User Notification component after decomposition}
+
+
+\paragraph{Verification and refinement of drivers}
+Both UC9' and UC13' have been handled by this component. The second part of
+UC9 (sending the message) will be handled by the outgoing gateway.

@@ -1,0 +1,24 @@
+\subsubsection{IBuffer}
+\paragraph{Interface Identity}
+This interface is used by all buffers in our system. This interface uses
+	a generic type T.
+\paragraph{Resources Provided}
+\begin{itemize}
+	\item{void addToBuffer(T data)}\\
+	This method will add data to the buffer.
+	\item{T getNext()}\\
+	This method will get the next data from the buffer and return it.
+	\item{T getFromBuffer(Integer index)}\\
+	This method will get data from the buffer at a given position.
+\end{itemize}
+\paragraph{Data Type Definitions}
+\begin{itemize}
+	\item T\\
+	This is a generic type.
+\end{itemize}
+\paragraph{Exception Definitions}
+\begin{itemize}
+	\item IndexOutOfBoundsException\\
+	This exception can be thrown by the getFromBuffer(Integer index) method if
+		there is no data at the given index.
+\end{itemize}

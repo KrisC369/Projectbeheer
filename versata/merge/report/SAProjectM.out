@@ -1,0 +1,472 @@
+\BOOKMARK [1][-]{section.1}{Preface}{}
+\BOOKMARK [1][-]{section.2}{Overview}{}
+\BOOKMARK [1][-]{section.3}{Domain Analysis}{}
+\BOOKMARK [2][-]{subsection.3.1}{Domain components}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Domain model diagram}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Additional Domain Constraints}{section.3}
+\BOOKMARK [1][-]{section.4}{Glossary}{}
+\BOOKMARK [2][-]{subsection.4.1}{Main Metering \(Blue\)}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Module}{subsection.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Valve}{subsection.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Data Trame}{subsection.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Contact Information}{subsection.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.5}{Consumer}{subsection.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.6}{Contract}{subsection.4.1}
+\BOOKMARK [2][-]{subsection.4.2}{Utility Company \(Orange\)}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Meter}{subsection.4.2}
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Utility Network}{subsection.4.2}
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Utility Information System}{subsection.4.2}
+\BOOKMARK [2][-]{subsection.4.3}{Anomalies \(Red\)}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Problem}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Alarm}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Response}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Priorities}{subsection.4.3}
+\BOOKMARK [2][-]{subsection.4.4}{Other External Parties \(Green\)}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Emergency Call Center}{subsection.4.4}
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Communication Channel}{subsection.4.4}
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Technician}{subsection.4.4}
+\BOOKMARK [1][-]{section.5}{Functional Requirements}{}
+\BOOKMARK [2][-]{subsection.5.1}{Use Case Diagram}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Use Case Scenarios}{section.5}
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Create user profile}{subsection.5.2}
+\BOOKMARK [4][-]{section*.5}{Use Case Name}{subsubsection.5.2.1}
+\BOOKMARK [4][-]{section*.6}{Primary Actor}{subsubsection.5.2.1}
+\BOOKMARK [4][-]{section*.7}{Interested Parties}{subsubsection.5.2.1}
+\BOOKMARK [4][-]{section*.8}{Preconditions}{subsubsection.5.2.1}
+\BOOKMARK [4][-]{section*.9}{Normal Flow}{subsubsection.5.2.1}
+\BOOKMARK [4][-]{section*.10}{Alternative Flow}{subsubsection.5.2.1}
+\BOOKMARK [4][-]{section*.11}{Postcondition}{subsubsection.5.2.1}
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Create user profile for business user.}{subsection.5.2}
+\BOOKMARK [4][-]{section*.12}{Use Case Name}{subsubsection.5.2.2}
+\BOOKMARK [4][-]{section*.13}{Primary actor}{subsubsection.5.2.2}
+\BOOKMARK [4][-]{section*.14}{Interested Parties}{subsubsection.5.2.2}
+\BOOKMARK [4][-]{section*.15}{Preconditions}{subsubsection.5.2.2}
+\BOOKMARK [4][-]{section*.16}{Normal Flow}{subsubsection.5.2.2}
+\BOOKMARK [4][-]{section*.17}{Alternative Flow}{subsubsection.5.2.2}
+\BOOKMARK [4][-]{section*.18}{Postcondition}{subsubsection.5.2.2}
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Profile Association}{subsection.5.2}
+\BOOKMARK [4][-]{section*.19}{Use Case Name}{subsubsection.5.2.3}
+\BOOKMARK [4][-]{section*.20}{Primary Actor}{subsubsection.5.2.3}
+\BOOKMARK [4][-]{section*.21}{Interested Parties}{subsubsection.5.2.3}
+\BOOKMARK [4][-]{section*.22}{Preconditions}{subsubsection.5.2.3}
+\BOOKMARK [4][-]{section*.23}{Normal Flow}{subsubsection.5.2.3}
+\BOOKMARK [4][-]{section*.24}{Alternative Flow}{subsubsection.5.2.3}
+\BOOKMARK [4][-]{section*.25}{Postcondition}{subsubsection.5.2.3}
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Install Module}{subsection.5.2}
+\BOOKMARK [4][-]{section*.26}{Use Case Name}{subsubsection.5.2.4}
+\BOOKMARK [4][-]{section*.27}{Primary actor}{subsubsection.5.2.4}
+\BOOKMARK [4][-]{section*.28}{Interested Parties}{subsubsection.5.2.4}
+\BOOKMARK [4][-]{section*.29}{Preconditions}{subsubsection.5.2.4}
+\BOOKMARK [4][-]{section*.30}{Normal Flow}{subsubsection.5.2.4}
+\BOOKMARK [4][-]{section*.31}{Alternative Flow}{subsubsection.5.2.4}
+\BOOKMARK [4][-]{section*.32}{Postcondition}{subsubsection.5.2.4}
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Measurement Check-in}{subsection.5.2}
+\BOOKMARK [4][-]{section*.33}{Use Case Name}{subsubsection.5.2.5}
+\BOOKMARK [4][-]{section*.34}{Primary actor}{subsubsection.5.2.5}
+\BOOKMARK [4][-]{section*.35}{Interested Parties}{subsubsection.5.2.5}
+\BOOKMARK [4][-]{section*.36}{Preconditions}{subsubsection.5.2.5}
+\BOOKMARK [4][-]{section*.37}{Normal Flow}{subsubsection.5.2.5}
+\BOOKMARK [4][-]{section*.38}{Alternative Flow}{subsubsection.5.2.5}
+\BOOKMARK [4][-]{section*.39}{Postcondition}{subsubsection.5.2.5}
+\BOOKMARK [3][-]{subsubsection.5.2.6}{Log in}{subsection.5.2}
+\BOOKMARK [4][-]{section*.40}{Use Case Name}{subsubsection.5.2.6}
+\BOOKMARK [4][-]{section*.41}{Primary Actor}{subsubsection.5.2.6}
+\BOOKMARK [4][-]{section*.42}{Interested Parties}{subsubsection.5.2.6}
+\BOOKMARK [4][-]{section*.43}{Normal System Flow}{subsubsection.5.2.6}
+\BOOKMARK [4][-]{section*.44}{Alternate System flow}{subsubsection.5.2.6}
+\BOOKMARK [4][-]{section*.45}{Outcome \(post condition\)}{subsubsection.5.2.6}
+\BOOKMARK [3][-]{subsubsection.5.2.7}{Transmission frequency reconfiguration}{subsection.5.2}
+\BOOKMARK [4][-]{section*.46}{Use Case Name}{subsubsection.5.2.7}
+\BOOKMARK [4][-]{section*.47}{Primary actor}{subsubsection.5.2.7}
+\BOOKMARK [4][-]{section*.48}{Interested Parties}{subsubsection.5.2.7}
+\BOOKMARK [4][-]{section*.49}{Preconditions}{subsubsection.5.2.7}
+\BOOKMARK [4][-]{section*.50}{Normal Flow}{subsubsection.5.2.7}
+\BOOKMARK [4][-]{section*.51}{Alternative Flow}{subsubsection.5.2.7}
+\BOOKMARK [4][-]{section*.52}{Postcondition}{subsubsection.5.2.7}
+\BOOKMARK [3][-]{subsubsection.5.2.8}{Alarm data transmission}{subsection.5.2}
+\BOOKMARK [4][-]{section*.53}{Use Case Name}{subsubsection.5.2.8}
+\BOOKMARK [4][-]{section*.54}{Primary actor}{subsubsection.5.2.8}
+\BOOKMARK [4][-]{section*.55}{Interested Parties}{subsubsection.5.2.8}
+\BOOKMARK [4][-]{section*.56}{Preconditions}{subsubsection.5.2.8}
+\BOOKMARK [4][-]{section*.57}{Normal Flow}{subsubsection.5.2.8}
+\BOOKMARK [4][-]{section*.58}{Alternative Flow}{subsubsection.5.2.8}
+\BOOKMARK [4][-]{section*.59}{Postcondition}{subsubsection.5.2.8}
+\BOOKMARK [3][-]{subsubsection.5.2.9}{Gas Valve Shutdown}{subsection.5.2}
+\BOOKMARK [4][-]{section*.60}{Use Case Name}{subsubsection.5.2.9}
+\BOOKMARK [4][-]{section*.61}{Primary actor}{subsubsection.5.2.9}
+\BOOKMARK [4][-]{section*.62}{Interested Parties}{subsubsection.5.2.9}
+\BOOKMARK [4][-]{section*.63}{Preconditions}{subsubsection.5.2.9}
+\BOOKMARK [4][-]{section*.64}{Normal Flow}{subsubsection.5.2.9}
+\BOOKMARK [4][-]{section*.65}{Alternative Flow}{subsubsection.5.2.9}
+\BOOKMARK [4][-]{section*.66}{Postcondition}{subsubsection.5.2.9}
+\BOOKMARK [3][-]{subsubsection.5.2.10}{Bill Payment}{subsection.5.2}
+\BOOKMARK [4][-]{section*.67}{Use Case Name}{subsubsection.5.2.10}
+\BOOKMARK [4][-]{section*.68}{Primary actor}{subsubsection.5.2.10}
+\BOOKMARK [4][-]{section*.69}{Interested Parties}{subsubsection.5.2.10}
+\BOOKMARK [4][-]{section*.70}{Preconditions}{subsubsection.5.2.10}
+\BOOKMARK [4][-]{section*.71}{Normal Flow}{subsubsection.5.2.10}
+\BOOKMARK [4][-]{section*.72}{Alternative Flow}{subsubsection.5.2.10}
+\BOOKMARK [4][-]{section*.73}{Postcondition}{subsubsection.5.2.10}
+\BOOKMARK [3][-]{subsubsection.5.2.11}{New Bill Creation}{subsection.5.2}
+\BOOKMARK [4][-]{section*.74}{Use Case Name}{subsubsection.5.2.11}
+\BOOKMARK [4][-]{section*.75}{Primary actor}{subsubsection.5.2.11}
+\BOOKMARK [4][-]{section*.76}{Interested Parties}{subsubsection.5.2.11}
+\BOOKMARK [4][-]{section*.77}{Preconditions}{subsubsection.5.2.11}
+\BOOKMARK [4][-]{section*.78}{Normal Flow}{subsubsection.5.2.11}
+\BOOKMARK [4][-]{section*.79}{Postcondition}{subsubsection.5.2.11}
+\BOOKMARK [3][-]{subsubsection.5.2.12}{Remote Control Module De-activation}{subsection.5.2}
+\BOOKMARK [4][-]{section*.80}{Use Case Name}{subsubsection.5.2.12}
+\BOOKMARK [4][-]{section*.81}{Primary actor}{subsubsection.5.2.12}
+\BOOKMARK [4][-]{section*.82}{Interested Parties}{subsubsection.5.2.12}
+\BOOKMARK [4][-]{section*.83}{Preconditions}{subsubsection.5.2.12}
+\BOOKMARK [4][-]{section*.84}{Normal Flow}{subsubsection.5.2.12}
+\BOOKMARK [4][-]{section*.85}{Alternative Flow}{subsubsection.5.2.12}
+\BOOKMARK [4][-]{section*.86}{Postcondition}{subsubsection.5.2.12}
+\BOOKMARK [3][-]{subsubsection.5.2.13}{Low Battery Alarm}{subsection.5.2}
+\BOOKMARK [4][-]{section*.87}{Use Case Name}{subsubsection.5.2.13}
+\BOOKMARK [4][-]{section*.88}{Primary actor}{subsubsection.5.2.13}
+\BOOKMARK [4][-]{section*.89}{Interested Parties}{subsubsection.5.2.13}
+\BOOKMARK [4][-]{section*.90}{Preconditions}{subsubsection.5.2.13}
+\BOOKMARK [4][-]{section*.91}{Normal Flow}{subsubsection.5.2.13}
+\BOOKMARK [4][-]{section*.92}{Alternative Flow}{subsubsection.5.2.13}
+\BOOKMARK [4][-]{section*.93}{Postcondition}{subsubsection.5.2.13}
+\BOOKMARK [3][-]{subsubsection.5.2.14}{Bad Signal Alarm}{subsection.5.2}
+\BOOKMARK [4][-]{section*.94}{Use Case Name}{subsubsection.5.2.14}
+\BOOKMARK [4][-]{section*.95}{Primary actor}{subsubsection.5.2.14}
+\BOOKMARK [4][-]{section*.96}{Interested Parties}{subsubsection.5.2.14}
+\BOOKMARK [4][-]{section*.97}{Preconditions}{subsubsection.5.2.14}
+\BOOKMARK [4][-]{section*.98}{Normal Flow}{subsubsection.5.2.14}
+\BOOKMARK [4][-]{section*.99}{Alternative Flow}{subsubsection.5.2.14}
+\BOOKMARK [4][-]{section*.100}{Postcondition}{subsubsection.5.2.14}
+\BOOKMARK [3][-]{subsubsection.5.2.15}{Profile Deletion}{subsection.5.2}
+\BOOKMARK [4][-]{section*.101}{Use Case Name}{subsubsection.5.2.15}
+\BOOKMARK [4][-]{section*.102}{Primary actor}{subsubsection.5.2.15}
+\BOOKMARK [4][-]{section*.103}{Interested Parties}{subsubsection.5.2.15}
+\BOOKMARK [4][-]{section*.104}{Preconditions}{subsubsection.5.2.15}
+\BOOKMARK [4][-]{section*.105}{Normal Flow}{subsubsection.5.2.15}
+\BOOKMARK [4][-]{section*.106}{Alternative Flow}{subsubsection.5.2.15}
+\BOOKMARK [4][-]{section*.107}{Postcondition}{subsubsection.5.2.15}
+\BOOKMARK [1][-]{section.6}{Quality Attribute Scenarios}{}
+\BOOKMARK [2][-]{subsection.6.1}{Availability}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Av1: Communication channel between the remote module and the ReMeS system}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Av2: Availability of the webportal}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Av3: Consumption prediction model updates}{subsection.6.1}
+\BOOKMARK [2][-]{subsection.6.2}{Performance}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.2.1}{PF1: Remote monitoring module sends new data}{subsection.6.2}
+\BOOKMARK [3][-]{subsubsection.6.2.2}{PF2: A user requests data through the web portal}{subsection.6.2}
+\BOOKMARK [3][-]{subsubsection.6.2.3}{PF3: A new consumer has been added to ReMeS}{subsection.6.2}
+\BOOKMARK [1][-]{section.7}{Attribute Driven Design \(ADD\)}{}
+\BOOKMARK [2][-]{subsection.7.1}{Iteration 1: Level 0}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.1.1}{ReMeS}{subsection.7.1}
+\BOOKMARK [4][-]{section*.108}{Architectural drivers}{subsubsection.7.1.1}
+\BOOKMARK [4][-]{section*.109}{Tactics}{subsubsection.7.1.1}
+\BOOKMARK [4][-]{section*.110}{Architectural Patterns}{subsubsection.7.1.1}
+\BOOKMARK [4][-]{section*.112}{Verification and refinement of drivers}{subsubsection.7.1.1}
+\BOOKMARK [2][-]{subsection.7.2}{Iteration 1: Level 1}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Incoming gateway}{subsection.7.2}
+\BOOKMARK [4][-]{section*.113}{Architectural drivers}{subsubsection.7.2.1}
+\BOOKMARK [4][-]{section*.114}{Tactics}{subsubsection.7.2.1}
+\BOOKMARK [4][-]{section*.115}{Architectural Patterns}{subsubsection.7.2.1}
+\BOOKMARK [4][-]{section*.117}{Verification and refinement of drivers}{subsubsection.7.2.1}
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Scheduler for incoming measurement trames}{subsection.7.2}
+\BOOKMARK [4][-]{section*.118}{Architectural drivers}{subsubsection.7.2.2}
+\BOOKMARK [4][-]{section*.119}{Tactics}{subsubsection.7.2.2}
+\BOOKMARK [4][-]{section*.120}{Architectural Patterns}{subsubsection.7.2.2}
+\BOOKMARK [4][-]{section*.122}{Verification and refinement of drivers}{subsubsection.7.2.2}
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Scheduler for incoming alarm trames}{subsection.7.2}
+\BOOKMARK [4][-]{section*.123}{Architectural drivers}{subsubsection.7.2.3}
+\BOOKMARK [4][-]{section*.124}{Tactics}{subsubsection.7.2.3}
+\BOOKMARK [4][-]{section*.125}{Architectural Patterns}{subsubsection.7.2.3}
+\BOOKMARK [4][-]{section*.127}{Verification and refinement of drivers}{subsubsection.7.2.3}
+\BOOKMARK [3][-]{subsubsection.7.2.4}{Data Storage}{subsection.7.2}
+\BOOKMARK [4][-]{section*.128}{Architectural drivers}{subsubsection.7.2.4}
+\BOOKMARK [4][-]{section*.129}{Tactics}{subsubsection.7.2.4}
+\BOOKMARK [4][-]{section*.130}{Architectural Patterns}{subsubsection.7.2.4}
+\BOOKMARK [4][-]{section*.132}{Verification and refinement of drivers}{subsubsection.7.2.4}
+\BOOKMARK [3][-]{subsubsection.7.2.5}{Watchdog}{subsection.7.2}
+\BOOKMARK [4][-]{section*.133}{Architectural drivers}{subsubsection.7.2.5}
+\BOOKMARK [4][-]{section*.134}{Tactics}{subsubsection.7.2.5}
+\BOOKMARK [4][-]{section*.135}{Architectural Patterns}{subsubsection.7.2.5}
+\BOOKMARK [4][-]{section*.137}{Verification and refinement of drivers}{subsubsection.7.2.5}
+\BOOKMARK [2][-]{subsection.7.3}{Iteration 1: Level 2}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Trame Handler}{subsection.7.3}
+\BOOKMARK [4][-]{section*.138}{Architectural drivers}{subsubsection.7.3.1}
+\BOOKMARK [4][-]{section*.139}{Tactics}{subsubsection.7.3.1}
+\BOOKMARK [4][-]{section*.140}{Architectural Patterns}{subsubsection.7.3.1}
+\BOOKMARK [4][-]{section*.142}{Verification and refinement of drivers}{subsubsection.7.3.1}
+\BOOKMARK [3][-]{subsubsection.7.3.2}{Buffer}{subsection.7.3}
+\BOOKMARK [4][-]{section*.143}{Architectural drivers}{subsubsection.7.3.2}
+\BOOKMARK [4][-]{section*.144}{Tactics}{subsubsection.7.3.2}
+\BOOKMARK [4][-]{section*.145}{Architectural Patterns}{subsubsection.7.3.2}
+\BOOKMARK [4][-]{section*.147}{Verification and refinement of drivers}{subsubsection.7.3.2}
+\BOOKMARK [3][-]{subsubsection.7.3.3}{DB Request Handler}{subsection.7.3}
+\BOOKMARK [4][-]{section*.148}{Architectural drivers}{subsubsection.7.3.3}
+\BOOKMARK [4][-]{section*.149}{Tactics}{subsubsection.7.3.3}
+\BOOKMARK [4][-]{section*.150}{Architectural Patterns}{subsubsection.7.3.3}
+\BOOKMARK [4][-]{section*.152}{Verification and refinement of drivers}{subsubsection.7.3.3}
+\BOOKMARK [2][-]{subsection.7.4}{Iteration 2: Level 1}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.4.1}{Other functionality}{subsection.7.4}
+\BOOKMARK [4][-]{section*.153}{Architectural drivers}{subsubsection.7.4.1}
+\BOOKMARK [4][-]{section*.154}{Tactics}{subsubsection.7.4.1}
+\BOOKMARK [4][-]{section*.155}{Architectural Patterns}{subsubsection.7.4.1}
+\BOOKMARK [4][-]{section*.157}{Verification and refinement of drivers}{subsubsection.7.4.1}
+\BOOKMARK [3][-]{subsubsection.7.4.2}{Scheduler for outgoing trames}{subsection.7.4}
+\BOOKMARK [4][-]{section*.158}{Architectural drivers}{subsubsection.7.4.2}
+\BOOKMARK [4][-]{section*.159}{Tactics}{subsubsection.7.4.2}
+\BOOKMARK [4][-]{section*.160}{Architectural Patterns}{subsubsection.7.4.2}
+\BOOKMARK [4][-]{section*.162}{Verification and refinement of drivers}{subsubsection.7.4.2}
+\BOOKMARK [3][-]{subsubsection.7.4.3}{User notification}{subsection.7.4}
+\BOOKMARK [4][-]{section*.163}{Architectural drivers}{subsubsection.7.4.3}
+\BOOKMARK [4][-]{section*.164}{Tactics}{subsubsection.7.4.3}
+\BOOKMARK [4][-]{section*.165}{Architectural Patterns}{subsubsection.7.4.3}
+\BOOKMARK [4][-]{section*.167}{Verification and refinement of drivers}{subsubsection.7.4.3}
+\BOOKMARK [3][-]{subsubsection.7.4.4}{Outgoing gateway}{subsection.7.4}
+\BOOKMARK [4][-]{section*.168}{Architectural drivers}{subsubsection.7.4.4}
+\BOOKMARK [4][-]{section*.169}{Tactics}{subsubsection.7.4.4}
+\BOOKMARK [4][-]{section*.170}{Architectural Patterns}{subsubsection.7.4.4}
+\BOOKMARK [4][-]{section*.172}{Verification and refinement of drivers}{subsubsection.7.4.4}
+\BOOKMARK [3][-]{subsubsection.7.4.5}{Invoice manager}{subsection.7.4}
+\BOOKMARK [4][-]{section*.173}{Architectural drivers}{subsubsection.7.4.5}
+\BOOKMARK [4][-]{section*.174}{Tactics}{subsubsection.7.4.5}
+\BOOKMARK [4][-]{section*.175}{Architectural Patterns}{subsubsection.7.4.5}
+\BOOKMARK [4][-]{section*.177}{Verification and refinement of drivers}{subsubsection.7.4.5}
+\BOOKMARK [2][-]{subsection.7.5}{Iteration 3: Level 1}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.5.1}{ReMeS}{subsection.7.5}
+\BOOKMARK [4][-]{section*.178}{Architectural drivers}{subsubsection.7.5.1}
+\BOOKMARK [4][-]{section*.179}{Tactics}{subsubsection.7.5.1}
+\BOOKMARK [4][-]{section*.180}{Architectural Patterns}{subsubsection.7.5.1}
+\BOOKMARK [4][-]{section*.181}{Verification and refinement of drivers}{subsubsection.7.5.1}
+\BOOKMARK [3][-]{subsubsection.7.5.2}{User Interaction}{subsection.7.5}
+\BOOKMARK [4][-]{section*.182}{Architectural drivers}{subsubsection.7.5.2}
+\BOOKMARK [4][-]{section*.183}{Tactics}{subsubsection.7.5.2}
+\BOOKMARK [4][-]{section*.184}{Architectural Patterns}{subsubsection.7.5.2}
+\BOOKMARK [4][-]{section*.186}{Verification and refinement of drivers}{subsubsection.7.5.2}
+\BOOKMARK [3][-]{subsubsection.7.5.3}{Scheduler for consumption prediction requests}{subsection.7.5}
+\BOOKMARK [4][-]{section*.187}{Architectural drivers}{subsubsection.7.5.3}
+\BOOKMARK [4][-]{section*.188}{Tactics}{subsubsection.7.5.3}
+\BOOKMARK [4][-]{section*.189}{Architectural Patterns}{subsubsection.7.5.3}
+\BOOKMARK [4][-]{section*.191}{Verification and refinement of drivers}{subsubsection.7.5.3}
+\BOOKMARK [3][-]{subsubsection.7.5.4}{Computation of consumption prediction}{subsection.7.5}
+\BOOKMARK [4][-]{section*.192}{Architectural drivers}{subsubsection.7.5.4}
+\BOOKMARK [4][-]{section*.194}{Verification and refinement of drivers}{subsubsection.7.5.4}
+\BOOKMARK [2][-]{subsection.7.6}{Assumptions}{section.7}
+\BOOKMARK [2][-]{subsection.7.7}{Remarks}{section.7}
+\BOOKMARK [1][-]{section.8}{Final Architecture Design}{}
+\BOOKMARK [2][-]{subsection.8.1}{Context diagram}{section.8}
+\BOOKMARK [2][-]{subsection.8.2}{Overall component diagram}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Core functionality}{subsection.8.2}
+\BOOKMARK [2][-]{subsection.8.3}{Decomposition component diagrams}{section.8}
+\BOOKMARK [2][-]{subsection.8.4}{Deployment diagram}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.4.1}{Device Nodes}{subsection.8.4}
+\BOOKMARK [3][-]{subsubsection.8.4.2}{Communication protocols}{subsection.8.4}
+\BOOKMARK [1][-]{section.9}{Scenarios}{}
+\BOOKMARK [2][-]{subsection.9.1}{Notes}{section.9}
+\BOOKMARK [2][-]{subsection.9.2}{User profile creation}{section.9}
+\BOOKMARK [2][-]{subsection.9.3}{User profile association with remote monitoring module}{section.9}
+\BOOKMARK [2][-]{subsection.9.4}{Installation and initialization}{section.9}
+\BOOKMARK [2][-]{subsection.9.5}{Transmission frequency reconfiguration}{section.9}
+\BOOKMARK [2][-]{subsection.9.6}{Troubleshooting}{section.9}
+\BOOKMARK [2][-]{subsection.9.7}{Alarm notification recipient configuration}{section.9}
+\BOOKMARK [2][-]{subsection.9.8}{Remote control}{section.9}
+\BOOKMARK [2][-]{subsection.9.9}{Normal measurement data transmission}{section.9}
+\BOOKMARK [2][-]{subsection.9.10}{Individual data analysis}{section.9}
+\BOOKMARK [2][-]{subsection.9.11}{Utility production planning analysis}{section.9}
+\BOOKMARK [2][-]{subsection.9.12}{Information exchange towards the UIS}{section.9}
+\BOOKMARK [2][-]{subsection.9.13}{Alarm data transmission: remote monitoring module}{section.9}
+\BOOKMARK [2][-]{subsection.9.14}{Alarm data transmission: ReMeS}{section.9}
+\BOOKMARK [2][-]{subsection.9.15}{Remote control module de-activation}{section.9}
+\BOOKMARK [2][-]{subsection.9.16}{New bill creation}{section.9}
+\BOOKMARK [2][-]{subsection.9.17}{Bill payment is received}{section.9}
+\BOOKMARK [1][-]{section.10}{Understanding the architecture}{}
+\BOOKMARK [1][-]{section.11}{Privacy analysis}{}
+\BOOKMARK [2][-]{subsection.11.1}{Data Flow Diagram}{section.11}
+\BOOKMARK [2][-]{subsection.11.2}{Mapping of threats to DFD}{section.11}
+\BOOKMARK [2][-]{subsection.11.3}{Threat elicitation}{section.11}
+\BOOKMARK [3][-]{subsubsection.11.3.1}{Assumptions}{subsection.11.3}
+\BOOKMARK [3][-]{subsubsection.11.3.2}{Threats}{subsection.11.3}
+\BOOKMARK [4][-]{section*.216}{T01 - Linking Alarm configuration data to user data}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.225}{T02 - Information disclosure of customer usage history}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.234}{T03 - Spoofing an internal user of ReMeS by falsifying credentials}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.243}{T04 - Spoofing a user of ReMeS because of weak credential storage. }{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.252}{T05 - Linkability of requests sent to external UIS}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.261}{T06 - Information disclosure internal process}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.270}{T07 - Side channel information disclosure internal process}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.279}{T08 - Non-compliance of employees}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.288}{T09 - Missing user consents}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.297}{T10 - Non-compliance management}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.306}{T11 - User unawareness}{subsubsection.11.3.2}
+\BOOKMARK [4][-]{section*.315}{T12 - content inaccuracy}{subsubsection.11.3.2}
+\BOOKMARK [2][-]{subsection.11.4}{Prioritization of threats}{section.11}
+\BOOKMARK [3][-]{subsubsection.11.4.1}{High priority}{subsection.11.4}
+\BOOKMARK [3][-]{subsubsection.11.4.2}{Medium priority}{subsection.11.4}
+\BOOKMARK [3][-]{subsubsection.11.4.3}{Low priority}{subsection.11.4}
+\BOOKMARK [1][-]{section.12}{Appendix}{}
+\BOOKMARK [2][-]{subsection.12.1}{Element Catalog}{section.12}
+\BOOKMARK [3][-]{subsubsection.12.1.1}{Incoming gateway}{subsection.12.1}
+\BOOKMARK [4][-]{section*.324}{Message router}{subsubsection.12.1.1}
+\BOOKMARK [4][-]{section*.325}{Acknowledgement handler}{subsubsection.12.1.1}
+\BOOKMARK [3][-]{subsubsection.12.1.2}{Scheduler for incoming alarm trames}{subsection.12.1}
+\BOOKMARK [4][-]{section*.326}{Trame handler}{subsubsection.12.1.2}
+\BOOKMARK [4][-]{section*.330}{Buffer}{subsubsection.12.1.2}
+\BOOKMARK [4][-]{section*.333}{Scheduler}{subsubsection.12.1.2}
+\BOOKMARK [3][-]{subsubsection.12.1.3}{Scheduler for outgoing trames}{subsection.12.1}
+\BOOKMARK [4][-]{section*.334}{Request handler}{subsubsection.12.1.3}
+\BOOKMARK [4][-]{section*.335}{Buffer}{subsubsection.12.1.3}
+\BOOKMARK [4][-]{section*.336}{Trame constructor}{subsubsection.12.1.3}
+\BOOKMARK [3][-]{subsubsection.12.1.4}{Outgoing gateway}{subsection.12.1}
+\BOOKMARK [4][-]{section*.337}{Request handler}{subsubsection.12.1.4}
+\BOOKMARK [4][-]{section*.338}{Buffer}{subsubsection.12.1.4}
+\BOOKMARK [4][-]{section*.339}{Message constructor}{subsubsection.12.1.4}
+\BOOKMARK [4][-]{section*.340}{Network broker}{subsubsection.12.1.4}
+\BOOKMARK [3][-]{subsubsection.12.1.5}{User notification}{subsection.12.1}
+\BOOKMARK [4][-]{section*.341}{Request handler}{subsubsection.12.1.5}
+\BOOKMARK [4][-]{section*.342}{Buffer}{subsubsection.12.1.5}
+\BOOKMARK [4][-]{section*.343}{Notification constructor}{subsubsection.12.1.5}
+\BOOKMARK [3][-]{subsubsection.12.1.6}{Scheduler for incoming measurement trames}{subsection.12.1}
+\BOOKMARK [4][-]{section*.344}{Trame handler}{subsubsection.12.1.6}
+\BOOKMARK [4][-]{section*.345}{Buffer}{subsubsection.12.1.6}
+\BOOKMARK [4][-]{section*.346}{Event channel}{subsubsection.12.1.6}
+\BOOKMARK [4][-]{section*.347}{Scheduler}{subsubsection.12.1.6}
+\BOOKMARK [3][-]{subsubsection.12.1.7}{Watchdog}{subsection.12.1}
+\BOOKMARK [4][-]{section*.348}{Active loop}{subsubsection.12.1.7}
+\BOOKMARK [4][-]{section*.349}{Event channel}{subsubsection.12.1.7}
+\BOOKMARK [4][-]{section*.350}{Heartbeat table}{subsubsection.12.1.7}
+\BOOKMARK [3][-]{subsubsection.12.1.8}{Invoice manager}{subsection.12.1}
+\BOOKMARK [4][-]{section*.351}{UIS communicator}{subsubsection.12.1.8}
+\BOOKMARK [4][-]{section*.352}{3rd party billing service communicator}{subsubsection.12.1.8}
+\BOOKMARK [4][-]{section*.353}{Invoice generator}{subsubsection.12.1.8}
+\BOOKMARK [4][-]{section*.354}{Event channel}{subsubsection.12.1.8}
+\BOOKMARK [3][-]{subsubsection.12.1.9}{Computation of consumption prediction}{subsection.12.1}
+\BOOKMARK [4][-]{section*.355}{Consumption prediction algorithm}{subsubsection.12.1.9}
+\BOOKMARK [3][-]{subsubsection.12.1.10}{Scheduler for consumption prediction requests}{subsection.12.1}
+\BOOKMARK [4][-]{section*.356}{Request handler}{subsubsection.12.1.10}
+\BOOKMARK [4][-]{section*.357}{Buffer}{subsubsection.12.1.10}
+\BOOKMARK [4][-]{section*.358}{Scheduler}{subsubsection.12.1.10}
+\BOOKMARK [3][-]{subsubsection.12.1.11}{User interaction}{subsection.12.1}
+\BOOKMARK [4][-]{section*.359}{Application controller}{subsubsection.12.1.11}
+\BOOKMARK [4][-]{section*.360}{UIView}{subsubsection.12.1.11}
+\BOOKMARK [4][-]{section*.361}{Service request executer}{subsubsection.12.1.11}
+\BOOKMARK [4][-]{section*.362}{Authorization checker}{subsubsection.12.1.11}
+\BOOKMARK [4][-]{section*.363}{Event channel}{subsubsection.12.1.11}
+\BOOKMARK [3][-]{subsubsection.12.1.12}{Data storage}{subsection.12.1}
+\BOOKMARK [4][-]{section*.364}{DB request handler}{subsubsection.12.1.12}
+\BOOKMARK [4][-]{section*.369}{Measurement processor}{subsubsection.12.1.12}
+\BOOKMARK [4][-]{section*.370}{Anomaly detector}{subsubsection.12.1.12}
+\BOOKMARK [4][-]{section*.371}{Event channel}{subsubsection.12.1.12}
+\BOOKMARK [4][-]{section*.372}{User profile DB}{subsubsection.12.1.12}
+\BOOKMARK [4][-]{section*.373}{Measurement DB}{subsubsection.12.1.12}
+\BOOKMARK [4][-]{section*.374}{Remote device configuration DB}{subsubsection.12.1.12}
+\BOOKMARK [4][-]{section*.375}{Invoice and billing DB}{subsubsection.12.1.12}
+\BOOKMARK [2][-]{subsection.12.2}{Interface descriptions}{section.12}
+\BOOKMARK [3][-]{subsubsection.12.2.1}{IAcknowledgementHandler}{subsection.12.2}
+\BOOKMARK [4][-]{section*.376}{Interface Identity}{subsubsection.12.2.1}
+\BOOKMARK [4][-]{section*.377}{Resources Provided}{subsubsection.12.2.1}
+\BOOKMARK [4][-]{section*.378}{Data Type Definitions}{subsubsection.12.2.1}
+\BOOKMARK [4][-]{section*.379}{Exception Definitions}{subsubsection.12.2.1}
+\BOOKMARK [3][-]{subsubsection.12.2.2}{IAnomalyDetector}{subsection.12.2}
+\BOOKMARK [4][-]{section*.380}{Interface Identity}{subsubsection.12.2.2}
+\BOOKMARK [4][-]{section*.381}{Resources Provided}{subsubsection.12.2.2}
+\BOOKMARK [4][-]{section*.382}{Data Type Definitions}{subsubsection.12.2.2}
+\BOOKMARK [4][-]{section*.383}{Exception Definitions}{subsubsection.12.2.2}
+\BOOKMARK [3][-]{subsubsection.12.2.3}{IAuthenticator}{subsection.12.2}
+\BOOKMARK [4][-]{section*.384}{Interface Identity}{subsubsection.12.2.3}
+\BOOKMARK [4][-]{section*.385}{Resources Provided}{subsubsection.12.2.3}
+\BOOKMARK [4][-]{section*.386}{Data Type Definitions}{subsubsection.12.2.3}
+\BOOKMARK [4][-]{section*.387}{Exception Definitions}{subsubsection.12.2.3}
+\BOOKMARK [3][-]{subsubsection.12.2.4}{IBillSender}{subsection.12.2}
+\BOOKMARK [4][-]{section*.388}{Interface Identity}{subsubsection.12.2.4}
+\BOOKMARK [4][-]{section*.389}{Resources Provided}{subsubsection.12.2.4}
+\BOOKMARK [4][-]{section*.390}{Data Type Definitions}{subsubsection.12.2.4}
+\BOOKMARK [4][-]{section*.391}{Exception Definitions}{subsubsection.12.2.4}
+\BOOKMARK [3][-]{subsubsection.12.2.5}{IBroker}{subsection.12.2}
+\BOOKMARK [4][-]{section*.392}{Interface Identity}{subsubsection.12.2.5}
+\BOOKMARK [4][-]{section*.393}{Resources Provided}{subsubsection.12.2.5}
+\BOOKMARK [4][-]{section*.394}{Data Type Definitions}{subsubsection.12.2.5}
+\BOOKMARK [4][-]{section*.395}{Exception Definitions}{subsubsection.12.2.5}
+\BOOKMARK [3][-]{subsubsection.12.2.6}{IBuffer}{subsection.12.2}
+\BOOKMARK [4][-]{section*.396}{Interface Identity}{subsubsection.12.2.6}
+\BOOKMARK [4][-]{section*.397}{Resources Provided}{subsubsection.12.2.6}
+\BOOKMARK [4][-]{section*.398}{Data Type Definitions}{subsubsection.12.2.6}
+\BOOKMARK [4][-]{section*.399}{Exception Definitions}{subsubsection.12.2.6}
+\BOOKMARK [3][-]{subsubsection.12.2.7}{ICompute}{subsection.12.2}
+\BOOKMARK [4][-]{section*.400}{Interface Identity}{subsubsection.12.2.7}
+\BOOKMARK [4][-]{section*.401}{Resources Provided}{subsubsection.12.2.7}
+\BOOKMARK [4][-]{section*.402}{Data Type Definitions}{subsubsection.12.2.7}
+\BOOKMARK [4][-]{section*.403}{Exception Definitions}{subsubsection.12.2.7}
+\BOOKMARK [3][-]{subsubsection.12.2.8}{IDataBase}{subsection.12.2}
+\BOOKMARK [4][-]{section*.404}{Interface Identity}{subsubsection.12.2.8}
+\BOOKMARK [4][-]{section*.405}{Resources provided}{subsubsection.12.2.8}
+\BOOKMARK [4][-]{section*.406}{Data Type Definitions}{subsubsection.12.2.8}
+\BOOKMARK [4][-]{section*.407}{Exception Definitions}{subsubsection.12.2.8}
+\BOOKMARK [3][-]{subsubsection.12.2.9}{IExecuter}{subsection.12.2}
+\BOOKMARK [4][-]{section*.408}{Interface Identity}{subsubsection.12.2.9}
+\BOOKMARK [3][-]{subsubsection.12.2.10}{IHeartBeat}{subsection.12.2}
+\BOOKMARK [4][-]{section*.409}{Interface Identity}{subsubsection.12.2.10}
+\BOOKMARK [4][-]{section*.410}{Resources Provided}{subsubsection.12.2.10}
+\BOOKMARK [4][-]{section*.411}{Data Type Definitions}{subsubsection.12.2.10}
+\BOOKMARK [4][-]{section*.412}{Exception Definitions}{subsubsection.12.2.10}
+\BOOKMARK [3][-]{subsubsection.12.2.11}{IHeartBeatTable}{subsection.12.2}
+\BOOKMARK [4][-]{section*.413}{Interface Identity}{subsubsection.12.2.11}
+\BOOKMARK [4][-]{section*.414}{Resources Provided}{subsubsection.12.2.11}
+\BOOKMARK [4][-]{section*.415}{Data Type Definitions}{subsubsection.12.2.11}
+\BOOKMARK [4][-]{section*.416}{Exception Definitions}{subsubsection.12.2.11}
+\BOOKMARK [3][-]{subsubsection.12.2.12}{IInvoiceGenerator}{subsection.12.2}
+\BOOKMARK [4][-]{section*.417}{Interface Identity}{subsubsection.12.2.12}
+\BOOKMARK [4][-]{section*.418}{Resources Provided}{subsubsection.12.2.12}
+\BOOKMARK [4][-]{section*.419}{Data Type Definitions}{subsubsection.12.2.12}
+\BOOKMARK [4][-]{section*.420}{Exception Definitions}{subsubsection.12.2.12}
+\BOOKMARK [3][-]{subsubsection.12.2.13}{IMeasProc}{subsection.12.2}
+\BOOKMARK [4][-]{section*.421}{Interface Identity}{subsubsection.12.2.13}
+\BOOKMARK [4][-]{section*.422}{Resources Provided}{subsubsection.12.2.13}
+\BOOKMARK [4][-]{section*.423}{Data Type Definitions}{subsubsection.12.2.13}
+\BOOKMARK [4][-]{section*.424}{Exception Definitions}{subsubsection.12.2.13}
+\BOOKMARK [3][-]{subsubsection.12.2.14}{IPredictionScheduler}{subsection.12.2}
+\BOOKMARK [4][-]{section*.425}{Interface Identity}{subsubsection.12.2.14}
+\BOOKMARK [4][-]{section*.426}{Resources Provided}{subsubsection.12.2.14}
+\BOOKMARK [4][-]{section*.427}{Data Type Definitions}{subsubsection.12.2.14}
+\BOOKMARK [4][-]{section*.428}{Exception Definitions}{subsubsection.12.2.14}
+\BOOKMARK [3][-]{subsubsection.12.2.15}{IPublishable}{subsection.12.2}
+\BOOKMARK [4][-]{section*.429}{Interface Identity}{subsubsection.12.2.15}
+\BOOKMARK [4][-]{section*.430}{Resources provided}{subsubsection.12.2.15}
+\BOOKMARK [4][-]{section*.431}{Data Type Definitions}{subsubsection.12.2.15}
+\BOOKMARK [4][-]{section*.432}{Exception Definitions}{subsubsection.12.2.15}
+\BOOKMARK [3][-]{subsubsection.12.2.16}{IReqCache}{subsection.12.2}
+\BOOKMARK [4][-]{section*.433}{Interface Identity}{subsubsection.12.2.16}
+\BOOKMARK [4][-]{section*.434}{Resources Provided}{subsubsection.12.2.16}
+\BOOKMARK [4][-]{section*.435}{Data Type Definitions}{subsubsection.12.2.16}
+\BOOKMARK [4][-]{section*.436}{Exception Definitions}{subsubsection.12.2.16}
+\BOOKMARK [3][-]{subsubsection.12.2.17}{IScheduler}{subsection.12.2}
+\BOOKMARK [4][-]{section*.437}{Interface Identity}{subsubsection.12.2.17}
+\BOOKMARK [4][-]{section*.438}{Resources provided}{subsubsection.12.2.17}
+\BOOKMARK [4][-]{section*.439}{Data Type Definitions}{subsubsection.12.2.17}
+\BOOKMARK [4][-]{section*.440}{Exception Definitions}{subsubsection.12.2.17}
+\BOOKMARK [3][-]{subsubsection.12.2.18}{ISender}{subsection.12.2}
+\BOOKMARK [4][-]{section*.441}{Interface Identity}{subsubsection.12.2.18}
+\BOOKMARK [4][-]{section*.442}{Resources Provided}{subsubsection.12.2.18}
+\BOOKMARK [4][-]{section*.443}{Data Type Definitions}{subsubsection.12.2.18}
+\BOOKMARK [4][-]{section*.444}{Exception Definitions}{subsubsection.12.2.18}
+\BOOKMARK [3][-]{subsubsection.12.2.19}{ISubscribable}{subsection.12.2}
+\BOOKMARK [4][-]{section*.445}{Interface Identity}{subsubsection.12.2.19}
+\BOOKMARK [4][-]{section*.446}{Resources provided}{subsubsection.12.2.19}
+\BOOKMARK [4][-]{section*.447}{Data Type Definitions}{subsubsection.12.2.19}
+\BOOKMARK [4][-]{section*.448}{Exception Definitions}{subsubsection.12.2.19}
+\BOOKMARK [3][-]{subsubsection.12.2.20}{ITrameSender}{subsection.12.2}
+\BOOKMARK [4][-]{section*.449}{Interface Identity}{subsubsection.12.2.20}
+\BOOKMARK [4][-]{section*.450}{Resources provided}{subsubsection.12.2.20}
+\BOOKMARK [4][-]{section*.451}{Data Type Definitions}{subsubsection.12.2.20}
+\BOOKMARK [4][-]{section*.452}{Exception Definitions}{subsubsection.12.2.20}
+\BOOKMARK [3][-]{subsubsection.12.2.21}{IUIS}{subsection.12.2}
+\BOOKMARK [4][-]{section*.453}{Interface Identity}{subsubsection.12.2.21}
+\BOOKMARK [4][-]{section*.454}{Resources Provided}{subsubsection.12.2.21}
+\BOOKMARK [4][-]{section*.455}{Data Type Definitions}{subsubsection.12.2.21}
+\BOOKMARK [4][-]{section*.456}{Exception Definitions}{subsubsection.12.2.21}
+\BOOKMARK [3][-]{subsubsection.12.2.22}{IUserInteraction}{subsection.12.2}
+\BOOKMARK [4][-]{section*.457}{Interface Identity}{subsubsection.12.2.22}
+\BOOKMARK [4][-]{section*.458}{Resources Provided}{subsubsection.12.2.22}
+\BOOKMARK [4][-]{section*.459}{Data Type Definitions}{subsubsection.12.2.22}
+\BOOKMARK [4][-]{section*.460}{Exception Definitions}{subsubsection.12.2.22}
+\BOOKMARK [3][-]{subsubsection.12.2.23}{IUserNotifier}{subsection.12.2}
+\BOOKMARK [4][-]{section*.461}{Interface Identity}{subsubsection.12.2.23}
+\BOOKMARK [4][-]{section*.462}{Resources provided}{subsubsection.12.2.23}
+\BOOKMARK [4][-]{section*.463}{Data Type Definitions}{subsubsection.12.2.23}
+\BOOKMARK [4][-]{section*.464}{Exception Definitions}{subsubsection.12.2.23}

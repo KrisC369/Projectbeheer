@@ -1,0 +1,29 @@
+\subsection{Assumptions}
+\label{sec:ADDAssumptions} 
+The assumption is made that a guaranteed lack of starvation is infeasible in relation 
+to the processing of alarm trames. There are scenarios possible wherein simply cannot avoid theoretical starvation. The effects will be mitigated as well as possible but other than that, the requested properties cannot be guaranteed.
+
+In relation to the 3 hours of measurement that need to be stored and retained when the database component should fail, the assumption is made that the buffers used, to accommodate for this measure
+is able to hold 3 hours worth of measurements. The size of the buffer that is needed, has to be determined further and is outside the scope of this document.
+
+In relation to requests for the database component, the assumption is made that each request has a priority, albeit default if not otherwise explicitly stated. 
+
+Related to UC16 (Mark invoice paid), the assumption is made that the main actor indicates that the invoice has been received through the user interface.
+The actor will have this option in his personal portal. This action will drive the functionality for this use case.
+
+To conform to UC15 (Generate invoice), the requirements do not indicate how and or when the generation of invoices is initiated.
+The assumption is made that only the client can specify the business rules for this case and it is not possible to provide an implementation without consent
+from the stakeholders. In the mean time, the functionality can be started from calling the generateInvoice() operation. Whichever component calls this to initiate the process,
+has to be specified later on. It is also possible to start this process in an event-driven manner. By monitoring the event channel, an indication that said process
+should be initiated, can be received.
+
+This way of working is promoted throughout the system. It is an assumption that incoming requests are processed through a UI portal while the outgoing results are distributed directly through other channels.
+
+In most, if not all of the significant software projects today, logging technologies are used. The assumption is made that also for ReMeS there will be a component which handles the logging information for different software components in the system.
+To avoid cluttering the diagrams and explanations, we omit the logger as a physical entity in our decompositions, although it actually is a useful component to have. This Logging component will not be discussed further as it is considered to be out of scope for this assignment. 
+
+When concerning the incoming gateway, the assumption is made that a physical device for receiving trames 
+from different networks is installed already and that this device delivers the incoming trames to the incoming gateway. 
+Normally the same boundaries should be assumed as in the outgoing gateway, but due to unforeseen circumstances, this wasn't addressed in the decomposition of the incoming gateway component.
+
+In the case that emergency services need to be notified because of a gas leak, it was not quite clear how this notification should occur. The assumption is made that an sms will be sent to the emergency systems to notify them of the problem.

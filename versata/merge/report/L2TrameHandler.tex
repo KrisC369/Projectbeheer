@@ -1,0 +1,37 @@
+\subsubsection{Trame Handler}
+\paragraph{Architectural drivers}
+
+\begin{itemize}
+	\item \textbf{UCw: Retrieve module checking schedule}\\
+	For the scheduler for incoming measurement trames to check whether or not some
+		measurements are missing, it must be able to retrieve the rate that the 
+		remote module will be sending measurements. It can then compare the timestamps
+		of the latest measurement trames with this rate to see if some measurements
+		are missing.
+	\item \textbf{AV2: Missing measurements}\\
+	ReMeS should be able to detect a single missing measurement by monitoring the measurement schedule
+	Operator should be notified after missing measurements.	
+\end{itemize}
+\paragraph{Tactics}
+\begin{itemize}
+	\item Availability 
+	\begin{itemize}
+		\item Fault detection \\
+		An implementation of a Heartbeat system is used to check whether all devices send their measurements in time.
+	\end{itemize}
+\end{itemize}
+\paragraph{Architectural Patterns}
+\begin{itemize}
+	\item{Heartbeat}\\
+	The device's measurement trames are used as heartbeats in this implementation.
+	An active loop component keeps track of the new entries in the heartbeat table and monitors them for absent measurements.
+	The active loop component also has the capability of querying the data storage for the send schedule of the different devices.
+	This component can also mark devices as active in the data storage component when a device sends it's first trame. 
+	\item{Active Object}\\
+	The active object pattern is used to provide a way of making an object run independently in its own thread of control for monitoring the heartbeat table for missing measurements.
+	The active loop component represents an active object in this decomposition.
+\end{itemize}
+\inclimg{0.40}{0}{L3TrameHandler}{The Trame Handler after decomposition}
+
+\paragraph{Verification and refinement of drivers}
+All drivers for this module have been met and addressed. No further delegation to child nodes is needed.

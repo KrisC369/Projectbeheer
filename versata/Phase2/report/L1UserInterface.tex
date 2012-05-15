@@ -1,0 +1,58 @@
+%\subsection{Level 1}
+\subsubsection{User Interaction}
+
+\paragraph{Architectural drivers}
+\begin{itemize}
+	\item \textbf{AV1': } Measurement database failure
+		If the measurement database fails, this must be clearly indicated in the user interface (which will work through this user interaction component).
+	\item \textbf{UC1: } Log in
+	\item \textbf{UC2: } Log off
+	\item \textbf{UC3: } Register customer
+	\item \textbf{UC4: } Unregister customer
+	\item \textbf{UC5: } Associate device to customer
+	\item \textbf{UC6: } Customize customer profile
+	\item \textbf{UC11: } Operate actuator remotely
+	\item \textbf{UC12: } Set alarm recipients
+	\item \textbf{UC14': } Request consumption predictions
+	\item \textbf{UC16: } Mark invoice paid
+	\item \textbf{UC17: } Perform research
+\end{itemize}
+
+
+\paragraph{Tactics}
+\begin{itemize}
+	\item Security
+	\begin{itemize}
+		\item Authenticate users \\
+		We will want to ensure that a user is actually who it purports to be.
+		For this we will use a password to authenticate the users.
+		\item Authorize users \\
+		Authorization of users ensures that authenticated users have the correct
+			rights to access and/or edit certain information. These access rights
+			may differ between different users. This access control can be by user
+			or by user class.
+	\end{itemize}
+\end{itemize}
+
+
+\paragraph{Architectural Patterns}
+\begin{itemize}
+	\item Authorization\\
+	We must ensure that only specific clients can access functionality of a subsystem.
+	Therefor we will assign access rights to each client that can send service requests.
+	to the security-sensitive subsystem and check these rights before executing any requests
+	on the subsystem.
+	\item Publish-Subscribe\\
+	This pattern allows us to efficiently notify all interested parties
+		about the modus of the system and more importantly, to be notified of changes in modus caused by other components. We will also use this pattern to
+		notify an operator through the user interface by this publisher-subscriber
+		pattern. The reason for notifying operators will be addressed in a further decomposition.
+\end{itemize}
+\inclimg{0.40}{0}{L2UserInterface}{The User Interaction after decomposition}
+
+\paragraph{Verification and refinement of drivers}
+All drivers have been dealt with. Each of these operations is available in the user interaction interface.
+Before executing any of these operations, the access rights of the client requesting the service will be checked
+(except for UC1: Log in, here the client will be assigned certain access rights).
+If the measurement database is unavailable, the user interaction component will be notified of this through
+	the event channel and will update its status appropriately.

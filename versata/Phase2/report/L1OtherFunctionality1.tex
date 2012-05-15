@@ -1,0 +1,93 @@
+%\subsection{Level 1}
+\subsubsection{Other functionality}
+Decomposing this module actually represents doing another iteration of ADD.
+In further diagrams, the components that will arise from this decomposition will not
+be subcomponents of the other functionality module since this was only a pseudo module
+for ADD-process purposes.
+
+Solely the drivers from the first decomposition that were delegated to this pseudo-component will be handled. If another iteration is needed for quality attributes or functionality that is not covered by these drivers, then another iteration will follow after this one.
+
+
+\paragraph{Architectural drivers}
+\begin{itemize}
+	\item \textbf{P1': Timely closure of valves}
+	\begin{itemize}
+		\item UC7: Send trame to remote device
+		\item UC13': Send alarm
+		\item UC9: Notify customer
+	\end{itemize}
+	Performance 1 has only been fulfilled partially in the first iteration. Our current ReMeS decomposition
+		is unable to send outgoing messages or trames. But to close the valves we obviously
+		need outgoing control trames. These outgoing control trames also must be treated
+		with different priorities. Again, starvation of certain outgoing messages cannot happen.
+	
+	\item \textbf{M1': Dynamic pricing}
+	\begin{itemize}
+		\item UC15: Generate invoice
+	\end{itemize}
+	In the near future, utility prices will change dynamically on a minute-to-minute basis.
+		Since ReMeS already has the necessary infrastructure in place to remotely communicate with
+		many customers, providing the current price to them seems like a logical extention.
+		ReMeS will ensure that this modification takes less than 250 man man months to implement.
+		The costs of this implementation will cost less than 2Mio Euro.
+\end{itemize}
+
+
+\paragraph{Tactics}
+\begin{itemize}
+	\item Performance
+	\begin{itemize}
+		\item Resource arbitration\\
+		For considering resource arbitration, different scheduling policies can be used.
+	\end{itemize}
+\end{itemize}
+
+
+\paragraph{Architectural Patterns}
+We will be using mainly the same patterns as we used in the first decomposition of ReMeS. 
+This is because the motivation and the reasoning behind the first decomposition on this level
+	hasn't changed.
+\begin{itemize}
+	\item Active Object \\
+	Concurrency is an important requisite for the system that is being developed. Being able to execute operations of components within their own threads of control can help achieve this goal. The use of an active object architecture also improves the ability to issue requests on components without blocking until the requests execute.
+
+It should also be possible to schedule the execution of requests according to specific criteria, such as customer type based priorities and load based priorities.
+
+	\item Command processor \\
+	The command processor pattern will be used for the implementation of different schedulers. Often the functionality of the scheduler, as described in the command processor pattern, will be split up into two separate components. 
+These components are the buffer where the service requests are stored and the actual scheduler that empties the buffer and schedules the commands for execution. This shows a more explicit view of the workings of such a scheduler without going into another deeper level of ADD design.
+
+	\item Client Request Handler \\
+	To send messages across the internet, through sms or gprs, we opted for a
+		client request handler pattern.	
+\end{itemize}
+\inclimg{0.40}{90}{L0ReMeS-Report-Iteration2}{The decomposition of ReMeS after the second iteration}
+
+
+\paragraph{Verification and refinement of drivers}
+No quality attributes have been completed. All drivers are delegated to child components:
+
+\textbf{Scheduler for outgoing trames}
+\begin{itemize}
+	\item \textbf{P1': } Timely closure of valves
+	\item \textbf{UC13': } Send alarm
+	\item \textbf{UC7': } Send trame to remote device
+\end{itemize}
+
+\textbf{User notification}
+\begin{itemize}
+	\item \textbf{UC9': } Notify customer
+	\item \textbf{UC13': } Send alarm
+\end{itemize}
+
+\textbf{Outgoing gateway}
+\begin{itemize}
+	\item \textbf{UC7': } Send trame to remote device
+	\item \textbf{UC9': } Notify customer
+\end{itemize}
+
+\textbf{Invoice Manager}
+\begin{itemize}
+	\item \textbf{M1: } Dynamic pricing
+	\item \textbf{UC15: } Generate invoice
+\end{itemize}

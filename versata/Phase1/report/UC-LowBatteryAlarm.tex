@@ -1,0 +1,33 @@
+\subsubsection{Low Battery Alarm}
+
+\paragraph{Use Case Name}
+Low Battery Alarm
+\paragraph{Primary actor}
+Remote monitoring module: The module that has a battery.
+\paragraph{Interested Parties}
+ReMeS technician: A ReMeS technician sometimes needs to help a client to replace the battery of a remote module. \\
+Client: The client will want to know how and when to replace the battery of a remote module.
+\paragraph{Preconditions}
+The client has a remote monitoring module installed
+\paragraph{Normal Flow}
+\begin{enumerate}
+	\item The remote monitoring module's battery is low
+	\item The remote monitoring module sends a low battery alarm to ReMeS
+	\item ReMeS receives the alarm and creates an alarm to the appropriate recipient
+	\item The recipient receives the alarm and replaces the battery
+	\item The next time the remote monitoring module sends data, the battery status is automatically updated.
+\end{enumerate}
+
+\paragraph{Alternative Flow}
+\begin{enumerate}
+	\item[4a.] The recipient is unable to replace the battery
+	\begin{enumerate}
+		\item[4a1.] The recipient notifies ReMeS.
+		\item[4a2.] A ReMeS technician will be sent on site.
+		\item[4a3.] The ReMeS technician replaces the battery.
+		\item[4a4.] Goto step 5.
+	\end{enumerate}
+\end{enumerate}
+
+\paragraph{Postcondition}
+The remote module has a new, fully charged battery.

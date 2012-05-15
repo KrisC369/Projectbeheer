@@ -1,0 +1,53 @@
+\subsubsection{Scheduler for incoming alarm trames}
+This section will explain our reasons behind the decomposition of 
+the "Scheduler for incoming alarm trames" component.
+\paragraph{Architectural drivers}
+The main purpose of this component is making sure that the trames are
+processed in the correct order, according to their priority. Incoming
+gas alarm trames must be treated with the highest priority and the
+incoming water and power alarm trames with normal priority. This component will make sure
+that this happens. This component will handle the following drivers:
+\begin{itemize}
+	\item \textbf{UC13': Send alarm}
+	The scheduler for incoming alarm trames will partially help in solving
+		this use case since it will notify the correct system component to
+		send a control trame to the remote valve.
+	\item \textbf{P1': Timely closure of valves}
+	ReMeS will process incoming gas alarm trames with a higher priority as
+		water and power alarm trames. ReMeS must also make sure that starvation of
+		alarm trames is not possible.
+\end{itemize}
+\paragraph{Tactics}
+\begin{itemize}
+	 \item{Performance}
+	 \begin{itemize}
+		\item{Scheduling Policy} \\
+		To ensure that certain incoming alarm trames such as gas alarm trames
+			are treated with the highest priority, we chose for a scheduling
+			policy. The scheduling policy will also make sure that starvation
+			is not possible.
+	 \end{itemize}
+\end{itemize}
+
+
+\paragraph{Architectural Patterns}
+\begin{itemize}
+	\item Active Object\\
+	The active object pattern allows us, as in the Scheduler for incoming measurement trames,
+		to insert new alarm trames in a scheduler. The scheduler will then decide
+		itself which trames need to be processed first. The active object will be
+		implemented in the same way as in the Scheduler for incoming measurement trames.
+		The buffer that is used by the scheduler shouldn't be as big as with measurement trames.
+	\item Proxy \\
+	To increase the modifiability of the internal working of this component we chose
+		to use the explicit interface pattern. The interface that we see outside the
+		component will simply delegate it's methods to an internal component.
+\end{itemize}
+\inclimg{0.40}{0}{L2IncomingAlarmScheduler}{The Scheduler for Incoming Alarm Trames after decomposition}
+
+
+\paragraph{Verification and refinement of drivers}
+After the decomposition, P1 will be partially satisfied by the scheduler.
+Some incoming alarm trames will be prioritized while starvation of certain
+	incoming alarm trames is not possible.
+UC13 will be delegated to another component in our system.

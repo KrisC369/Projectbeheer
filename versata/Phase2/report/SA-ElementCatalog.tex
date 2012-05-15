@@ -1,0 +1,180 @@
+\subsubsection{Incoming gateway}
+The incoming gateway is the entry point for trames sent by a remote device, in the ReMeS system.
+This module dispatches the incoming trames to the components in the system that are fit to handle
+them. The incoming gateway also handles the incoming acknowledgement trames and provide a callback event for components waiting on such an acknowledgement.
+\paragraph{Message router}
+The message router is the subcomponent that handles the dispatching of the trames to the modules
+that are capable of processing them. 
+\paragraph{Acknowledgement handler}
+If the type of trame is an acknowledgement trame, the acknowledgement handler will process this incoming acknowledgement. Also, other incoming trames are passed to the acknowledgement to make sure those incoming trames are acknowledged by ReMeS itself.
+\subsubsection{Scheduler for incoming alarm trames}
+The Scheduler for incoming alarm trames handles, as the name indicates, the incoming alarm trames.
+These trames are temporarily stored in a prioritized queue, which makes it easy to prioritize
+incoming trames. The scheduler component than empties the queue at as fast a pace he can manage
+and dispatches the commands to send an emergency control trame and/or send a notification
+to the alarm recipients.
+\paragraph{Trame handler}
+A proxy instance which handles the external interface of this component and fills up the priority queue. 
+\subparagraph{Input router}
+The input router component is a subcomponent visible in the decomposed view of the trame handler. 
+This component handles the passing of incoming trame messages to the next supercomponent (in this case
+being the buffer). While passing the regular trame, it also stores part of the trame with the trame 
+header (containing the time stamp, device id and such) in the latest heartbeat table.
+\subparagraph{Latest heartbeat table}
+The latest heartbeat table is a subcomponent of the trame handler component. This component stores
+incoming measurement trame headers containing time stamp information and device id's. This table
+is used to monitor the incoming measurements and possibly detect missing measurements. 
+\subparagraph{Active loop}
+The active loop component is a subcomponent of the trame handler. This components gets its name from the fact that this component works in a continuous loop in it's own thread of control. This component
+iterates over the entries in the latest heartbeat table and monitors for missing measurements.
+This component also queries the data storage unit for the measurement schedules of the remote devices.
+These are needed to check for missing measurements. 
+\paragraph{Buffer} 
+This is a buffer in which data is stored based on priority. The implementation of this element could be achieved by using a priority queue implementation.
+\subparagraph{Buffer frontend}
+The buffer frontend component is a subcomponent of the buffer component. The components in this decomposed view illustrate the redundancy measures that have been taken to effect the availability quality attribute scenarios. The Buffer frontend is an simple component offering an external interface and delegating the requests to add an element to each buffer instance. For retrieving data, a request is delegated to the buffer instances and the first response is used. 
+\subparagraph{Buffer implementation}
+The buffer implementation component is a child component of the buffer component. This component represents the actual physical buffer. The instances manifesting this component will store and hold the actual data. These components will use the same interface as the previously discussed buffer frontend component.
+\paragraph{Scheduler} 
+This scheduler empties the queue and handles the incoming trames based on priority. This scheduler handles this responsibility with fairness, such that eventually all trames will be handled. This element will use a dynamic scheduling policy to avoid starvation.
+\subsubsection{Scheduler for outgoing trames}
+\label{sec:SchedulerOutgoingTrames}
+The scheduler for outgoing trames handle the requests for trames that need to be sent out from the ReMeS system.
+This component also uses a prioritized queue to sort and schedule those requests based on priority.
+This module has the capability of querying the central data storage unit for information on
+how a recipient needs to receive a trame or through which network technology.
+\paragraph{Request handler} 
+The request handler is a proxy for offering the external interface to this subcomponent.
+All received requests are stored into the prioritized queue.
+\paragraph{Buffer}
+The prioritized queue is the same component as previously discussed in section \ref{sec:SchedulerOutgoingTrames}.
+\paragraph{Trame constructor}  
+The trame constructor has the responsibility to empty the queue and process the incoming requests in such a manner that they are processed fairly, but based on their priorities.
+This component can also query the data storage unit for information on the recipient. This information will contain the technology that needs to be used to transfer the trame and the trame constructor will construct and prepare the outgoing trames in a manner compatible with that technology.
+
+\subsubsection{Outgoing gateway}
+The outgoing gateway component handles the physical dispatching of outgoing messages. These messages can be trames, but also email messages are possible. This gateway has the capability of sending those messages using a number of different technologies such as GPRS/3G, sms or just plain over tcp/ip. 
+\paragraph{Request handler}
+The request handler serves as a proxy for offering the external interface of this component.
+This proxy dispatches the outgoing messages based on the type of network technology that needs to be used. 
+\paragraph{Buffer} 
+For each network technology a buffer exists which holds the yet to be sent messages. 
+\paragraph{Message constructor} 
+For each network technology there exists a message constructor component which handles the construction of messages or packets for that specific network technology. 
+It sort of wraps the data that has to be sent with the adequate packet data that the network can accept.
+\paragraph{Network broker} 
+For each network technology, there is a network broker component in place which handles the effective communication with the network. 
+It is this component that will handle the final dispatching of messages over the network.
+\subsubsection{User notification}
+The user notification component handles the request for notifying users.
+This component also has the capability of polling the data storage unit for information about the 
+user that needs to be notified.
+\paragraph{Request handler} 
+The request handler is a proxy for providing an external interface for the internal functionality.
+\paragraph{Buffer} 
+This buffer is a simple component for temporary storing the requests until they can be handled.
+\paragraph{Notification constructor} 
+The notification constructor handles the construction of the notification messages (email structure for example). 
+These notification messages form the actual content that will be provided to the outgoing gateway.
+\subsubsection{Scheduler for incoming measurement trames}
+This component handles the scheduling of incoming measurement trames to the measurement processing service. 
+When a measurement trame arrives, it will also be checked if the trame arrives in time or if a scheduled check in has been missed.
+This scheduling component also monitors the event channel for information on the load of other heavy duty components and considers this when scheduling new requests to the data storage unit (for example).
+\paragraph{Trame handler}
+The trame handler functions as the entry point for this scheduler component and handles the dispatch to the buffer used for final scheduling. 
+In this trame handler the regularity of the device, when it comes to sending measurement updates, is checked against the intended check in schedule. 
+The moment a device sends a measurement trame, it is entered in the heartbeat table. The active loop request the device configuration from the data storage unit and uses that schedule to detect missing check ins.
+\paragraph{Buffer}
+This buffer is a very important buffer in the system. In case of a database failure, this buffer will hold the measurement trames until the other components return to normal operation.
+\paragraph{Event channel}
+The event channel in this component is the event channel used throughout the ReMeS system. This component is used to publish notifications to and to receive notifications from about the state of load on the system.
+\paragraph{Scheduler}  
+This scheduler component, schedules in a fair manner, the measurement trames to the data storage unit for processing. This component uses the event channel to monitor the operation mode of some heavy duty components. 
+\subsubsection{Watchdog}
+The watchdog component signifies the capability of the system to monitor the operational state of different components. Different important components in the system can post heartbeat updates to this watchdog component. This component handles the monitoring and storage of these heartbeats.
+\paragraph{Active loop} 
+The active loops continuously checks the heartbeat table for new entries. If an anomaly is found, 
+it posts a message in the event channel.
+\paragraph{Event channel} 
+This event channel component is the same component as the other event channels.
+\paragraph{Heartbeat table} 
+This heartbeat table registers and stores the heartbeats until the active loop can process data from them.
+\subsubsection{Invoice manager}
+The invoice manager component handles the creation and dispatching of invoices to the third party billing service.
+The creation of invoices can be triggered by synchronous and asynchronous calls to the invoice generation.
+\paragraph{UIS communicator}
+The UIS communicator will handle the communication with the Utility Information System. This component will use
+the external interface provided by the Utility Information System. The details of how this communication happens, depend on the interface provided by the UIS and is outside the scope of this assignment.
+\paragraph{3rd party billing service communicator}
+The 3rd party billing service communicator component handles the communication with the 3rd party billing service for sending them the generated invoices. The same limitations apply as in the previously discussed section.
+\paragraph{Invoice generator}
+The invoice generator handles the responsibility of creating the invoices based on the stored consumption history and measurement data. The generation of these invoices is triggered either by direct method call or by a notification in the event channel.
+\paragraph{Event channel}    
+The event channel component has been amply discussed in other components throughout the system.
+\subsubsection{Computation of consumption prediction}
+The computation of consumption prediction component represents the internal component that will actually be computing the consumption predictions.
+\paragraph{Consumption prediction algorithm}
+The consumption prediction algorithm component represents an algorithm to be used for performing consumption prediction. This component however is not fully decomposed or designed to specification due to timing constraints. A strategy pattern could be used to organise this component further if the need arises. 
+\subsubsection{Scheduler for consumption prediction requests}
+This scheduler component handles the scheduling of consumption prediction data. 
+The structure of this component is fairly similar to previously discussed scheduling components.
+The elements responsible for initiating requests is primarily the user interaction component discussed later on.
+\paragraph{Request handler} 
+This component is a proxy which provides an external interface to the internal components.
+This component stores the requests for consumption prediction in a temporary buffer.
+\paragraph{Buffer} 
+This buffer stores the request before they can be scheduled and handled for processing.
+\paragraph{Scheduler} 
+The scheduler actually schedules and triggers the computation of consumption predictions for the ReMeS system.
+\subsubsection{User interaction}
+The user interaction component handles the interaction of different types of users, with the system.
+This module represents the user interface and the handling of user initiated requests for data processing or 
+other stuff. This form of user interaction makes use of the MVC pattern as described in earlier sections.
+\paragraph{Application controller} 
+The application controller represents an application layer for handling the communication between the user interface controls and views and the core of the ReMeS system. External applications and user interfaces can make requests to this controller layer so they don't need to interact with the core itself.
+\paragraph{UIView} 
+The UIView component is an component representing the effective user interface that will be represented to clients of the ReMeS system. This user interface is related to the view component in an MVC architecture. It only directly communicates with the controller layer which is, in this case, represented by the Application controller.
+\paragraph{Service request executer} 
+The Service request executor component delegates service requests to components in the core of the system.
+\paragraph{Authorization checker}
+The Authorization checker is a module that handles the authorisation of users which are using the application controller or the user interface directly. This component has the responsibility of providing authentication services when needed.
+\paragraph{Event channel}  
+This event channel has been discussed a few times already. 
+One extra function for usage in this components can be found in the fact that some operator user interfaces use this event channel to monitor the uptime states of different components. If a component of some sort fails and this failure is detected, this event will be communicated to an operator interface through this event channel.
+\subsubsection{Data storage}
+The data storage component represents the central data repository that will be used by a lot of components in the ReMeS System.
+
+\paragraph{DB request handler} 
+The DB request handler is a proxy for the database functionality representing a unified external interface to the database functionality.
+This handler component internally uses a caching module, which improves performance and availability within given boundaries.
+This component is also capable of delegating queries to the database instances that are capable of handling them.
+
+\subparagraph{Request handler}
+The request handler component is a child component of the DB request handler component. This component
+handles the same functionality of the DB request handler, without the functionality added by decomposing said element any further. This request handler offers the external interface to the outside components to shield the implementation details from the rest of the system.
+\subparagraph{Buffer}
+This buffer component is a subcomponent of the DB request handler component. This component is nothing more than a simple buffer instance for storing requests before they can be handled.
+\subparagraph{Request cache}
+The Request cache component is a subcomponent of the DB request handler. This component handles the requests to the database and temporarily stores the results to offer a caching service. 
+
+When a request is pulled from the buffer, this cache component will first check if a result for this query already resides in the internal cache. 
+If this is the case, and the result is fresh enough, the cache component will return this cached result without querying the database for the information. 
+If an answer for the query is not present in the internal cache, or the version of the result is too old, the request will be passed along to the next component in line which will query the actual database for the results.
+
+\subparagraph{Parallel process scheduler}
+The parallel process scheduler is a subcomponent of the DB request handler component. This component schedules the incoming requests that couldn't be handled by the caching instance for actual processing. This component is capable of scheduling and dispatching multiple queries at once (hence the component name).
+\paragraph{Measurement processor} 
+The measurement processor accepts request from the request handler for incoming measurement requests and processes those measurements by extracting data, querying the anomaly detection unit on this data, and inserting the measurements at the correct location in the measurement database.
+\paragraph{Anomaly detector} 
+The anomaly detector actually runs various anomaly detection algorithms on the measurement data in order to try and detect anomalies in the consumption behavior of a certain user, based on reading of a certain device.
+\paragraph{Event channel}
+The event channel used here has been amply discussed in previous sections.
+\paragraph{User profile DB} 
+This is the physical database component storing the actual user profiles.
+\paragraph{Measurement DB} 
+This is the physical database component storing the actual measurements
+\paragraph{Remote device configuration DB} 
+This is the physical database component storing the actual device configurations.
+\paragraph{Invoice and billing DB}  
+This is the physical database component storing the actual invoice and billing data.
+

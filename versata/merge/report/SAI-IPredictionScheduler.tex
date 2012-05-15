@@ -1,0 +1,20 @@
+\subsubsection{IPredictionScheduler}
+\paragraph{Interface Identity}
+This interface is provided by the Scheduler for consumption prediction
+	requests. This interface is different from IScheduler because it
+	requires more information.
+\paragraph{Resources Provided}
+\begin{itemize}
+	\item{ConsumptionPrediction requestPrediction(PredictionType type)}\\
+	This method will schedule a consumption prediction. When the requested prediction
+		is computed, this method will also return the prediction.
+\end{itemize}
+\paragraph{Data Type Definitions}
+\begin{itemize}
+	\item ConsumptionPrediction\\
+	A computed consumption prediction.
+	\item PredictionType\\
+	The type of the requested consumption prediction. This structure contains the utility
+		and the time frame.
+\end{itemize}
+\paragraph{Exception Definitions}

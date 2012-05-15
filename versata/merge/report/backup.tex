@@ -1,0 +1,106 @@
+
+% place the number of the misuse cases in the corresponding field(s).
+% indicate the not examined threats with an "X"
+% at the bottom: list the total number of uncovered threats per LINDDUN category
+% + list the examined number of threats per LINDDUN category
+
+\begin{table}[h!]
+%\begin{longtable}[h!]
+\begin{center}
+\caption{ \label{table:LINDDUN_mapping_MUCs}}
+%\begin{tabular}{p{2.3cm} p{9cm} p{0.2cm} p{0.2cm} p{0.2cm} p{0.2cm}p{0.2cm} p{0.2cm} p{0.2cm} }
+\begin{longtable}{p{2.3cm} p{9cm} p{0.2cm} p{0.2cm} p{0.2cm} p{0.2cm}p{0.2cm} p{0.2cm} p{0.2cm} }
+\toprule[1pt]
+& Threat target & L & I & N & D & D & U & N \\
+\midrule[0.5pt]
+Data Store &  Database (7.1) & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ &  & $\times$ \\
+	   &  Alarm configuration DB (7.14) & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ &  & $\times$ \\
+\midrule[0.5pt]
+Data Flow  &  Operator -- Operator portal (1 - 7.2) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Operator portal -- Operator (7.2 - 1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Researcher -- Reasearcher portal (2 - 7.4) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Researcher portal -- Reasearcher (7.4 - 2) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Consumer -- Consumer portal (3 - 7.5) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Consumer portal -- Consumer (7.5 - 3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Consumer -- Gateway (3 - 7.9) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Gateway -- Consumer (7.9 - 3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Remote device -- Gateway (4 - 7.9) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Gateway -- Remote device (7.9 - 4) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  UIS web service -- UIS portal (5 - 7.7) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  UIS portal -- UIS web service (7.7 - 5) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  3rd party billing service -- Billing portal (6 - 7.6) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   & Billing portal --  3rd party billing service (7.6 - 6) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Operator portal  -- UIS Web service (7.2 - 7.7) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  UIS Web service -- Operator portal (7.7 - 7.2) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Operator portal -- Database (7.2 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Operator portal (7.1 - 7.2) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Operator portal -- Statistics component (7.2 - 7.3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Statistics component -- Operator portal (7.3 - 7.2) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Researcher portal -- Statistics component (7.4 - 7.3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Statistics component -- Researcher portal (7.3 - 7.4) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  UIS portal -- Statistics component (7.7 - 7.3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Statistics component -- UIS portal (7.3 - 7.7) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  UIS portal -- Database (7.7 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- UIS portal (7.1 - 7.7) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   
+		   &  Consumer portal -- Statistics component (7.5 - 7.3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Statistics component -- Consumer portal (7.3 - 7.5) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Consumer portal -- Database (7.5 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Consumer portal (7.1 - 7.5) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Statistics component -- Database (7.3 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Statistics component (7.1 - 7.3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		  % &  Consumer -- Configuration controller (3 - 7.8) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Configuration controller -- Consumer portal (7.8 -7.5) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Consumer portal -- Configuration controller (7.5 -7.8) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Configuration controller -- Database (7.8 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Configuration controller (7.1 - 7.8) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Gateway -- Configuration controller (7.9 - 7.8) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Configuration controller -- Gateway (7.8 - 7.9) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Gateway -- Data processor (7.9 - 7.10) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Data processor -- Gateway (7.10 - 7.9) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Data processor -- Database (7.10 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Data processor (7.1 - 7.10) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Gateway -- Alarm processor (7.9 - 7.11) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Alarm processor -- Gateway (7.11 - 7.9) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Alarm processor -- Alarm Configuration Database (7.11 - 7.14) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Alarm Configuration Database -- Alarm processor (7.14 - 7.11) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Alarm processor -- Database (7.11 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Alarm processor (7.1 - 7.11) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Alarm processor -- Actuator controller (7.11 - 7.12) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Actuator controller -- Alarm processor (7.12 - 7.11) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Gateway -- Actuator controller (7.9 - 7.12) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Actuator controller -- Gateway (7.12 - 7.9) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Actuator controller -- Database (7.12 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Actuator controller (7.1 - 7.12) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Billing portal -- Database (7.6 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Database -- Billing portal (7.1 - 7.6) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+		   &  Global demand predictor -- Database (7.13 - 7.1) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+			&  Database -- Global demand predictor (7.1 - 7.13) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\		   
+\midrule[0.5pt]
+Process & Operator portal (7.2) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Researcher portal (7.4) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Actuator controller (7.12) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Consumer portal (7.5) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Billing portal (7.6) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & UIS portal (7.7) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Statistics component (7.3) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Alarm Processor (7.11) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Data processor (7.10) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Configuration controller (7.8) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+        & Global demand predictor (7.13) & $\times$ & $\times$ & $\times$& $\times$ &  $\times$ & & $\times$\\
+\midrule[0.5pt]
+Entity 	& Operator (1) & $\times$ & $\times$ & & &  & $\times$ & \\
+	& Researcher (2) & $\times$ & $\times$ & & &  & $\times$ & \\
+	& Consumer (3) & $\times$ & $\times$ & & &  & $\times$ & \\
+	& Remote Module (4) & $\times$ & $\times$ & & &  & $\times$ & \\
+	& UIS web service (5) & $\times$ & $\times$ & & &  & $\times$ & \\
+	& 3rd party billing service (6) & $\times$ & $\times$ & & &  & $\times$ & \\
+\bottomrule[1pt]
+
+\end{longtable}
+%\end{tabular}
+\end{center}
+
+%\end{longtable}
+\end{table}
+

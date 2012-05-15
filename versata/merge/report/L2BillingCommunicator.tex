@@ -1,0 +1,36 @@
+%\subsection{Level 2}
+TODO remove this shit
+\subsubsection{3th Party Billing Service Communicator}
+\paragraph{Architectural drivers}
+\begin{itemize}
+	\item \textbf{AV3: Third Party Billing Service failure}
+	It is possible that the third party billing service is unreachable. ReMeS
+		must detect this and make sure no invoices are lost. This component will
+		take care of that.
+\end{itemize}
+
+
+\paragraph{Tactics}
+\begin{itemize}
+	\item Availability
+	\begin{itemize}
+		\item Fault Detection\\
+		The 3th party billing service communicator must detect when an error occurs with sending an invoice to the Third
+			Party Billing Service. Whenever it sends an invoice, the Third Party
+			Billing Service should send an acknowledgement back to the communicator.
+	\end{itemize}
+\end{itemize}
+
+
+\paragraph{Architectural Patterns}
+TODO
+\begin{itemize}
+	\item{}
+\end{itemize}
+
+
+\paragraph{Verification and refinement of drivers}
+\textbf{}
+\begin{itemize}
+	\item \textbf{UC : }
+\end{itemize}

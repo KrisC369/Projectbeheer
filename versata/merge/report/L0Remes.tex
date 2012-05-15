@@ -1,0 +1,201 @@
+\subsubsection{ReMeS}
+In the first iteration of the ADD runs, the full ReMeS system was used as a component to decompose. 
+For this decomposition, several architectural drivers were chosen.
+
+
+\paragraph{Architectural drivers}
+The primary decomposition for the ReMeS system started from certain 
+key architectural drivers. The quality attributes chosen as key architectural drivers were the performance QAS and some Availability QAS.
+These chosen QAS also related to some functional requirements. To ease the documentation of the ADD runs, the related Use Cases are also mentioned.
+The architectural drivers that were chosen for this decomposition are:
+\begin{itemize}
+	\item \textbf{P1: Timely closure of valves}
+	\begin{itemize}
+		\item UC7: Send trame to remote device
+		\item UC13: Send alarm
+	\end{itemize}
+	Performance 1 has certain qualities it demands. All the demands are about how certain alarm trames need to be processed. 
+		In case of a gas alarm trame,
+		the incoming alarm trame must be processed with the highest priority. The outgoing control trame to close the gas valve also must be treated with
+		the highest possible priority. This to ensure a response measure of less than 10 seconds between the alarm trame arriving and the control trame
+		being sent.
+		In case of a water alarm trame, the incoming alarm trame must be processed with normal priority. The outgoing control trame must be treated with
+		the highest priority, like the outgoing control trames to close gas valves. The response time between an incoming water alarm trame and the
+		corresponding outgoing control trame must be less than two minutes.
+		Finally, in case of a power alarm trame, ReMeS must process incoming and outgoing with normal priority. The response time must be less than 3 minutes.
+		We must also ensure a mechanism that avoids starvation of trame processing jobs.
+
+	
+	\item \textbf{P2: Anomaly detection}
+	\begin{itemize}
+		\item UC10: Detect anomaly
+		\item UC9: Notify customer
+	\end{itemize}
+	Incoming measurement trames will be processed by ReMeS to detect anomalies. It is possible that ReMeS receives new measurement trames at a
+		faster rate than ReMeS can process them. In this case, ReMeS goes into overload modus. This modus will be activated when the throughput
+		is greater than 50 anomaly detections per minute.
+		In normal modus, ReMeS will process the incoming measurements in first-in, first-out order (FIFO). When ReMeS goes into overload modus,
+		customers subscribed to the premium service level will get priority over the normal service level. Even while in overload modus, there
+		should be no starvation of jobs and 98 percent of the measurements should be handled within 10 minutes after arriving.
+		The load is also balanced over multiple instances of each sub-system.
+	
+	\item \textbf{AV1: Measurement database failure}
+	\begin{itemize}
+		\item UC8: Send measurement
+	\end{itemize}
+	It is possible that the internal database for storing measurements fails. This does not affect the availability of other types of persistent data.
+		The database should be at least 99.9 percent be up and running. If it fails, detection of the failure should happen within 5 seconds and the
+		operators are notified within 1 minute. In case of a failure, the database goes in degraded modus. This means that incoming measurements are
+		temporarily stored elsewhere and are processed when the database returns operational. This buffer should be able to store at least 3 hours 
+		of measurement trames. No measurements are lost when ReMeS switches from normal to degraded modus. The user interface should also display
+		clearly that the measurement data is temporarily unavailable.
+	
+	\item \textbf{AV2: Missing measurements}
+	\begin{itemize}
+		\item UC8: Send measurement
+	\end{itemize}
+	It is possible that certain measurements are missing because of a external communication failure, a remote module failure or an internal subsystem
+		failure. To detect this, ReMeS must be able to detect a single missing measurement. Remote devices and ReMeS must acknowledge received trames so
+		they can detect failed trames. ReMeS should be able to detect the failure of an internal subsystem autonomously within 1 minute. 
+	
+	\item \textbf{P3: Requests to the measurement database}
+	% \begin{itemize}
+		% \item UC14: Request consumption predictions
+	% \end{itemize}
+	In normal modus, the database processes the incoming requests first-in, first-out. Measurements for premium service level are handled within 500ms,
+		other measurements are handled within 1500ms. If the system fails to comply to these deadlines, it goes into overload modus. This means that
+		requests are handled in the order that returns the system to normal modus the fastest, keeping in mind that requests from premium service level
+		customers are handled before other requests and history queries for anomaly detection are prioritized over research purpose history queries. In
+		In overload modus, consumer history queries are allowed to return a stale cached version.
+	
+	\item \textbf{M1: Dynamic Pricing}
+	\begin{itemize}
+		\item UC15: Generate invoice
+	\end{itemize}
+	In the near future, utility prices will change dynamically on a minute-to-minute basis.
+		Since ReMeS already has the necessary infrastructure in place to remotely communicate with
+		many customers, providing the current price to them seems like a logical extention.
+		ReMeS will ensure that this modification takes less than 250 man man months to implement.
+		The costs of this implementation will cost less than 2Mio Euro.
+\end{itemize}
+
+
+\paragraph{Tactics}
+To address these drivers, certain tactics have been used. 
+Mainly, performance tactics have been used. 
+\begin{itemize}
+	\item Performance
+	\begin{itemize}
+		\item Resource management\\
+		For considering resource management, the introduction of concurrency and the increase of available resources are the chosen tactics. Increasing resource management is, however, out of the scope of these add runs.
+
+		\item Resource arbitration\\
+		For considering resource arbitration, different scheduling policies can be used.
+	\end{itemize}
+	\item{Availability}
+	\begin{itemize}
+		\item Fault Detection\\
+		The tactic that was considered to address the most important drivers (for this level of decomposition), was the use of a heartbeat mechanism. 
+The eventual decision and explanation will be given later on.
+	\end{itemize}
+\end{itemize}
+
+
+\paragraph{Architectural Patterns}
+The architectural patterns used to effect the tactics chosen in the previous section will be explained in this section. 
+\begin{itemize}
+	\item Active Object \\
+	Concurrency is an important requisite for the system that is being developed. Being able to execute operations of components within their own threads of control can help achieve this goal. The use of an active object architecture also improves the ability to issue requests on components without blocking until the requests execute.
+
+It should also be possible to schedule the execution of requests according to specific criteria, such as customer type based priorities and load based priorities.
+
+	\item Command processor \\
+	The command processor pattern will be used for the implementation of different schedulers. Often the functionality of the scheduler, as described in the command processor pattern, will be split up into two separate components. 
+These components are the buffer where the service requests are stored and the actual scheduler that empties the buffer and schedules the commands for execution. This shows a more explicit view of the workings of such a scheduler without going into another deeper level of ADD design.
+
+	\item Server Request Handler \\
+	To be able to easily receive messages from the remote modules, we opted
+		for a server request handler pattern.
+
+It is also possible to use strategies in the aforementioned schedulers. But this will be explained in further iterations of the ADD process when needed. 
+	 \item Heartbeat \\
+	In order to conform to the driver stating that the system should know about failing components, a heartbeat mechanism will be implemented. 
+Every component that is important enough to be registered, sends heartbeats to the watchdog component at frequent intervals. 
+When the first heartbeat arrives, the watchdog keeps track of that components uptime and notifies the event channel if certain heartbeats are missing. 
+This way components can be dynamically added to the systems uptime monitor (or in this case watchdog). 
+
+The choice was made not to use ping/echo because that would assume a one to many relationship of dependency between the Watchdog and the outside components. 
+In terms of scalability that would lead to a poorer design than the many to one relationship that is in place by using heartbeats. By using heartbeats, the watchdog does not need any knowledge of the system layout or structure in order to function. It is almost completely passive in it's functionality. The responsibility for deciding on the importance of failure detection lies completely with the other components.
+	
+\end{itemize}
+\inclimg{0.40}{0}{L0ReMeS-Report-Iteration1}{The ReMeS component diagram first decomposition.}
+The result of this iteration of the ADD process can be shown in figure \ref{fig:L0ReMeS-Report-Iteration1}
+
+
+\paragraph{Verification and refinement of drivers}
+After the initial decomposition no quality attributes have been completed yet. All considered drivers will be delegated to child components to act as drivers for their individual decomposition.
+
+\textbf{Incoming gateway}
+\begin{itemize}
+	\item \textbf{UCx: } Know the type of the trame
+	\item \textbf{UCz: } Send acknowledgement
+	\item \textbf{UC8': } Send Measurement
+	\item \textbf{UC13': } Send alarm
+	\item \textbf{P1': } Timely closure of valves
+\end{itemize}
+
+\textbf{Scheduler for incoming measurement trames}
+\begin{itemize}
+	\item \textbf{UC8': } Send measurement
+	\item \textbf{AV1: } Measurement database failure
+	\item \textbf{AV2: } Missing measurements
+	\item \textbf{P2: } Anomaly detection
+	\item \textbf{UCy: } Know the modus
+	\item \textbf{UCw: } Retrieve module checking schedule
+\end{itemize}
+
+\textbf{Scheduler for incoming alarm trames}
+\begin{itemize}
+	\item \textbf{UC13': } Send alarm
+	\item \textbf{P1': } Timely closure of valves
+\end{itemize}
+
+\textbf{Data storage}
+\begin{itemize}
+	\item \textbf{UC8': } Send measurement
+	\item \textbf{UC10: } Detect anomaly
+	\item \textbf{AV1: } Measurement database failure
+	\item \textbf{P2: } Anomaly detection
+	\item \textbf{P3: } Requests to the measurement database
+	\item \textbf{UCy: } Know the modus
+\end{itemize}
+
+\textbf{Watchdog}
+\begin{itemize}
+	\item \textbf{AV1: } Measurement database failure
+	\item \textbf{AV2: } Missing measurements
+\end{itemize}
+
+% \textbf{Scheduler for consumption prediction requests}
+% \begin{itemize}
+	% \item \textbf{UC14': } Request consumption prediction
+	% \item \textbf{AV1: } Measurement database failure
+% \end{itemize}
+
+% \textbf{Computation of consumption prediction}
+% \begin{itemize}
+	% \item \textbf{UC14': } Request consumption prediction
+	% \item \textbf{AV1: } Measurement database failure
+% \end{itemize}
+
+\textbf{Other functionality}
+\begin{itemize}
+	\item \textbf{P1': } Timely closure of valves
+	\item \textbf{UC7: } Send trame to remote device
+	\item \textbf{UC13': } Send alarm
+	\item \textbf{UC9: } Notify customer
+	\item \textbf{M1: } Dynamic pricing
+	\item \textbf{UC15: } Generate invoice
+	\item \textbf{UC16: } Mark invoice paid
+\end{itemize}
+

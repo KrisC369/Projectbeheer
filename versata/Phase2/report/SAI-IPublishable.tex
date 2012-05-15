@@ -1,0 +1,17 @@
+\subsubsection{IPublishable}
+\paragraph{Interface Identity}
+This interface is provided by every component that needs to receive messages
+	from the event channel. These components
+	are scattered throughout the complete system. This because every component
+	that needs to receive data from the event channel needs such an interface.
+\paragraph{Resources provided}
+\begin{itemize}
+	\item{void publishMessage(EventMessage message)}\\
+	This method is used to receive data from the event channel.
+\end{itemize}
+\paragraph{Data Type Definitions}
+\begin{itemize}
+	\item EventMessage\\
+	The message received from the event channel.
+\end{itemize}
+\paragraph{Exception Definitions}
