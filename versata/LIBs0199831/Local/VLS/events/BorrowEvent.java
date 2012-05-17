@@ -330,6 +330,9 @@ protected void insert() throws ServerException
 	this.tableConditionActions();
 
 
+	// Do Child Cascades.
+	// Child Cascade for Role prnt(BorrowEvent)-Copy(Copy): BorrowEvent->>Copy
+	this.childCascadeFor_Copy();
 
 	// Post Rule Event
 	postRuleEvent(VLSEvent.AFTER_INSERT, null);
@@ -379,6 +382,9 @@ protected void update() throws ServerException
 	// Factored out duplicate code passage - Val/Paul 03-17-03
 	this.tableConditionActions();
 
+	// Do Child Cascades.
+	// Child Cascade for Role prnt(BorrowEvent)-Copy(Copy): BorrowEvent->>Copy
+	this.childCascadeFor_Copy();
 	// Post Rule Event
 	postRuleEvent(VLSEvent.AFTER_UPDATE, null);
 	// This concludes the update procedure.
@@ -407,6 +413,8 @@ protected void delete() throws ServerException
 	this.tableConditionActions();
 
 	// Do Child Cascades.
+	// Child Cascade for Role prnt(BorrowEvent)-Copy(Copy): BorrowEvent->>Copy
+	this.childCascadeFor_Copy();
  
 
 	// Do the Parent Adjustment.
@@ -605,6 +613,54 @@ public void columnValidationCheck()
 	finally { if (  tr != null ) tr.end( tr_id ); }
 	}
 
+	protected void childCascadeFor_Copy()
+	{
+	IVSTrace tr = null;  long tr_id = 0;
+	if ( VSTrace.IS_ON ) {
+		tr = VSTrace.get(); 
+		tr_id = tr.beg(logger);
+		tr.set(VST_CATEGORY,VST_RULE).set(VST_ACTION_NAME,"childCascadeFor_Copy").set(VST_OBJECT_NAME,"BorrowEvent");
+	}
+	
+	try 
+	{		
+	boolean PKeyChanged = false;
+	boolean ReplChanged = false;
+	Enumeration	children;
+	// First find out if the Primary key has changed.
+	if (( isUpdated() == true ) &&
+	( (isChanged("FKCopy")) ))
+		PKeyChanged = true;
+	else
+		PKeyChanged = false;
+	
+
+    // Now do the Cascade.
+    if (isDeleted())
+    {
+      // no need to load all children into cache for a delete
+      children = getOldCopy(false);
+      if ( children.hasMoreElements() ) // There are children found
+      {
+				raiseException("Delete Rejected because there are Copy found for BorrowEvent");
+      }       
+    }
+    else if ( PKeyChanged || ReplChanged )
+	{
+		children = getOldCopy();
+		if ( children.hasMoreElements() ) // There are children found
+		{
+				// This is the case for an Update.
+				if ( PKeyChanged )
+				{
+					raiseException("Update Rejected because there are Copy found for BorrowEvent");
+				}
+				
+			}
+		}
+	}				
+	finally { if (  tr != null ) tr.end( tr_id );}
+	}
 
 
 
@@ -613,14 +669,139 @@ public void columnValidationCheck()
 
 	
 
+private ObjectHashtable CopyCache = null;
+
+/**	  
+* <br>
+* method to retrieve the Copy objects for this BorrowEvent
+* this method currently does not support additional conditional params.
+* @return Enumeration : the Enumeration of Copy objects.
+*/
+public Enumeration getCopy()
+{
+	if (!getSession().getProperty("NoCacheCopy").equals("true"))
+	{
+		if ( CopyCache != null ) return CopyCache.elements();
+	}
+	
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+
+	param = new Parameter();
+	param.objName = "Copy";
+	param.fieldName = "PKCopy";
+	param.value = getData("FKCopy").getString();
+	searchReq.add(param);
+	if (!getSession().getProperty("NoCacheCopy").equals("true"))
+	{
+		CopyCache = new ObjectHashtable();
+		for (Enumeration e = (CopyBaseImpl.getObjects(searchReq ,getSession())); e.hasMoreElements();)
+		{
+			DataObject cacheBO = (DataObject)e.nextElement();
+			DataRow row = cacheBO.getRow();
+			Vector pkey = row.getPkeyParams();
+			CopyCache.put(pkey,cacheBO);								
+		}
+		return (CopyCache.elements());
+	}
+	else
+	{
+		return (CopyBaseImpl.getObjects(searchReq ,getSession()));
+	}
+}
 
 
+
+/**	  
+* <br>
+* method to retrieve the old Copy objects for this BorrowEvent
+* old Copy objects would be different from the new ones usualy if
+* the BorrowEvent has a primary key change.
+* @param cache     : true if the relationship cache is to be used.
+                *                    it will result in all objects being fetched into
+                *                    memory (if they have not been cached yet).
+* @return Enumeration : the Enumeration of old Copy objects.
+*/
+  public Enumeration getOldCopy(boolean cache)
+  {
+    String oldCacheProperty = getSession().getProperty("NoCacheCopy");
+    if (cache)
+      getSession().setProperty("NoCacheCopy", "false");
+    else
+      getSession().setProperty("NoCacheCopy", "true");   
+    
+    try {
+      return getOldCopy();
+    } finally {                     
+        getSession().setProperty("NoCacheCopy", oldCacheProperty);                    
+    }			
+  }
+
+
+    /**	  
+* <br>
+* method to retrieve the old Copy objects for this BorrowEvent
+* old Copy objects would be different from the new ones usualy if
+* the BorrowEvent has a primary key change.
+* this method currently does not support additional conditional params.
+* @return Enumeration : the Enumeration of old Copy objects.
+*/
+public Enumeration	getOldCopy()
+{
+	if (!getSession().getProperty("NoCacheCopy").equals("true"))
+	{
+		if ( CopyCache != null ) return CopyCache.elements();
+	}
+
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+
+	param = new Parameter();
+	param.objName = "Copy";
+	param.fieldName = "PKCopy";
+	param.value = getData("FKCopy").getPreviousString();
+	searchReq.add(param);
+	if (!getSession().getProperty("NoCacheCopy").equals("true"))
+	{
+		CopyCache = new ObjectHashtable();
+		for (Enumeration e = (CopyBaseImpl.getObjects(searchReq ,getSession())); e.hasMoreElements();)
+		{
+			DataObject cacheBO = (DataObject)e.nextElement();
+			DataRow row = cacheBO.getRow();
+			Vector pkey = row.getPkeyParams();
+			CopyCache.put(pkey,cacheBO);								
+		}
+		return (CopyCache.elements());
+	}
+	else
+	{
+		return (CopyBaseImpl.getObjects(searchReq ,getSession()));
+	}
+}
+
+public void updateCacheForCopy(CopyBaseImpl child, boolean remove)
+{
+	if ( CopyCache == null ) return;
+	if ( child != null ) {
+		if ( remove ) {
+			if ( CopyCache.containsKey(child.getRow().getPkeyParams()) )
+				CopyCache.remove(child.getRow().getPkeyParams());
+		}
+		else {
+			// Add only if it is not in the cache.
+			if ( ! CopyCache.containsKey(child.getRow().getPkeyParams()) )
+				CopyCache.put(child.getRow().getPkeyParams(), child);
+		}
+	}
+}
 
 /**	
 * Invalidates the relationship cache. Called by the system on transaction begin.
 */
 public void invalidateNonTransactionCaches() 
 {
+ 
+  CopyCache = null;
 }
 
 	// Do the parent checks.

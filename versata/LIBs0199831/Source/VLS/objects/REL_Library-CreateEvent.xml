@@ -14,8 +14,8 @@
 				ChildAttribute="FKLibrary"
 			/>
 		</AttributePairs>
-		<AscendCaption><![CDATA[*]]></AscendCaption>
-		<DescendCaption><![CDATA[*]]></DescendCaption>
+		<AscendCaption><![CDATA[Library]]></AscendCaption>
+		<DescendCaption><![CDATA[CreateEvent(s)]]></DescendCaption>
 		<ErrPreventUpdateParent><![CDATA[<System Supplied>]]></ErrPreventUpdateParent>
 		<ErrPreventDeleteParent><![CDATA[<System Supplied>]]></ErrPreventDeleteParent>
 		<ErrPreventInsertOrUpdateChild><![CDATA[<System Supplied>]]></ErrPreventInsertOrUpdateChild>

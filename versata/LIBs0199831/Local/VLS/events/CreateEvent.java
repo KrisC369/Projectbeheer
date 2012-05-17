@@ -7,6 +7,14 @@
 
 
 
+
+
+
+
+
+
+
+
 	t.setDerivationType("TimeStamp", VSMetaColumn.derivationDefault);
 	String dpndsOn = "";
 	// add default listener for factory events 
@@ -532,6 +540,74 @@ public	LibraryImpl	getOldLibrary()
 
 	/**	  
 	* <br>
+	* method to get the City attribute for the CreateEvent
+	* @return String : the  value of the attribute City as String.
+	*/
+	public String	getCity() 
+	{
+	return getData("City").getString();
+	}
+
+	/**	  
+	* <br>
+	* method to set the City attribute for the CreateEvent
+	* @param String : value of the attribute City as String.
+	* @return nothing
+	*/
+	public void	setCity(String value)
+	{
+	// The code to do convertion from the primitive data
+	// to the one which can be stored goes here.
+	Data dataVal = getData("City");
+	dataVal.setString(value);
+	}
+
+	/**	  
+	* <br>
+	* method to get the old City attribute for the CreateEvent
+	* @return String : the  value of the old attribute City as String.
+	*/
+	public String	getOldCity()
+	{
+	return getData("City").getPreviousString();
+	}
+
+	/**	  
+	* <br>
+	* method to get the Name attribute for the CreateEvent
+	* @return String : the  value of the attribute Name as String.
+	*/
+	public String	getName() 
+	{
+	return getData("Name").getString();
+	}
+
+	/**	  
+	* <br>
+	* method to set the Name attribute for the CreateEvent
+	* @param String : value of the attribute Name as String.
+	* @return nothing
+	*/
+	public void	setName(String value)
+	{
+	// The code to do convertion from the primitive data
+	// to the one which can be stored goes here.
+	Data dataVal = getData("Name");
+	dataVal.setString(value);
+	}
+
+	/**	  
+	* <br>
+	* method to get the old Name attribute for the CreateEvent
+	* @return String : the  value of the old attribute Name as String.
+	*/
+	public String	getOldName()
+	{
+	return getData("Name").getPreviousString();
+	}
+
+	/**	  
+	* <br>
 	* method to get the FKLibrary attribute for the CreateEvent
 	* @return long : the  value of the attribute FKLibrary as long.
 	*/
@@ -562,6 +638,74 @@ public	LibraryImpl	getOldLibrary()
 	public long	getOldFKLibrary()
 	{
 	return getData("FKLibrary").getPreviouslong();
+	}
+
+	/**	  
+	* <br>
+	* method to get the PhoneNumber attribute for the CreateEvent
+	* @return long : the  value of the attribute PhoneNumber as long.
+	*/
+	public long	getPhoneNumber() 
+	{
+	return getData("PhoneNumber").getlong();
+	}
+
+	/**	  
+	* <br>
+	* method to set the PhoneNumber attribute for the CreateEvent
+	* @param long : value of the attribute PhoneNumber as long.
+	* @return nothing
+	*/
+	public void	setPhoneNumber(long value)
+	{
+	// The code to do convertion from the primitive data
+	// to the one which can be stored goes here.
+	Data dataVal = getData("PhoneNumber");
+	dataVal.setlong(value);
+	}
+
+	/**	  
+	* <br>
+	* method to get the old PhoneNumber attribute for the CreateEvent
+	* @return long : the  value of the old attribute PhoneNumber as long.
+	*/
+	public long	getOldPhoneNumber()
+	{
+	return getData("PhoneNumber").getPreviouslong();
+	}
+
+	/**	  
+	* <br>
+	* method to get the WebAddress attribute for the CreateEvent
+	* @return String : the  value of the attribute WebAddress as String.
+	*/
+	public String	getWebAddress() 
+	{
+	return getData("WebAddress").getString();
+	}
+
+	/**	  
+	* <br>
+	* method to set the WebAddress attribute for the CreateEvent
+	* @param String : value of the attribute WebAddress as String.
+	* @return nothing
+	*/
+	public void	setWebAddress(String value)
+	{
+	// The code to do convertion from the primitive data
+	// to the one which can be stored goes here.
+	Data dataVal = getData("WebAddress");
+	dataVal.setString(value);
+	}
+
+	/**	  
+	* <br>
+	* method to get the old WebAddress attribute for the CreateEvent
+	* @return String : the  value of the old attribute WebAddress as String.
+	*/
+	public String	getOldWebAddress()
+	{
+	return getData("WebAddress").getPreviousString();
 	}
 
 	/**	  

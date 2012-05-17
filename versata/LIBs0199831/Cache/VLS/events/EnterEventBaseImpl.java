@@ -106,6 +106,7 @@ public abstract class EnterEventBaseImpl extends  DataObject
 		t.addColumn( c );
 	
 		
+		t.addUniqueKeyColumn( "EnterEvent Unique Key", "PKEnterEvent" );
 		
 		// Register a foreign key from  to Member.
 		t.addForeignKeyColumn( "Foreign Key To Member", "FKMember" );

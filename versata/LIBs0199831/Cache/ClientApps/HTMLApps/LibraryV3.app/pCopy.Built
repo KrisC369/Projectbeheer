@@ -1,0 +1,20 @@
+[General]
+XMLDateTime=2012-05-17 01:52:41
+FrmCustomImpl=2012-05-16 23:34:03
+FrmBaseImpl=2012-05-17 01:52:36
+[Relationship]
+REL_Library-Copy=2012-05-05 21:04:56
+REL_Copy-Loan=2012-05-13 16:30:24
+REL_Copy-Reservation=2012-05-13 16:30:09
+REL_BorrowEvent-Copy=2012-05-17 01:25:04
+REL_Copy-AcquireEvent=2012-05-09 23:56:14
+REL_Copy-SellEvent=2012-05-09 23:59:58
+[BussinessCol]
+Copy=2012-05-13 16:49:21
+Library=2012-05-17 01:18:34
+Loan=2012-05-09 23:32:03
+Reservation=2012-05-09 23:32:39
+BorrowEvent=2012-05-17 01:25:04
+ReturnEvent=2012-05-14 00:52:01
+AcquireEvent=2012-05-13 15:16:55
+SellEvent=2012-05-13 16:32:20

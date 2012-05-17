@@ -100,7 +100,19 @@
 			/>
 		</Attribute>
 	</Attributes>
-	<Indexes></Indexes>
+	<Indexes>
+		<Index
+			Name="PKEY1"
+			Primary="True"
+			Unique="True"
+			IgnoreNulls="False"
+			>
+			<Index_Attribute
+				Name="FKCopy"
+				Descending="False"
+			/>
+		</Index>
+	</Indexes>
 	<SingularCaption><![CDATA[*]]></SingularCaption>
 	<PluralCaption><![CDATA[*]]></PluralCaption>
 	<VLSDeployment

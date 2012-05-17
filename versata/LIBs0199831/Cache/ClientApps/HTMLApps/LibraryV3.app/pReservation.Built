@@ -1,0 +1,17 @@
+[General]
+XMLDateTime=2012-05-17 01:52:41
+FrmCustomImpl=2012-05-16 23:39:56
+FrmBaseImpl=2012-05-17 01:52:37
+[Relationship]
+REL_Copy-Reservation=2012-05-13 16:30:09
+REL_Member-Reservation=2012-05-13 21:16:30
+REL_Reservation-ReserveEvent=2012-05-09 23:59:25
+REL_Reservation-CancelEvent=2012-05-09 23:56:54
+REL_Reservation-FetchEvent=2012-05-09 23:58:17
+[BussinessCol]
+Reservation=2012-05-09 23:32:39
+Copy=2012-05-13 16:49:21
+Member=2012-05-13 21:16:30
+ReserveEvent=2012-05-14 00:30:13
+CancelEvent=2012-05-14 00:54:16
+FetchEvent=2012-05-14 00:54:54

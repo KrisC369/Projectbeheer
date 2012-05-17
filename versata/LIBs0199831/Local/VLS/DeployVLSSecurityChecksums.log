@@ -3,12 +3,12 @@ Member	-852307301
 Loan	17935315
 Copy	-274560434
 Reservation	-1287447006
-Library	1032009369
-CreateEvent	1058035587
-EnterEvent	-1910975521
+Library	789801661
+CreateEvent	1471014594
+EnterEvent	1651779272
 AcquireEvent	1623235142
 ClassifyEvent	1265561773
-BorrowEvent	51662076
+BorrowEvent	-1612517476
 RenewEvent	-1990100555
 ReturnEvent	1279357970
 SellEvent	-1105182806

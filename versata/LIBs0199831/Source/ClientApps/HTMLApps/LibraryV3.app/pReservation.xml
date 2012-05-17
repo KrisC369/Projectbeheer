@@ -1,0 +1,886 @@
+<?xml version="1.0"?>
+<!DOCTYPE Form SYSTEM "Form.dtd">
+<Form
+	DTDVersion="05.06.00"
+	TargetLanguage="HTML"
+	Archetype="Default"
+	PositionTop="412"
+	PositionLeft="554"
+	PositionWidth="150"
+	PositionHeight="44"
+	IsAddedAfterGen="False"
+	HasCustomFormLayout="False"
+	ObjectsUnusedByFormLayout="False"
+	External="False"
+	NoDataForm="False"
+	ClassName="versata.pdx.html.VSPagePDX"
+	ObjectsRemovedFromLayout="False"
+	HTMLFileCheckSum="631182796"
+	>
+	<FormCaption><![CDATA[Reservation]]></FormCaption>
+	<ArchetypeExtendedProperties>
+		<Property
+			Name="Comments"
+			Value=""
+		/>
+		<Property
+			Name="CommentsTrailing"
+			Value=""
+		/>
+		<Property
+			Name="CrumbTrailEnabled"
+			Value="true"
+		/>
+		<Property
+			Name="CrumbTrailIncludesThisPage"
+			Value="true"
+		/>
+		<Property
+			Name="CrumbTrailRestartsHere"
+			Value="false"
+		/>
+		<Property
+			Name="CrumbTrailSeparator"
+			Value="&gt;"
+		/>
+		<Property
+			Name="ErrorStyle"
+			Value="Popup"
+		/>
+		<Property
+			Name="IncludeFooter"
+			Value="false"
+		/>
+		<Property
+			Name="IncludeHeader"
+			Value="false"
+		/>
+		<Property
+			Name="IncludeLeftBar"
+			Value="false"
+		/>
+		<Property
+			Name="IncludeRightBar"
+			Value="false"
+		/>
+		<Property
+			Name="ShowCancelButton"
+			Value="true"
+		/>
+		<Property
+			Name="ShowFormCaption"
+			Value="true"
+		/>
+		<Property
+			Name="ShowReturnButton"
+			Value="true"
+		/>
+		<Property
+			Name="TransitionsToHide"
+			Value=""
+		/>
+	</ArchetypeExtendedProperties>
+	<RecordSource
+		RSID="1"
+		Prefix="T1"
+		BusinessObject="Reservation"
+		RelnIsFromParent="False"
+		DoesSourceAffectMe="False"
+		DoIAffectSource="False"
+		IsAddedAfterGen="False"
+		RsAttributesDefault="True"
+		ClassName="versata.pdx.html.DataSourcePDX"
+		RecordSourceArchetype="Display"
+		MaxGridRowCount="10"
+		FetchedBlockRowCount="16"
+		AllowDelete="True"
+		AllowInsert="True"
+		AllowUpdate="True"
+		SaveMode="Immediate"
+		PreFetchRowCount="False"
+		>
+		<ParameterizedWhereClause><![CDATA[ ]]></ParameterizedWhereClause>
+		<AdditionalWhereClause><![CDATA[ ]]></AdditionalWhereClause>
+		<OrderByClause><![CDATA[ ]]></OrderByClause>
+		<RSAttributesMeta>
+			<DefaultAttributes>
+				<RSDefaultAttribute ID="1" Name="PKReservation" />
+				<RSDefaultAttribute ID="2" Name="FKMember" />
+				<RSDefaultAttribute ID="3" Name="FKCopy" />
+				<RSDefaultAttribute ID="4" Name="StartDate" />
+				<RSDefaultAttribute ID="5" Name="EndDate" />
+				<RSDefaultAttribute ID="6" Name="ReservationState" />
+			</DefaultAttributes>
+			<ScalerAttributes>
+				<RSAttribute Name="PKReservation" Displayed="True" UnPlaced="False" />
+				<RSAttribute Name="FKMember" Displayed="True" UnPlaced="False" />
+				<RSAttribute Name="FKCopy" Displayed="True" UnPlaced="False" />
+				<RSAttribute Name="StartDate" Displayed="True" UnPlaced="False" />
+				<RSAttribute Name="EndDate" Displayed="True" UnPlaced="False" />
+				<RSAttribute Name="ReservationState" Displayed="True" UnPlaced="False" />
+			</ScalerAttributes>
+		</RSAttributesMeta>
+		<ArchetypeExtendedProperties>
+			<Property
+				Name="Caption"
+				Value=""
+			/>
+			<Property
+				Name="Comments"
+				Value=""
+			/>
+			<Property
+				Name="CommentsTrailing"
+				Value="&lt;br&gt;"
+			/>
+			<Property
+				Name="Cond0HideRecSrc"
+				Value=""
+			/>
+			<Property
+				Name="Cond1"
+				Value=""
+			/>
+			<Property
+				Name="Cond1Actions"
+				Value=""
+			/>
+			<Property
+				Name="Cond1Fields"
+				Value=""
+			/>
+			<Property
+				Name="Cond1Transitions"
+				Value=""
+			/>
+			<Property
+				Name="Cond2"
+				Value=""
+			/>
+			<Property
+				Name="Cond2Actions"
+				Value=""
+			/>
+			<Property
+				Name="Cond2Fields"
+				Value=""
+			/>
+			<Property
+				Name="Cond2Transitions"
+				Value=""
+			/>
+			<Property
+				Name="Cond3"
+				Value=""
+			/>
+			<Property
+				Name="Cond3Actions"
+				Value=""
+			/>
+			<Property
+				Name="Cond3Fields"
+				Value=""
+			/>
+			<Property
+				Name="Cond3Transitions"
+				Value=""
+			/>
+			<Property
+				Name="Cond4"
+				Value=""
+			/>
+			<Property
+				Name="Cond4Actions"
+				Value=""
+			/>
+			<Property
+				Name="Cond4Fields"
+				Value=""
+			/>
+			<Property
+				Name="Cond4Transitions"
+				Value=""
+			/>
+			<Property
+				Name="Cond5"
+				Value=""
+			/>
+			<Property
+				Name="Cond5Actions"
+				Value=""
+			/>
+			<Property
+				Name="Cond5Fields"
+				Value=""
+			/>
+			<Property
+				Name="Cond5Transitions"
+				Value=""
+			/>
+			<Property
+				Name="ConfirmDeleteMsg"
+				Value="Delete record?"
+			/>
+			<Property
+				Name="FieldCaptionPosition"
+				Value="Left"
+			/>
+			<Property
+				Name="FieldMaxLength"
+				Value="50"
+			/>
+			<Property
+				Name="FieldsDisplayedTogether"
+				Value=""
+			/>
+			<Property
+				Name="MaxNumberOfRows"
+				Value="5"
+			/>
+			<Property
+				Name="RequiredCaptionPrefix"
+				Value=""
+			/>
+			<Property
+				Name="RequiredCaptionSuffix"
+				Value="*"
+			/>
+			<Property
+				Name="ShowRSActions"
+				Value="true"
+			/>
+			<Property
+				Name="StartNewColsFields"
+				Value=""
+			/>
+			<Property
+				Name="TabCaption"
+				Value=""
+			/>
+			<Property
+				Name="TabGenerated"
+				Value="true"
+			/>
+			<Property
+				Name="TabImageHeight"
+				Value=""
+			/>
+			<Property
+				Name="TabImageOff"
+				Value=""
+			/>
+			<Property
+				Name="TabImageOn"
+				Value=""
+			/>
+			<Property
+				Name="TabImageWidth"
+				Value=""
+			/>
+			<Property
+				Name="TabSheetsEnabled"
+				Value="true"
+			/>
+			<Property
+				Name="TabSheetsInitialRS"
+				Value=""
+			/>
+			<Property
+				Name="UsePopupPicks"
+				Value="true"
+			/>
+			<Property
+				Name="ZoomFromRS"
+				Value=""
+			/>
+		</ArchetypeExtendedProperties>
+		<PickObject
+			RSID="2"
+			Prefix="T2"
+			BusinessObject="Copy"
+			Relationship="Copy(Copy)-Reservation(Reservation)"
+			RelnIsFromParent="False"
+			DoesSourceAffectMe="True"
+			DoIAffectSource="False"
+			IsAddedAfterGen="False"
+			RsAttributesDefault="True"
+			ClassName="Pick"
+			OnScreenPick="False"
+			>
+			<FKeyParamsClause><![CDATA[ [PKCopy] = [?FKCopy]]]></FKeyParamsClause>
+			<AdditionalWhereClause><![CDATA[ ]]></AdditionalWhereClause>
+			<OrderByClause><![CDATA[ ]]></OrderByClause>
+			<RSAttributesMeta>
+				<DefaultAttributes>
+					<RSDefaultAttribute ID="1" Name="PKCopy" />
+					<RSDefaultAttribute ID="2" Name="FKLibrary" />
+					<RSDefaultAttribute ID="3" Name="numberOfLoans" />
+					<RSDefaultAttribute ID="4" Name="Title" />
+					<RSDefaultAttribute ID="5" Name="Author" />
+					<RSDefaultAttribute ID="6" Name="ISBN" />
+					<RSDefaultAttribute ID="7" Name="CopyState" />
+					<RSDefaultAttribute ID="8" Name="CurrentLoans" />
+					<RSDefaultAttribute ID="9" Name="CurrentReservations" />
+				</DefaultAttributes>
+				<GridAttributes>
+					<RSAttribute Name="PKCopy" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKLibrary" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="numberOfLoans" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="Title" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="Author" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="ISBN" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CopyState" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentLoans" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentReservations" Displayed="True" UnPlaced="False" />
+				</GridAttributes>
+			</RSAttributesMeta>
+		</PickObject>
+		<PickObject
+			RSID="3"
+			Prefix="T3"
+			BusinessObject="Member"
+			Relationship="Member(Member)-Reservation(Reservation)"
+			RelnIsFromParent="False"
+			DoesSourceAffectMe="True"
+			DoIAffectSource="False"
+			IsAddedAfterGen="False"
+			RsAttributesDefault="True"
+			ClassName="Pick"
+			OnScreenPick="False"
+			>
+			<FKeyParamsClause><![CDATA[ [PKMember] = [?FKMember]]]></FKeyParamsClause>
+			<AdditionalWhereClause><![CDATA[ ]]></AdditionalWhereClause>
+			<OrderByClause><![CDATA[ ]]></OrderByClause>
+			<RSAttributesMeta>
+				<DefaultAttributes>
+					<RSDefaultAttribute ID="1" Name="PKMember" />
+					<RSDefaultAttribute ID="2" Name="FKLibrary" />
+					<RSDefaultAttribute ID="3" Name="FirstName" />
+					<RSDefaultAttribute ID="4" Name="LastName" />
+					<RSDefaultAttribute ID="5" Name="Address" />
+					<RSDefaultAttribute ID="6" Name="City" />
+					<RSDefaultAttribute ID="7" Name="Country" />
+					<RSDefaultAttribute ID="8" Name="MobileNumber" />
+					<RSDefaultAttribute ID="9" Name="MemberState" />
+					<RSDefaultAttribute ID="10" Name="CurrentLoans" />
+					<RSDefaultAttribute ID="11" Name="CurrentReservations" />
+				</DefaultAttributes>
+				<GridAttributes>
+					<RSAttribute Name="PKMember" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKLibrary" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FirstName" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="LastName" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="Address" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="City" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="Country" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="MobileNumber" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="MemberState" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentLoans" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentReservations" Displayed="True" UnPlaced="False" />
+				</GridAttributes>
+			</RSAttributesMeta>
+		</PickObject>
+		<RecordSource
+			RSID="4"
+			Prefix="T4"
+			BusinessObject="ReserveEvent"
+			Relationship="Reservation(Reservation)-ReserveEvent(ReserveEvent)"
+			RelnIsFromParent="True"
+			DoesSourceAffectMe="False"
+			DoIAffectSource="False"
+			IsAddedAfterGen="False"
+			RsAttributesDefault="True"
+			ClassName="versata.pdx.html.DataSourcePDX"
+			RecordSourceArchetype="Grid"
+			MaxGridRowCount="10"
+			FetchedBlockRowCount="16"
+			AllowDelete="False"
+			AllowInsert="False"
+			AllowUpdate="False"
+			SaveMode="Buffered"
+			PreFetchRowCount="False"
+			ParentAlias=""
+			ChildAlias=""
+			>
+			<ParameterizedWhereClause><![CDATA[ [FKReservation] = [?PKReservation]]]></ParameterizedWhereClause>
+			<AdditionalWhereClause><![CDATA[ ]]></AdditionalWhereClause>
+			<OrderByClause><![CDATA[ ]]></OrderByClause>
+			<RSAttributesMeta>
+				<DefaultAttributes>
+					<RSDefaultAttribute ID="1" Name="PKReserveEvent" />
+					<RSDefaultAttribute ID="2" Name="FKReservation" />
+					<RSDefaultAttribute ID="3" Name="FKCopy" />
+					<RSDefaultAttribute ID="4" Name="FKMember" />
+				</DefaultAttributes>
+				<GridAttributes>
+					<RSAttribute Name="PKReserveEvent" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKReservation" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKCopy" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKMember" Displayed="True" UnPlaced="False" />
+				</GridAttributes>
+			</RSAttributesMeta>
+			<ArchetypeExtendedProperties>
+				<Property
+					Name="AltRowColor"
+					Value="#EFEFEF"
+				/>
+				<Property
+					Name="Caption"
+					Value=""
+				/>
+				<Property
+					Name="Comments"
+					Value=""
+				/>
+				<Property
+					Name="CommentsTrailing"
+					Value="&lt;br&gt;"
+				/>
+				<Property
+					Name="Cond0HideRecSrc"
+					Value=""
+				/>
+				<Property
+					Name="Cond1"
+					Value=""
+				/>
+				<Property
+					Name="Cond1Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond2"
+					Value=""
+				/>
+				<Property
+					Name="Cond2Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond3"
+					Value=""
+				/>
+				<Property
+					Name="Cond3Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond4"
+					Value=""
+				/>
+				<Property
+					Name="Cond4Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond5"
+					Value=""
+				/>
+				<Property
+					Name="Cond5Actions"
+					Value=""
+				/>
+				<Property
+					Name="ConfirmDeleteMsg"
+					Value="Delete record?"
+				/>
+				<Property
+					Name="NoDataMessage"
+					Value="&lt;br&gt;&lt;center&gt;&lt;b&gt;No records found!&lt;/b&gt;&lt;/center&gt;&lt;br&gt;"
+				/>
+				<Property
+					Name="ShowHeader"
+					Value="true"
+				/>
+				<Property
+					Name="ShowRowCount"
+					Value="true"
+				/>
+				<Property
+					Name="ShowRowSelector"
+					Value="true"
+				/>
+				<Property
+					Name="SortableHeader"
+					Value="true"
+				/>
+				<Property
+					Name="TabCaption"
+					Value=""
+				/>
+				<Property
+					Name="TabGenerated"
+					Value="true"
+				/>
+				<Property
+					Name="TabImageHeight"
+					Value=""
+				/>
+				<Property
+					Name="TabImageOff"
+					Value=""
+				/>
+				<Property
+					Name="TabImageOn"
+					Value=""
+				/>
+				<Property
+					Name="TabImageWidth"
+					Value=""
+				/>
+				<Property
+					Name="UsePopupPicks"
+					Value="true"
+				/>
+			</ArchetypeExtendedProperties>
+			<Transition
+				FormTransNum="1"
+				Prefix="T5"
+				TargetFormName="pReserveEvent"
+				IsTargetInitialQueryMode="False"
+				IsTargetInitialAddMode="False"
+				IsVisibleAppline="True"
+				IsAddedAfterGen="False"
+				ClassName="PageNavigation"
+				TargetFramesetPage=""
+				TargetFrame=""
+				FrameNameInFramesetPage=""
+				>
+			</Transition>
+		</RecordSource>
+		<RecordSource
+			RSID="5"
+			Prefix="T6"
+			BusinessObject="CancelEvent"
+			Relationship="Reservation(Reservation)-CancelEvent(CancelEvent)"
+			RelnIsFromParent="True"
+			DoesSourceAffectMe="False"
+			DoIAffectSource="False"
+			IsAddedAfterGen="False"
+			RsAttributesDefault="True"
+			ClassName="versata.pdx.html.DataSourcePDX"
+			RecordSourceArchetype="Grid"
+			MaxGridRowCount="10"
+			FetchedBlockRowCount="16"
+			AllowDelete="False"
+			AllowInsert="False"
+			AllowUpdate="False"
+			SaveMode="Buffered"
+			PreFetchRowCount="False"
+			ParentAlias=""
+			ChildAlias=""
+			>
+			<ParameterizedWhereClause><![CDATA[ [FKReservation] = [?PKReservation]]]></ParameterizedWhereClause>
+			<AdditionalWhereClause><![CDATA[ ]]></AdditionalWhereClause>
+			<OrderByClause><![CDATA[ ]]></OrderByClause>
+			<RSAttributesMeta>
+				<DefaultAttributes>
+					<RSDefaultAttribute ID="1" Name="PKReserveEvent" />
+					<RSDefaultAttribute ID="2" Name="FKReservation" />
+					<RSDefaultAttribute ID="3" Name="TimeStamp" />
+				</DefaultAttributes>
+				<GridAttributes>
+					<RSAttribute Name="PKReserveEvent" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKReservation" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="TimeStamp" Displayed="True" UnPlaced="False" />
+				</GridAttributes>
+			</RSAttributesMeta>
+			<ArchetypeExtendedProperties>
+				<Property
+					Name="AltRowColor"
+					Value="#EFEFEF"
+				/>
+				<Property
+					Name="Caption"
+					Value=""
+				/>
+				<Property
+					Name="Comments"
+					Value=""
+				/>
+				<Property
+					Name="CommentsTrailing"
+					Value="&lt;br&gt;"
+				/>
+				<Property
+					Name="Cond0HideRecSrc"
+					Value=""
+				/>
+				<Property
+					Name="Cond1"
+					Value=""
+				/>
+				<Property
+					Name="Cond1Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond2"
+					Value=""
+				/>
+				<Property
+					Name="Cond2Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond3"
+					Value=""
+				/>
+				<Property
+					Name="Cond3Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond4"
+					Value=""
+				/>
+				<Property
+					Name="Cond4Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond5"
+					Value=""
+				/>
+				<Property
+					Name="Cond5Actions"
+					Value=""
+				/>
+				<Property
+					Name="ConfirmDeleteMsg"
+					Value="Delete record?"
+				/>
+				<Property
+					Name="NoDataMessage"
+					Value="&lt;br&gt;&lt;center&gt;&lt;b&gt;No records found!&lt;/b&gt;&lt;/center&gt;&lt;br&gt;"
+				/>
+				<Property
+					Name="ShowHeader"
+					Value="true"
+				/>
+				<Property
+					Name="ShowRowCount"
+					Value="true"
+				/>
+				<Property
+					Name="ShowRowSelector"
+					Value="true"
+				/>
+				<Property
+					Name="SortableHeader"
+					Value="true"
+				/>
+				<Property
+					Name="TabCaption"
+					Value=""
+				/>
+				<Property
+					Name="TabGenerated"
+					Value="true"
+				/>
+				<Property
+					Name="TabImageHeight"
+					Value=""
+				/>
+				<Property
+					Name="TabImageOff"
+					Value=""
+				/>
+				<Property
+					Name="TabImageOn"
+					Value=""
+				/>
+				<Property
+					Name="TabImageWidth"
+					Value=""
+				/>
+				<Property
+					Name="UsePopupPicks"
+					Value="true"
+				/>
+			</ArchetypeExtendedProperties>
+			<Transition
+				FormTransNum="1"
+				Prefix="T7"
+				TargetFormName="pCancelEvent"
+				IsTargetInitialQueryMode="False"
+				IsTargetInitialAddMode="False"
+				IsVisibleAppline="True"
+				IsAddedAfterGen="False"
+				ClassName="PageNavigation"
+				TargetFramesetPage=""
+				TargetFrame=""
+				FrameNameInFramesetPage=""
+				>
+			</Transition>
+		</RecordSource>
+		<RecordSource
+			RSID="6"
+			Prefix="T8"
+			BusinessObject="FetchEvent"
+			Relationship="Reservation(Reservation)-FetchEvent(FetchEvent)"
+			RelnIsFromParent="True"
+			DoesSourceAffectMe="False"
+			DoIAffectSource="False"
+			IsAddedAfterGen="False"
+			RsAttributesDefault="True"
+			ClassName="versata.pdx.html.DataSourcePDX"
+			RecordSourceArchetype="Grid"
+			MaxGridRowCount="10"
+			FetchedBlockRowCount="16"
+			AllowDelete="False"
+			AllowInsert="False"
+			AllowUpdate="False"
+			SaveMode="Buffered"
+			PreFetchRowCount="False"
+			ParentAlias=""
+			ChildAlias=""
+			>
+			<ParameterizedWhereClause><![CDATA[ [FKReservation] = [?PKReservation]]]></ParameterizedWhereClause>
+			<AdditionalWhereClause><![CDATA[ ]]></AdditionalWhereClause>
+			<OrderByClause><![CDATA[ ]]></OrderByClause>
+			<RSAttributesMeta>
+				<DefaultAttributes>
+					<RSDefaultAttribute ID="1" Name="PKFetchEvent" />
+					<RSDefaultAttribute ID="2" Name="FKReservation" />
+					<RSDefaultAttribute ID="3" Name="FKLoan" />
+					<RSDefaultAttribute ID="4" Name="TimeStamp" />
+				</DefaultAttributes>
+				<GridAttributes>
+					<RSAttribute Name="PKFetchEvent" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKReservation" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKLoan" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="TimeStamp" Displayed="True" UnPlaced="False" />
+				</GridAttributes>
+			</RSAttributesMeta>
+			<ArchetypeExtendedProperties>
+				<Property
+					Name="AltRowColor"
+					Value="#EFEFEF"
+				/>
+				<Property
+					Name="Caption"
+					Value=""
+				/>
+				<Property
+					Name="Comments"
+					Value=""
+				/>
+				<Property
+					Name="CommentsTrailing"
+					Value="&lt;br&gt;"
+				/>
+				<Property
+					Name="Cond0HideRecSrc"
+					Value=""
+				/>
+				<Property
+					Name="Cond1"
+					Value=""
+				/>
+				<Property
+					Name="Cond1Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond2"
+					Value=""
+				/>
+				<Property
+					Name="Cond2Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond3"
+					Value=""
+				/>
+				<Property
+					Name="Cond3Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond4"
+					Value=""
+				/>
+				<Property
+					Name="Cond4Actions"
+					Value=""
+				/>
+				<Property
+					Name="Cond5"
+					Value=""
+				/>
+				<Property
+					Name="Cond5Actions"
+					Value=""
+				/>
+				<Property
+					Name="ConfirmDeleteMsg"
+					Value="Delete record?"
+				/>
+				<Property
+					Name="NoDataMessage"
+					Value="&lt;br&gt;&lt;center&gt;&lt;b&gt;No records found!&lt;/b&gt;&lt;/center&gt;&lt;br&gt;"
+				/>
+				<Property
+					Name="ShowHeader"
+					Value="true"
+				/>
+				<Property
+					Name="ShowRowCount"
+					Value="true"
+				/>
+				<Property
+					Name="ShowRowSelector"
+					Value="true"
+				/>
+				<Property
+					Name="SortableHeader"
+					Value="true"
+				/>
+				<Property
+					Name="TabCaption"
+					Value=""
+				/>
+				<Property
+					Name="TabGenerated"
+					Value="true"
+				/>
+				<Property
+					Name="TabImageHeight"
+					Value=""
+				/>
+				<Property
+					Name="TabImageOff"
+					Value=""
+				/>
+				<Property
+					Name="TabImageOn"
+					Value=""
+				/>
+				<Property
+					Name="TabImageWidth"
+					Value=""
+				/>
+				<Property
+					Name="UsePopupPicks"
+					Value="true"
+				/>
+			</ArchetypeExtendedProperties>
+			<Transition
+				FormTransNum="1"
+				Prefix="T9"
+				TargetFormName="pFetchEvent"
+				IsTargetInitialQueryMode="False"
+				IsTargetInitialAddMode="False"
+				IsVisibleAppline="True"
+				IsAddedAfterGen="False"
+				ClassName="PageNavigation"
+				TargetFramesetPage=""
+				TargetFrame=""
+				FrameNameInFramesetPage=""
+				>
+			</Transition>
+		</RecordSource>
+	</RecordSource>
+</Form>

@@ -13,16 +13,6 @@ FOREIGN KEY ("FKMember") REFERENCES
 "Member" ("PKMember")
 go
 
-ALTER TABLE "BorrowEvent" ADD CONSTRAINT "JV__0001BorrowEvent"
-FOREIGN KEY ("FKLoan") REFERENCES 
-"Loan" ("PKLoan")
-go
-
-ALTER TABLE "BorrowEvent" ADD CONSTRAINT "JV__0002BorrowEvent"
-FOREIGN KEY ("FKMember") REFERENCES 
-"Member" ("PKMember")
-go
-
 ALTER TABLE "ReturnEvent" ADD CONSTRAINT "JV__0001ReturnEvent"
 FOREIGN KEY ("FKLoan") REFERENCES 
 "Loan" ("PKLoan")
@@ -46,16 +36,6 @@ go
 ALTER TABLE "RenewEvent" ADD CONSTRAINT "JV__0001RenewEvent"
 FOREIGN KEY ("FKLoan") REFERENCES 
 "Loan" ("PKLoan")
-go
-
-ALTER TABLE "Loan" ADD CONSTRAINT "JV__0001Loan"
-FOREIGN KEY ("FKMember") REFERENCES 
-"Member" ("PKMember")
-go
-
-ALTER TABLE "Loan" ADD CONSTRAINT "JV__0002Loan"
-FOREIGN KEY ("FKCopy") REFERENCES 
-"Copy" ("PKCopy")
 go
 
 ALTER TABLE "AcquireEvent" ADD CONSTRAINT "JV__0001AcquireEvent"
@@ -98,9 +78,34 @@ FOREIGN KEY ("FKCopy") REFERENCES
 "Copy" ("PKCopy")
 go
 
+ALTER TABLE "Loan" ADD CONSTRAINT "JV__0001Loan"
+FOREIGN KEY ("FKMember") REFERENCES 
+"Member" ("PKMember")
+go
+
+ALTER TABLE "Loan" ADD CONSTRAINT "JV__0002Loan"
+FOREIGN KEY ("FKCopy") REFERENCES 
+"Copy" ("PKCopy")
+go
+
 ALTER TABLE "Copy" ADD CONSTRAINT "JV__0001Copy"
 FOREIGN KEY ("FKLibrary") REFERENCES 
 "Library" ("PKLibrary")
+go
+
+ALTER TABLE "Copy" ADD CONSTRAINT "JV__0002Copy"
+FOREIGN KEY ("PKCopy") REFERENCES 
+"BorrowEvent" ("FKCopy")
+go
+
+ALTER TABLE "BorrowEvent" ADD CONSTRAINT "JV__0001BorrowEvent"
+FOREIGN KEY ("FKLoan") REFERENCES 
+"Loan" ("PKLoan")
+go
+
+ALTER TABLE "BorrowEvent" ADD CONSTRAINT "JV__0002BorrowEvent"
+FOREIGN KEY ("FKMember") REFERENCES 
+"Member" ("PKMember")
 go
 
 ALTER TABLE "Member" ADD CONSTRAINT "JV__0001Member"

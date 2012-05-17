@@ -171,3 +171,16 @@ Versata Error Message
 Stack ->>>
 ******************** End of Stack Dump ********************
 
+*********** Stack Dump at 5/17/2012 12:53:28 AM *******************
+Error Text: There is no layout available for this page.Multiple transitions from the Startup Page are requiredbefore this page has a layout.
+Versata Error Message
+Stack ->>>
+loadUserExtProperties busRules
+******************** End of Stack Dump ********************
+
+*********** Stack Dump at 5/17/2012 1:22:16 AM *******************
+Error Text: 3754: You cannot delete the root RecordSource.
+Versata Error Message
+Stack ->>>
+******************** End of Stack Dump ********************
+

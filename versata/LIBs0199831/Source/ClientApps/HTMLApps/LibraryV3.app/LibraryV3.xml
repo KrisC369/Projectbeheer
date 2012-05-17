@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE Application SYSTEM "Application.dtd">
+<Application
+	SurrId="0721350391.Administrator.0031"
+	TargetLanguage="HTML"
+	DefaultLogonUserId="sa"
+	ExecutionEnvironment="Browser"
+	AppletHeight="575"
+	AppletWidth="725"
+	ClassId="1FD1BC87-0F73-4E2D-BE80-6892131CD356"
+	SuppressDefaultLoginScreen="False"
+	InitialFramesetPage="FramesetPage"
+	StartupPageFrameName="Startup"
+	InitialFrameNameForStartupTrans="Display"
+	AppRepositoryVersion="05.06.01"
+	DeploySecurityInfo="False"
+	DTDVersion="05.06.00"
+	>
+	<ServerLocation><![CDATA[<localVLSServer>]]></ServerLocation>
+	<ApplicationArchetypesFolder><![CDATA[PDXSystemHTMLArchetypes]]></ApplicationArchetypesFolder>
+	<!-- APPLICATION FORMS -->
+	<Forms>
+		<Form>StartupPage</Form>
+		<Form>pLibrary</Form>
+		<Form>pMember</Form>
+		<Form>pCopy</Form>
+		<Form>pLoan</Form>
+		<Form>pReservation</Form>
+		<Form>FramesetPage</Form>
+		<Form>pCreateEvent</Form>
+		<Form>pDestroyEvent</Form>
+		<Form>pBorrowEvent</Form>
+		<Form>pReturnEvent</Form>
+		<Form>pLoseEvent</Form>
+		<Form>pEnterEvent</Form>
+		<Form>pLeaveEvent</Form>
+		<Form>pAcquireEvent</Form>
+		<Form>pSellEvent</Form>
+		<Form>pReserveEvent</Form>
+		<Form>pCancelEvent</Form>
+		<Form>pFetchEvent</Form>
+	</Forms>
+	<SourceFiles>
+	</SourceFiles>
+</Application>

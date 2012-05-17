@@ -17,6 +17,7 @@
 
 
 
+	t.setDerivationType("LibraryState", VSMetaColumn.derivationDefault);
 	t.setDerivationType("amountOfCopies", VSMetaColumn.derivationCount);
 	t.setDerivationType("amountOfMembers", VSMetaColumn.derivationCount);
 	String dpndsOn = "";
@@ -279,6 +280,9 @@ protected void insert() throws ServerException
 	// Set the default values for the aggregates
 	setamountOfCopies((int)0);
 	setamountOfMembers((int)0);
+	// Generate Columns Default code here.
+	if ( isNull("LibraryState") ) 
+		setLibraryState((int)(1));
 	
 	XDAConnector xdac = getXDAConnector();
 	// For the counter field set and get the counter value
@@ -303,6 +307,12 @@ protected void insert() throws ServerException
 	// Do TableConstraintChecks
 
 	// Now verify that not nullable columns are not null.
+	if ( isNull("LibraryState") )
+	{
+		// Raise the exception here.
+		raiseException("Attribute 'Library.LibraryState' does not allow Null Values. Error Column: <Library>.<LibraryState>");
+
+	}
 
 
 	// At this point all the computations for the object attributes have been made,
@@ -335,10 +345,6 @@ protected void update() throws ServerException
 	if (response.rejected()) return;
 
 	// Column Non Alterability check
-	if ( getGlobalNestLevel() == 1 && isAltered("LibraryState") && !isUpdatedAfterInsert() )
-	{		
-		raiseException("Attribute 'LibraryState' in Object Library is not Alterable. Error Column: <Library>.<LibraryState>");
-	}
 	if ( getGlobalNestLevel() == 1 && isAltered("amountOfCopies") && !isUpdatedAfterInsert() )
 	{		
 		raiseException("Attribute 'amountOfCopies' in Object Library is not Alterable. Error Column: <Library>.<amountOfCopies>");
@@ -362,6 +368,12 @@ protected void update() throws ServerException
 	this.columnValidationCheck();
 
 	// verify that not nullable columns are not null.
+	if ( isNull("LibraryState") )
+	{
+		// Raise the exception here.
+		raiseException("Attribute 'Library.LibraryState' does not allow Null Values. Error Column: <Library>.<LibraryState>");
+
+	}
 
 
 

@@ -126,7 +126,7 @@
 		</Attribute>
 		<Attribute
 			Name="LibraryState"
-			PreventUserUpdates="True"
+			PreventUserUpdates="False"
 			ValueRequired="True"
 			LayoutByDefault="True"
 			Persistent="True"
@@ -135,8 +135,10 @@
 				DataType="Integer"
 			/>
 			<Derivation
-				DerivationType="None"
-			/>
+				DerivationType="Default"
+				>
+				<DefaultValue><![CDATA[1]]></DefaultValue>
+			</Derivation>
 			<Validation
 				ValidationType="Condition"
 			/>

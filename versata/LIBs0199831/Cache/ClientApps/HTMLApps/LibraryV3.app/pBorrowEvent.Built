@@ -1,0 +1,11 @@
+[General]
+XMLDateTime=2012-05-17 01:52:41
+FrmCustomImpl=2012-05-17 01:52:38
+FrmBaseImpl=2012-05-17 01:52:38
+[Relationship]
+REL_Loan-BorrowEvent=2012-05-09 23:56:38
+REL_Member-BorrowEvent=2012-05-13 15:46:08
+[BussinessCol]
+BorrowEvent=2012-05-17 01:25:04
+Loan=2012-05-09 23:32:03
+Member=2012-05-13 21:16:30

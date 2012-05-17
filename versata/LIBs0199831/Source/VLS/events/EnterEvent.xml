@@ -173,7 +173,19 @@
 			/>
 		</Attribute>
 	</Attributes>
-	<Indexes></Indexes>
+	<Indexes>
+		<Index
+			Name="PKKEY1"
+			Primary="True"
+			Unique="True"
+			IgnoreNulls="False"
+			>
+			<Index_Attribute
+				Name="PKEnterEvent"
+				Descending="False"
+			/>
+		</Index>
+	</Indexes>
 	<SingularCaption><![CDATA[*]]></SingularCaption>
 	<PluralCaption><![CDATA[*]]></PluralCaption>
 	<VLSDeployment

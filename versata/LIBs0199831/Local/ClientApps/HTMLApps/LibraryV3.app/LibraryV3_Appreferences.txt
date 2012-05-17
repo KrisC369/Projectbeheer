@@ -1,0 +1,10 @@
+Classpath:C:\projects\LIBs0199831\Lib\ClientApps\HTMLApps\LibraryV3.app, FileSpecification:*.class;*.gif
+Classpath:C:\VERSAT~1\VLS-5~1.6-J\client\lib, FileSpecification:*.class;*.gif
+PackageSource:C:\VERSAT~1\VLS-5~1.6-J\client\lib\vs-tle-client.jar
+PackageSource:C:\VERSAT~1\VLS-5~1.6-J\client\lib\vs-tle-beans-client.jar
+PackageSource:C:\VERSAT~1\VLS-5~1.6-J\vls\lib\vs-common-logging.jar
+PackageSource:C:\VERSAT~1\VLS-5~1.6-J\vls\lib\aspectjrt.jar
+PackageSource:C:\VERSAT~1\VLS-5~1.6-J\Client\lib\vs-tle-client.cab
+ClassID:1FD1BC87-0F73-4E2D-BE80-6892131CD356
+CabVersionPreferred:"1,0,0,0"
+

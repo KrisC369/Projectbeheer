@@ -301,6 +301,7 @@ protected void insert() throws ServerException
 
 	// Do the parent checks.
 	this.parentCheckFor_Library();
+	this.parentCheckFor_BorrowEvent();
 
 
 	// Do Column Validation Checks
@@ -376,6 +377,7 @@ protected void update() throws ServerException
 
 	// Do the parent checks.
 	this.parentCheckFor_Library();
+	this.parentCheckFor_BorrowEvent();
 
 	// Set the formulae values at this point
 	this.setFormulaValues();
@@ -436,6 +438,7 @@ protected void delete() throws ServerException
 	// Remove myself from the parent cache.
 	// Do the parent checks.
 	removeMeFromLibraryCache();
+	removeMeFromBorrowEventCache();
 
 	// Do Column Validation Checks
 	this.columnValidationCheck();
@@ -517,6 +520,45 @@ public void columnValidationCheck()
 		if ( parent == null )
 		{
 			raiseException("Library not found for Copy. Error Column: <Copy>.<FKLibrary>");
+		}
+		else
+		{
+			// Add myself to the new parent cache.
+			parent.updateCacheForCopy(this, false);
+		}
+		
+	}
+		
+	
+	}
+	finally { if (  tr != null ) tr.end( tr_id ); }
+	}
+	protected void parentCheckFor_BorrowEvent()
+	{
+	IVSTrace tr = null;  long tr_id = 0;
+	if ( VSTrace.IS_ON ) {
+		tr = VSTrace.get(); 
+		tr_id = tr.beg(logger);
+		tr.set(VST_CATEGORY,VST_RULE).set(VST_ACTION_NAME,"parentCheckFor_BorrowEvent").set(VST_OBJECT_NAME,"Copy");
+	}
+	
+	try {
+	
+	BorrowEventImpl	parent = null;
+	boolean		ParentKeyChanged = false;
+	boolean		OrphanChildParenting;
+	if (( isInserted() || isUpdated() ) && ( 
+	(isChanged("PKCopy"))
+ ) &&
+	((!isNull("PKCopy")) ))
+	{
+		// This would cause the row to be dropped from the old parent if it exist.
+		removeMeFromBorrowEventCache();
+		parent = this.getBorrowEvent();
+			
+		if ( parent == null )
+		{
+			raiseException("BorrowEvent not found for Copy. Error Column: <Copy>.<PKCopy>");
 		}
 		else
 		{
@@ -985,6 +1027,7 @@ protected void parentAdjustmentFor_LibraryamountOfCopies( DataObjectWrapper oldP
 }
 
 
+	
 	
 
 	
@@ -1760,6 +1803,21 @@ public void removeMeFromLibraryCache()
 		parent.updateCacheForCopy(this, true);
 	}
 }
+public void removeMeFromBorrowEventCache()
+{
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "BorrowEvent";
+	param.fieldName = "FKCopy";
+	param.value = getData("PKCopy").getPreviousString();
+	searchReq.add(param);
+	if (getSession().getTransactionInfo().isInCache(BorrowEventImpl.getMetaQuery(), searchReq))
+	{
+		BorrowEventBaseImpl	parent = this.getOldBorrowEvent();
+		parent.updateCacheForCopy(this, true);
+	}
+}
 
 /**	  
 * <br>
@@ -1791,6 +1849,36 @@ public	void	setLibrary(LibraryImpl parentObj)
 	this.setFKLibrary(parentObj.getPKLibrary());
 }
 
+/**	  
+* <br>
+* method to get the BorrowEvent object for this Copy
+* this method currently does not support additional conditional params.
+* @return Object : the  parent object BorrowEvent for this Copy.
+*/
+public	BorrowEventImpl	getBorrowEvent()
+{
+	BorrowEventImpl parent = null;
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "BorrowEvent";
+	param.fieldName = "FKCopy";
+	param.value = getData("PKCopy").getString();
+	searchReq.add(param);
+	parent = (BorrowEventImpl)(BorrowEventBaseImpl.getObjectByKey(searchReq ,getSession()));
+	return parent;
+}
+
+/**	  
+* <br>
+* method to set the BorrowEvent object for this Copy.
+* @param Object : the  parent object BorrowEvent for this Copy.
+*/
+public	void	setBorrowEvent(BorrowEventImpl parentObj)
+{
+	this.setPKCopy(parentObj.getFKCopy());
+}
+
 
 /**	  
 * <br>
@@ -1809,6 +1897,25 @@ public	LibraryImpl	getOldLibrary()
 	param.value = getData("FKLibrary").getPreviousString();
 	searchReq.add(param);
 	parent = (LibraryImpl)(LibraryBaseImpl.getObjectByKey(searchReq ,getSession()));
+	return parent;
+}
+/**	  
+* <br>
+* method to get the old BorrowEvent object for this Copy
+* this method currently does not support additional conditional params.
+* @return Object : the  old parent object BorrowEvent for this Copy.
+*/
+public	BorrowEventImpl	getOldBorrowEvent()
+{
+	BorrowEventImpl parent = null;
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "BorrowEvent";
+	param.fieldName = "FKCopy";
+	param.value = getData("PKCopy").getPreviousString();
+	searchReq.add(param);
+	parent = (BorrowEventImpl)(BorrowEventBaseImpl.getObjectByKey(searchReq ,getSession()));
 	return parent;
 }
 

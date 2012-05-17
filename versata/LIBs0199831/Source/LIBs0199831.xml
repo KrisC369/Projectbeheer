@@ -51,10 +51,12 @@
 		<Relationship>objects\REL_Member-ReserveEvent</Relationship>
 		<Relationship>objects\REL_Copy-ClassifyEvent</Relationship>
 		<Relationship>objects\REL_Loan-RenewEvent</Relationship>
+		<Relationship>events\REL_BorrowEvent-Copy</Relationship>
 	</Relationships>
 	<HTMLApplications>
 		<Application>LibraryV1</Application>
 		<Application>LibraryV2</Application>
+		<Application>LibraryV3</Application>
 	</HTMLApplications>
 	<Groups>
 		<Group
