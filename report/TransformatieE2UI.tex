@@ -1,4 +1,25 @@
 \section{Transformatie van EDG naar een UI}
 \label{sec:E2UI}
-\subsection{}
-\subsection{}
+Het mechanisch transformeren van merode documentatie naar een gebruikersinterface is iets moeilijker gebleken als het transformeren
+van de services zelf. Merode zelf, bespreekt voornamelijk services, los van de gebruikersinterface.
+Om echter toch een poging te wagen is er gekozen om te vertrekken van de Existence Dependency Graph. 
+Deze graph geeft een rudimentair beeld van de flow die ingewerkt kan worden in een gebruikersinterface. 
+Om een mechanische transformatie te bespreken nemen we hier expliciet het versata framework, waar in voorgaande secties het bespreken van een algemene transformatie nog mogelijk was.
+
+Om te beginnen moet er altijd een startpagina voorzien worden voor de html applicatie die de gebruikersinterface zal voorstellen.
+Naast deze startpagina moet er ook een FramesetPage voorzien worden voor opmaak doeleinden.
+De startpagina zal entries hebben voor elk root object dat voorkomt in de geleverde merode documentatie (en meer specifiek, de EDG's).
+Voor het huidige voorbeeld is dit enkel van toepassing op het library object.
+
+Verder moet er voor elk business object in de versata repository een pagina aangemaakt worden waarop de informatie velden getoond worden.
+Naast deze informatie velden moeten er ook verwijzingen naar child objecten getoond worden op deze pagina. 
+In de EDG's worden deze relaties getoond als existence dependency relaties. Op basis van deze relaties is het dus mogelijk om 
+de master-detail pagina's in versata studio op te stellen. Voor elke ED moet er dus zo een verwijzing geplaatst worden.
+
+Deze manier van werken kan men ook doortrekken tot de event objecten. Zo kan men voor elk event object zo een informatie pagina opmaken en de pagina van het parent object invullen met verwijzingen naar deze event pagina's. 
+Men kan deze events ook een andere opmaak geven, indien gewenst, om de gebruikersinterface wat interactiever en visueel meer stimulerend te maken.
+
+Bij deze voorstelling zijn er wel nog enkel problemen die opgelost dienen te worden voordat een volledige mechanische transformatie van merode naar een applicatie (inclusief gebruikersinterface) mogelijk is. 
+Wanneer men de events afhankelijk maakt van hun parent objecten, moet er rekening gehouden worden met het feit dat voor creatie events er nog geen parent object bestaat om een detail view voor te openen. 
+Het is op die manier dus niet onmiddellijk mogelijk om een creatie event aan te maken zonder eerst ook een passend parent object aan te maken, ook al is de java code in de service implementatie hier wel voor aanwezig. 
+Dit probleem is in de huidige versie van de voorbeeld oplossing nog niet opgelost.

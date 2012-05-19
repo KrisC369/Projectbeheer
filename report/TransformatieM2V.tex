@@ -6,9 +6,13 @@ De omzetting van het EDG diagram naar een oplossing binnen versata wordt besprok
 
 \subsection{OET}
 \label{sec:OET}
+\subsubsection{Business objects}
 Bij het omzetten van de merode modellen naar een oplossing binnen het versata framework, vertrekken we van de object-event-table. Deze tabel zal gebruikt worden om de versata objecten te construeren.
 Voor elke kolom van de tabel wordt er een versata business object aangemaakt. 
-Deze objecten zullen als het ware de datacontainers zijn voor de domein elementen die ze voorstellen. Deze objecten worden ook voorzien van attributen die relevant kunnen zijn voor deze context. Deze attributen worden niet expliciet in de merode documentatie vermeld, maar kunnen zelf nog toegevoegd worden waar nodig.
+Deze objecten zullen als het ware de data containers zijn voor de domein elementen die ze voorstellen. Deze objecten worden ook voorzien van attributen die relevant kunnen zijn voor deze context. Deze attributen worden niet expliciet in de merode documentatie vermeld, maar kunnen zelf nog toegevoegd worden waar nodig.
+
+Voor een mechanische transformatie dient er echter wel nog een soort van referentie document voorzien te worden als input voor het omzettingsproces. 
+Dit referentiedocument zal voor elk business object de informatie velden bevatten die gegenereerd moeten worden.
 
 Verder worden de objecten die aangemaakt worden in versata studio ook nog voorzien van: 
 \begin{itemize}
@@ -17,11 +21,18 @@ Verder worden de objecten die aangemaakt worden in versata studio ook nog voorzi
 	\item Afleidende velden: Attributen die het aantal relaties tellen of een som maken. Deze objecten dienen te worden aangemaakt wanneer nodig in een voorheen besproken constraint.
 	\item ObjectState: Een teller die bijhoudt in welke toestand een object zich bevindt.
 \end{itemize}
-
+\subsubsection{Event objects}
 Voor elke rij in de OET (events) worden event object aangemaakt in versata studio. Deze objecten verschillen volgens versata niet per definitie van business objecten, maar worden in onze context wel op een andere manier gebruikt. Voor elke mogelijke event worden er dus event objecten aangemaakt. 
-Bij deze objecteventen kunnen immers constraints en acties worden gespecifieerd die de beperkingen en handelingen die gepaard gaan bij een event, voorstellen.
+Bij deze objectevents kunnen immers constraints en acties worden gespecifieerd die de beperkingen en handelingen die gepaard gaan bij een event, voorstellen.
 
 Een bepaald subtype van deze event objecten, namelijk de create events zorgen echter ook voor de aanmaak van hun parent-object (wanneer natuurlijk aan alle precondities is voldaan).
+Voor het voorzien van deze functionaliteit is het nodig dat de gegenereerde java code moet worden aangepast voor deze event objecten. Zo moet er een operatie \textit{beforeInsert()} voorzien worden. 
+Deze methode zal opgeroepen worden voordat de effectieve insert operatie gebeurt van het event object. In deze methode worden dan de logica voorzien om het parent object (waarvoor deze create event geldt) te cre\"eren, te instanti\"eren en te voorzien van de noodzakelijke informatie. 
+Dit laatste gebeurt door de setters in het parent object op te roepen met als parameter de waarde van het locale event object.
+Het is mogelijk om dit allemaal mechanisch te doen omdat de velden in het event object aangemaakt worden op basis van de velden van het parent object. 
+De getters and setters van deze velden komen dan echter ook overeen omdat ze door het volgen van hetzelfde process gegenereerd worden.
+ 
+
 Verder hebben deze event objecten de volgende eigenschappen(/velden).
 \begin{itemize}
 	\item Primary key: Unieke primaire sleutel voor elk event object.
@@ -32,7 +43,29 @@ Verder hebben deze event objecten de volgende eigenschappen(/velden).
 Het is mogelijk om nog meer informatie bij te houden in deze event objecten zoals tijdstip van uitvoeren of de initiator van het event. Dit is echter niet strikt noodzakelijk en kan mogelijk gezien worden als administratieve keuze die gemaakt moet worden.
 \subsection{Life cycles}
 \label{sec:Life_cycles}
+De life cycles worden in de vorm van state machine diagrams geleverd als input voor het transformatie proces. 
+Dit is een belangrijk document voor dit process aangezien de toestandsovergangen van de business objecten hieruit afgeleid kunnen worden.
+Elke toestand wordt zo voorgesteld als een getal en er is een veld voorzien in de business objecten om dit getal bij te houden. 
+Dit getal dient niet aangepast te worden door gebruikers zelf. Het aanpassen van de \textit{objectState} gebeurt door het afvuren van events (i.e. het cre\"eren van event objects). 
+Deze event objecten zullen bij creatie dus de toestandsvariabelen van de parent objecten manipuleren.
+Wanneer en hoe dit gebeurt, wordt uitgelegd in secties \ref{sec:precondities} en \ref{sec:acties}.
 \subsection{Precondities}
 \label{sec:precondities}
+Er zijn een aantal precondities die gewoon afgeleid kunnen worden uit de geleverde merode documenten.
+Meer bepaald de events die gebruikt worden om een business object van toestand te doen veranderen, kunnen enkel afgevuurd worden wanneer het parent object zich in de juiste toestand bevindt. 
+Afhankelijk van de life cycle documentatie uit sectie \ref{sec:Life_cycles}, kan mechanisch afgeleid worden welke toestanden geldig zijn voor een object om een bepaalde event uit te voeren.
+Op basis van deze informatie worden dan precondities gegenereerd voor de event objects in kwestie om af te dwingen dat zo een event enkel kan voorkomen wanneer het parent object zich in de juiste toestand bevindt. 
+
+Verder kan het zijn dat er nog enkele constraints moeten gelegd worden op business objecten. Deze constrains zijn dan echter wel context afhankelijk en zijn moeilijker automatisch te genereren zonder de nodige informatie.
+Om dit probleem op te lossen is het mogelijk om nog een extra referentie document te voorzien naast de gebruikelijke Merode documentatie.
+In dit referentiedocument kunnen dan bijvoorbeeld constraints in een meer algemene taal uitgedrukt worden voor bepaalde business objecten. Zo kan bijvoorbeeld OCL gebruikt worden als zo een algemene taal.
+
 \subsection{Acties}
 \label{sec:acties}
+Net zoals in sectie \ref{sec:precondities} kunnen er al enkele acties afgeleid worden uit de geleverde merode documenten.
+Bij het overgaan van de ene toestand van een business object naar een andere, ten gevolge van een bepaalde event, dient deze manipulatie van de toestandsvariabele voorgesteld te worden door een een feitelijke actie. 
+Deze actie kan voor elk event object geconstrueerd worden als een manipulatie van de toestandsvariabele van het parent object door middel van het gebruik van de setter van de objectState variabele. 
+De concrete doel waarde van die variabele valt af te leiden uit het life cycle diagram.
+
+Verder zijn er niet echt acties die afgeleid kunnen worden uit de merode documentatie. 
+Indien er via een mechanische transformatie nog extra acties moeten gespecifieerd worden, dienen deze voorzien te worden in een referentie document op een manier die gelijkaardig is aan de methode besproken in sectie \ref{sec:precondities}.
