@@ -45,7 +45,7 @@ abstract class pCopyBase extends versata.pdx.html.VSPagePDX implements java.io.S
 		    T1Copy.setMaxRowsPerFetch(16);
 			T1Copy.setSaveMode(T1Copy.SAVE_IMMEDIATE);
 		add(T1Copy);
-		    				T2Library.Init("T2Library", T1Copy, "Library", "", "", "[PKLibrary] = [?FKLibrary]", "", "PKLibrary, amountOfMembers, amountOfCopies, Name, City, PhoneNumber, WebAddress",getPackageName() + ".genericPick", this);
+		    				T2Library.Init("T2Library", T1Copy, "Library", "", "", "[PKLibrary] = [?FKLibrary]", "", "PKLibrary, amountOfMembers, amountOfCopies, Name, City, PhoneNumber, WebAddress, LibraryState",getPackageName() + ".genericPick", this);
 			T2Library.setParentTableAlias("");
 		        
 		add(T2Library);

@@ -1,1 +1,9 @@
+C:\projects\LIBS01~1\Cache\CLIENT~1\HTMLApps\LIBRAR~2.APP\LibraryV2Base.java
+C:\projects\LIBS01~1\Source\CLIENT~1\HTMLApps\LIBRAR~2.APP\StartupPage.java
+C:\projects\LIBS01~1\Cache\CLIENT~1\HTMLApps\LIBRAR~2.APP\StartupPageBase.java
+C:\projects\LIBS01~1\Cache\CLIENT~1\HTMLApps\LIBRAR~2.APP\pMemberBase.java
 C:\projects\LIBS01~1\Cache\CLIENT~1\HTMLApps\LIBRAR~2.APP\pCopyBase.java
+C:\projects\LIBS01~1\Source\CLIENT~1\HTMLApps\LIBRAR~2.APP\pEnterEvent.java
+C:\projects\LIBS01~1\Cache\CLIENT~1\HTMLApps\LIBRAR~2.APP\pEnterEventBase.java
+C:\projects\LIBS01~1\Source\CLIENT~1\HTMLApps\LIBRAR~2.APP\FramesetPage.java
+C:\projects\LIBS01~1\Cache\CLIENT~1\HTMLApps\LIBRAR~2.APP\FramesetPageBase.java

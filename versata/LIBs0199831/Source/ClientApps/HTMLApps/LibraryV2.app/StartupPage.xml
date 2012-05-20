@@ -8,14 +8,14 @@
 	PositionLeft="0"
 	PositionWidth="150"
 	PositionHeight="44"
-	IsAddedAfterGen="True"
+	IsAddedAfterGen="False"
 	HasCustomFormLayout="False"
-	ObjectsUnusedByFormLayout="True"
+	ObjectsUnusedByFormLayout="False"
 	External="False"
 	NoDataForm="False"
 	ClassName="VSPage"
 	ObjectsRemovedFromLayout="False"
-	HTMLFileCheckSum="0"
+	HTMLFileCheckSum="-2133749275"
 	>
 	<FormCaption><![CDATA[StartupPage]]></FormCaption>
 	<ArchetypeExtendedProperties>
@@ -43,13 +43,33 @@
 		IsTargetInitialQueryMode="False"
 		IsTargetInitialAddMode="False"
 		IsVisibleAppline="True"
-		IsAddedAfterGen="True"
+		IsAddedAfterGen="False"
 		ClassName="PageNavigation"
 		TargetFramesetPage=""
-		TargetFrame=""
+		TargetFrame="Display"
 		FrameNameInFramesetPage=""
 		RSID="1"
 		BusinessObject="Library"
+		RelnIsFromParent="True"
+		>
+		<OrderByClause><![CDATA[ ]]></OrderByClause>
+		<ParameterizedWhereClause><![CDATA[ ]]></ParameterizedWhereClause>
+		<AdditionalWhereClause><![CDATA[ ]]></AdditionalWhereClause>
+	</Transition>
+	<Transition
+		FormTransNum="1"
+		Prefix="T2"
+		TargetFormName="pEnterEvent"
+		IsTargetInitialQueryMode="False"
+		IsTargetInitialAddMode="False"
+		IsVisibleAppline="True"
+		IsAddedAfterGen="False"
+		ClassName="PageNavigation"
+		TargetFramesetPage=""
+		TargetFrame="Display"
+		FrameNameInFramesetPage=""
+		RSID="2"
+		BusinessObject="EnterEvent"
 		RelnIsFromParent="True"
 		>
 		<OrderByClause><![CDATA[ ]]></OrderByClause>

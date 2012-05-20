@@ -53,7 +53,7 @@ public abstract class EnterEventBaseImpl extends  DataObject
 	
 		c = new VSMetaColumn("FKMember", DataConst.BIGINT);	
 		c.setAlterability(true);
-		c.setNullability(VSMetaColumn.columnNoNulls);
+		c.setNullability(VSMetaColumn.columnNullable);
 		c.setCaption("");
 		t.addColumn( c );
 	
@@ -105,11 +105,20 @@ public abstract class EnterEventBaseImpl extends  DataObject
 		c.setCaption("");
 		t.addColumn( c );
 	
+		c = new VSMetaColumn("FKLibrary", DataConst.BIGINT);	
+		c.setAlterability(true);
+		c.setNullability(VSMetaColumn.columnNoNulls);
+		c.setCaption("");
+		t.addColumn( c );
+	
 		
 		t.addUniqueKeyColumn( "EnterEvent Unique Key", "PKEnterEvent" );
 		
 		// Register a foreign key from  to Member.
 		t.addForeignKeyColumn( "Foreign Key To Member", "FKMember" );
+	
+		// Register a foreign key from  to Library.
+		t.addForeignKeyColumn( "Foreign Key To Library", "FKLibrary" );
 	
 		
 		
@@ -136,6 +145,8 @@ public abstract class EnterEventBaseImpl extends  DataObject
 
 	//{{COMPONENT_RULES
 	
+
+
 
 
 
@@ -435,6 +446,7 @@ protected void insert() throws ServerException
 
 	// Do the parent checks.
 	this.parentCheckFor_Member();
+	this.parentCheckFor_Library();
 
 
 	// Do Column Validation Checks
@@ -472,6 +484,7 @@ protected void update() throws ServerException
 
 	// Do the parent checks.
 	this.parentCheckFor_Member();
+	this.parentCheckFor_Library();
 
 	// Set the formulae values at this point
 	this.setFormulaValues();
@@ -508,6 +521,7 @@ protected void delete() throws ServerException
 	// Remove myself from the parent cache.
 	// Do the parent checks.
 	removeMeFromMemberCache();
+	removeMeFromLibraryCache();
 
 	// Do Column Validation Checks
 	this.columnValidationCheck();
@@ -588,10 +602,50 @@ public void columnValidationCheck()
 	}
 	finally { if (  tr != null ) tr.end( tr_id ); }
 	}
+	protected void parentCheckFor_Library()
+	{
+	IVSTrace tr = null;  long tr_id = 0;
+	if ( VSTrace.IS_ON ) {
+		tr = VSTrace.get(); 
+		tr_id = tr.beg(logger);
+		tr.set(VST_CATEGORY,VST_RULE).set(VST_ACTION_NAME,"parentCheckFor_Library").set(VST_OBJECT_NAME,"EnterEvent");
+	}
+	
+	try {
+	
+	LibraryImpl	parent = null;
+	boolean		ParentKeyChanged = false;
+	boolean		OrphanChildParenting;
+	if (( isInserted() || isUpdated() ) && ( 
+	(isChanged("FKLibrary"))
+ ) &&
+	((!isNull("FKLibrary")) ))
+	{
+		// This would cause the row to be dropped from the old parent if it exist.
+		removeMeFromLibraryCache();
+		parent = this.getLibrary();
+			
+		if ( parent == null )
+		{
+			raiseException("Library not found for EnterEvent. Error Column: <EnterEvent>.<FKLibrary>");
+		}
+		else
+		{
+			// Add myself to the new parent cache.
+			parent.updateCacheForEnterEvent(this, false);
+		}
+		
+	}
+		
+	
+	}
+	finally { if (  tr != null ) tr.end( tr_id ); }
+	}
 
 
 
 
+	
 	
 
 	
@@ -619,6 +673,21 @@ public void removeMeFromMemberCache()
 	if (getSession().getTransactionInfo().isInCache(MemberImpl.getMetaQuery(), searchReq))
 	{
 		MemberBaseImpl	parent = this.getOldMember();
+		parent.updateCacheForEnterEvent(this, true);
+	}
+}
+public void removeMeFromLibraryCache()
+{
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "Library";
+	param.fieldName = "PKLibrary";
+	param.value = getData("FKLibrary").getPreviousString();
+	searchReq.add(param);
+	if (getSession().getTransactionInfo().isInCache(LibraryImpl.getMetaQuery(), searchReq))
+	{
+		LibraryBaseImpl	parent = this.getOldLibrary();
 		parent.updateCacheForEnterEvent(this, true);
 	}
 }
@@ -653,6 +722,36 @@ public	void	setMember(MemberImpl parentObj)
 	this.setFKMember(parentObj.getPKMember());
 }
 
+/**	  
+* <br>
+* method to get the Library object for this EnterEvent
+* this method currently does not support additional conditional params.
+* @return Object : the  parent object Library for this EnterEvent.
+*/
+public	LibraryImpl	getLibrary()
+{
+	LibraryImpl parent = null;
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "Library";
+	param.fieldName = "PKLibrary";
+	param.value = getData("FKLibrary").getString();
+	searchReq.add(param);
+	parent = (LibraryImpl)(LibraryBaseImpl.getObjectByKey(searchReq ,getSession()));
+	return parent;
+}
+
+/**	  
+* <br>
+* method to set the Library object for this EnterEvent.
+* @param Object : the  parent object Library for this EnterEvent.
+*/
+public	void	setLibrary(LibraryImpl parentObj)
+{
+	this.setFKLibrary(parentObj.getPKLibrary());
+}
+
 
 /**	  
 * <br>
@@ -671,6 +770,25 @@ public	MemberImpl	getOldMember()
 	param.value = getData("FKMember").getPreviousString();
 	searchReq.add(param);
 	parent = (MemberImpl)(MemberBaseImpl.getObjectByKey(searchReq ,getSession()));
+	return parent;
+}
+/**	  
+* <br>
+* method to get the old Library object for this EnterEvent
+* this method currently does not support additional conditional params.
+* @return Object : the  old parent object Library for this EnterEvent.
+*/
+public	LibraryImpl	getOldLibrary()
+{
+	LibraryImpl parent = null;
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "Library";
+	param.fieldName = "PKLibrary";
+	param.value = getData("FKLibrary").getPreviousString();
+	searchReq.add(param);
+	parent = (LibraryImpl)(LibraryBaseImpl.getObjectByKey(searchReq ,getSession()));
 	return parent;
 }
 
@@ -809,6 +927,40 @@ public	MemberImpl	getOldMember()
 	public long	getOldFKMember()
 	{
 	return getData("FKMember").getPreviouslong();
+	}
+
+	/**	  
+	* <br>
+	* method to get the FKLibrary attribute for the EnterEvent
+	* @return long : the  value of the attribute FKLibrary as long.
+	*/
+	public long	getFKLibrary() 
+	{
+	return getData("FKLibrary").getlong();
+	}
+
+	/**	  
+	* <br>
+	* method to set the FKLibrary attribute for the EnterEvent
+	* @param long : value of the attribute FKLibrary as long.
+	* @return nothing
+	*/
+	public void	setFKLibrary(long value)
+	{
+	// The code to do convertion from the primitive data
+	// to the one which can be stored goes here.
+	Data dataVal = getData("FKLibrary");
+	dataVal.setlong(value);
+	}
+
+	/**	  
+	* <br>
+	* method to get the old FKLibrary attribute for the EnterEvent
+	* @return long : the  value of the old attribute FKLibrary as long.
+	*/
+	public long	getOldFKLibrary()
+	{
+	return getData("FKLibrary").getPreviouslong();
 	}
 
 	/**	  

@@ -49,6 +49,7 @@ public void beforeInsert(DataObject obj, Response response)
 	copy.setTitle(AcquireEvent.getTitle());
 	copy.setAuthor(AcquireEvent.getAuthor());
 	copy.setISBN(AcquireEvent.getISBN());
+	copy.setFKLibrary(AcquireEvent.getFKLibrary());
 	copy.setCopyState(1);
 	copy.executeRules();
 	AcquireEvent.setFKCopy(copy.getPKCopy());

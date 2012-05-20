@@ -10,7 +10,7 @@
 	PositionHeight="44"
 	IsAddedAfterGen="False"
 	HasCustomFormLayout="False"
-	ObjectsUnusedByFormLayout="False"
+	ObjectsUnusedByFormLayout="True"
 	External="False"
 	NoDataForm="False"
 	ClassName="versata.pdx.html.VSPagePDX"
@@ -1043,6 +1043,7 @@
 					<RSDefaultAttribute ID="4" Name="Author" />
 					<RSDefaultAttribute ID="5" Name="ISBN" />
 					<RSDefaultAttribute ID="6" Name="TimeStamp" />
+					<RSDefaultAttribute ID="7" Name="FKLibrary" />
 				</DefaultAttributes>
 				<GridAttributes>
 					<RSAttribute Name="PKAcquireEvent" Displayed="True" UnPlaced="False" />
@@ -1051,6 +1052,7 @@
 					<RSAttribute Name="Author" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="ISBN" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="TimeStamp" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKLibrary" Displayed="True" UnPlaced="True" />
 				</GridAttributes>
 			</RSAttributesMeta>
 			<ArchetypeExtendedProperties>

@@ -54,6 +54,7 @@ public void beforeInsert(DataObject obj, Response response)
 	member.setCountry(enterEv.getCountry());
 	member.setMobileNumber(enterEv.getMobileNumber());
 	member.setMemberState(1);
+	member.setFKLibrary(enterEv.getFKLibrary());
 	member.executeRules();
 	enterEv.setFKMember(member.getPKMember());
 	

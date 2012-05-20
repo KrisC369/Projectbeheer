@@ -32,7 +32,7 @@
 		<Attribute
 			Name="FKMember"
 			PreventUserUpdates="False"
-			ValueRequired="True"
+			ValueRequired="False"
 			LayoutByDefault="True"
 			Persistent="True"
 			>
@@ -168,6 +168,23 @@
 				>
 				<DefaultValue><![CDATA[date()]]></DefaultValue>
 			</Derivation>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
+		<Attribute
+			Name="FKLibrary"
+			PreventUserUpdates="False"
+			ValueRequired="True"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
 			<Validation
 				ValidationType="Condition"
 			/>

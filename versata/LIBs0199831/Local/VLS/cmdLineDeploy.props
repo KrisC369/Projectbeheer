@@ -1,1 +1,1 @@
- -RepoFolder "C:\projects\LIBs0199831\" -RepoName LIBs0199831 -DataServiceNotOK  -Silent  -RemoteRefsOnly  -Dest C:\projects\LIBS01~1\Lib\CLIENT~1\HTMLApps\LIBRAR~3.APP\ -WS  -HTMLAPP LibraryV3 -VLSFOLDER "C:\versata563\VLS-5.6-JBoss" -nologging
+ -RepoFolder "C:\projects\LIBs0199831\" -RepoName LIBs0199831 -DataServiceNotOK  -Silent  -RemoteRefsOnly  -Dest C:\projects\LIBS01~1\Lib\CLIENT~1\HTMLApps\LIBRAR~2.APP\ -WS  -HTMLAPP LibraryV2 -VLSFOLDER "C:\versata563\VLS-5.6-JBoss" -nologging

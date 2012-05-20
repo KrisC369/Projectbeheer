@@ -3775,3 +3775,1328 @@ FOREIGN KEY ("FKMember") REFERENCES
 
 
 ***************************************************************
+***************** Server Deployment on 5/21/2012 12:45:25 AM ***************
+The following warnings were reported:
+
+
+
+Table CancelEvent may already exist in the server.
+
+Table CancelEvent will be dropped on the server.
+
+There is no primary key for the table CancelEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table EnterEvent may already exist in the server.
+
+Table EnterEvent will be dropped on the server.
+
+
+
+Table LeaveEvent may already exist in the server.
+
+Table LeaveEvent will be dropped on the server.
+
+There is no primary key for the table LeaveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReturnEvent may already exist in the server.
+
+Table ReturnEvent will be dropped on the server.
+
+There is no primary key for the table ReturnEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table LoseEvent may already exist in the server.
+
+Table LoseEvent will be dropped on the server.
+
+There is no primary key for the table LoseEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table FetchEvent may already exist in the server.
+
+Table FetchEvent will be dropped on the server.
+
+There is no primary key for the table FetchEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table RenewEvent may already exist in the server.
+
+Table RenewEvent will be dropped on the server.
+
+There is no primary key for the table RenewEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table AcquireEvent may already exist in the server.
+
+Table AcquireEvent will be dropped on the server.
+
+There is no primary key for the table AcquireEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table SellEvent may already exist in the server.
+
+Table SellEvent will be dropped on the server.
+
+There is no primary key for the table SellEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReserveEvent may already exist in the server.
+
+Table ReserveEvent will be dropped on the server.
+
+There is no primary key for the table ReserveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Reservation may already exist in the server.
+
+Table Reservation will be dropped on the server.
+
+
+
+Table ClassifyEvent may already exist in the server.
+
+Table ClassifyEvent will be dropped on the server.
+
+There is no primary key for the table ClassifyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Loan may already exist in the server.
+
+Table Loan will be dropped on the server.
+
+
+
+Table Copy may already exist in the server.
+
+Table Copy will be dropped on the server.
+
+
+
+Table BorrowEvent may already exist in the server.
+
+Table BorrowEvent will be dropped on the server.
+
+
+
+Table Member may already exist in the server.
+
+Table Member will be dropped on the server.
+
+
+
+Table CreateEvent may already exist in the server.
+
+Table CreateEvent will be dropped on the server.
+
+
+
+Table DestroyEvent may already exist in the server.
+
+Table DestroyEvent will be dropped on the server.
+
+There is no primary key for the table DestroyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Library may already exist in the server.
+
+Table Library will be dropped on the server.
+
+
+
+==============================================================================
+
+The following are informational messages:
+
+
+
+Quoted identifier is set on
+
+Table CancelEvent will be created on the target server.
+
+
+
+Table EnterEvent will be created on the target server.
+
+
+
+Table LeaveEvent will be created on the target server.
+
+
+
+Table ReturnEvent will be created on the target server.
+
+
+
+Table LoseEvent will be created on the target server.
+
+
+
+Table FetchEvent will be created on the target server.
+
+
+
+Table RenewEvent will be created on the target server.
+
+
+
+Table AcquireEvent will be created on the target server.
+
+
+
+Table SellEvent will be created on the target server.
+
+
+
+Table ReserveEvent will be created on the target server.
+
+
+
+Table Reservation will be created on the target server.
+
+
+
+Table ClassifyEvent will be created on the target server.
+
+
+
+Table Loan will be created on the target server.
+
+
+
+Table Copy will be created on the target server.
+
+
+
+Table BorrowEvent will be created on the target server.
+
+
+
+Table Member will be created on the target server.
+
+
+
+Table CreateEvent will be created on the target server.
+
+
+
+Table DestroyEvent will be created on the target server.
+
+
+
+Table Library will be created on the target server.
+
+
+
+==============================================================================
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:50:21 AM ***************
+The following warnings were reported:
+
+
+
+Table CancelEvent may already exist in the server.
+
+Table CancelEvent will be dropped on the server.
+
+There is no primary key for the table CancelEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table EnterEvent may already exist in the server.
+
+Table EnterEvent will be dropped on the server.
+
+
+
+Table LeaveEvent may already exist in the server.
+
+Table LeaveEvent will be dropped on the server.
+
+There is no primary key for the table LeaveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReturnEvent may already exist in the server.
+
+Table ReturnEvent will be dropped on the server.
+
+There is no primary key for the table ReturnEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table LoseEvent may already exist in the server.
+
+Table LoseEvent will be dropped on the server.
+
+There is no primary key for the table LoseEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table FetchEvent may already exist in the server.
+
+Table FetchEvent will be dropped on the server.
+
+There is no primary key for the table FetchEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table RenewEvent may already exist in the server.
+
+Table RenewEvent will be dropped on the server.
+
+There is no primary key for the table RenewEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table AcquireEvent may already exist in the server.
+
+Table AcquireEvent will be dropped on the server.
+
+There is no primary key for the table AcquireEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table SellEvent may already exist in the server.
+
+Table SellEvent will be dropped on the server.
+
+There is no primary key for the table SellEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReserveEvent may already exist in the server.
+
+Table ReserveEvent will be dropped on the server.
+
+There is no primary key for the table ReserveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Reservation may already exist in the server.
+
+Table Reservation will be dropped on the server.
+
+
+
+Table ClassifyEvent may already exist in the server.
+
+Table ClassifyEvent will be dropped on the server.
+
+There is no primary key for the table ClassifyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Loan may already exist in the server.
+
+Table Loan will be dropped on the server.
+
+
+
+Table Copy may already exist in the server.
+
+Table Copy will be dropped on the server.
+
+
+
+Table BorrowEvent may already exist in the server.
+
+Table BorrowEvent will be dropped on the server.
+
+
+
+Table Member may already exist in the server.
+
+Table Member will be dropped on the server.
+
+
+
+Table CreateEvent may already exist in the server.
+
+Table CreateEvent will be dropped on the server.
+
+
+
+Table DestroyEvent may already exist in the server.
+
+Table DestroyEvent will be dropped on the server.
+
+There is no primary key for the table DestroyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Library may already exist in the server.
+
+Table Library will be dropped on the server.
+
+
+
+==============================================================================
+
+The following are informational messages:
+
+
+
+Quoted identifier is set on
+
+Table CancelEvent will be created on the target server.
+
+
+
+Table EnterEvent will be created on the target server.
+
+
+
+Table LeaveEvent will be created on the target server.
+
+
+
+Table ReturnEvent will be created on the target server.
+
+
+
+Table LoseEvent will be created on the target server.
+
+
+
+Table FetchEvent will be created on the target server.
+
+
+
+Table RenewEvent will be created on the target server.
+
+
+
+Table AcquireEvent will be created on the target server.
+
+
+
+Table SellEvent will be created on the target server.
+
+
+
+Table ReserveEvent will be created on the target server.
+
+
+
+Table Reservation will be created on the target server.
+
+
+
+Table ClassifyEvent will be created on the target server.
+
+
+
+Table Loan will be created on the target server.
+
+
+
+Table Copy will be created on the target server.
+
+
+
+Table BorrowEvent will be created on the target server.
+
+
+
+Table Member will be created on the target server.
+
+
+
+Table CreateEvent will be created on the target server.
+
+
+
+Table DestroyEvent will be created on the target server.
+
+
+
+Table Library will be created on the target server.
+
+
+
+==============================================================================
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:50:23 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Loan' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Loan"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:50:25 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Copy' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Copy"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:50:25 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'BorrowEvent' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "BorrowEvent"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:50:25 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Member' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Member"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:50:26 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Library' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Library"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:50:26 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Loan' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Loan"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Copy' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Copy"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'BorrowEvent' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "BorrowEvent"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Member' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Member"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Library' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Library"
+
+
+
+Error: Error Number: 2714 [Microsoft][ODBC SQL Server Driver][SQL Server]There is already an object named 'JV__0001Loan' in the database.
+
+SQL:
+
+
+
+
+ALTER TABLE "Loan" ADD CONSTRAINT "JV__0001Loan"
+
+FOREIGN KEY ("FKMember") REFERENCES 
+
+"Member" ("PKMember")
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:56:39 AM ***************
+The following warnings were reported:
+
+
+
+Table CancelEvent may already exist in the server.
+
+Table CancelEvent will be dropped on the server.
+
+There is no primary key for the table CancelEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table EnterEvent may already exist in the server.
+
+Table EnterEvent will be dropped on the server.
+
+
+
+Table LeaveEvent may already exist in the server.
+
+Table LeaveEvent will be dropped on the server.
+
+There is no primary key for the table LeaveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReturnEvent may already exist in the server.
+
+Table ReturnEvent will be dropped on the server.
+
+There is no primary key for the table ReturnEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table LoseEvent may already exist in the server.
+
+Table LoseEvent will be dropped on the server.
+
+There is no primary key for the table LoseEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table FetchEvent may already exist in the server.
+
+Table FetchEvent will be dropped on the server.
+
+There is no primary key for the table FetchEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table RenewEvent may already exist in the server.
+
+Table RenewEvent will be dropped on the server.
+
+There is no primary key for the table RenewEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table AcquireEvent may already exist in the server.
+
+Table AcquireEvent will be dropped on the server.
+
+There is no primary key for the table AcquireEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table SellEvent may already exist in the server.
+
+Table SellEvent will be dropped on the server.
+
+There is no primary key for the table SellEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReserveEvent may already exist in the server.
+
+Table ReserveEvent will be dropped on the server.
+
+There is no primary key for the table ReserveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Reservation may already exist in the server.
+
+Table Reservation will be dropped on the server.
+
+
+
+Table ClassifyEvent may already exist in the server.
+
+Table ClassifyEvent will be dropped on the server.
+
+There is no primary key for the table ClassifyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Loan may already exist in the server.
+
+Table Loan will be dropped on the server.
+
+
+
+Table Copy may already exist in the server.
+
+Table Copy will be dropped on the server.
+
+
+
+Table BorrowEvent may already exist in the server.
+
+Table BorrowEvent will be dropped on the server.
+
+
+
+Table Member may already exist in the server.
+
+Table Member will be dropped on the server.
+
+
+
+Table CreateEvent may already exist in the server.
+
+Table CreateEvent will be dropped on the server.
+
+
+
+Table DestroyEvent may already exist in the server.
+
+Table DestroyEvent will be dropped on the server.
+
+There is no primary key for the table DestroyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Library may already exist in the server.
+
+Table Library will be dropped on the server.
+
+
+
+==============================================================================
+
+The following are informational messages:
+
+
+
+Quoted identifier is set on
+
+Table CancelEvent will be created on the target server.
+
+
+
+Table EnterEvent will be created on the target server.
+
+
+
+Table LeaveEvent will be created on the target server.
+
+
+
+Table ReturnEvent will be created on the target server.
+
+
+
+Table LoseEvent will be created on the target server.
+
+
+
+Table FetchEvent will be created on the target server.
+
+
+
+Table RenewEvent will be created on the target server.
+
+
+
+Table AcquireEvent will be created on the target server.
+
+
+
+Table SellEvent will be created on the target server.
+
+
+
+Table ReserveEvent will be created on the target server.
+
+
+
+Table Reservation will be created on the target server.
+
+
+
+Table ClassifyEvent will be created on the target server.
+
+
+
+Table Loan will be created on the target server.
+
+
+
+Table Copy will be created on the target server.
+
+
+
+Table BorrowEvent will be created on the target server.
+
+
+
+Table Member will be created on the target server.
+
+
+
+Table CreateEvent will be created on the target server.
+
+
+
+Table DestroyEvent will be created on the target server.
+
+
+
+Table Library will be created on the target server.
+
+
+
+==============================================================================
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:08 AM ***************
+The following warnings were reported:
+
+
+
+Table CancelEvent may already exist in the server.
+
+Table CancelEvent will be dropped on the server.
+
+There is no primary key for the table CancelEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table EnterEvent may already exist in the server.
+
+Table EnterEvent will be dropped on the server.
+
+
+
+Table LeaveEvent may already exist in the server.
+
+Table LeaveEvent will be dropped on the server.
+
+There is no primary key for the table LeaveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReturnEvent may already exist in the server.
+
+Table ReturnEvent will be dropped on the server.
+
+There is no primary key for the table ReturnEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table LoseEvent may already exist in the server.
+
+Table LoseEvent will be dropped on the server.
+
+There is no primary key for the table LoseEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table FetchEvent may already exist in the server.
+
+Table FetchEvent will be dropped on the server.
+
+There is no primary key for the table FetchEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table RenewEvent may already exist in the server.
+
+Table RenewEvent will be dropped on the server.
+
+There is no primary key for the table RenewEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table AcquireEvent may already exist in the server.
+
+Table AcquireEvent will be dropped on the server.
+
+There is no primary key for the table AcquireEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table SellEvent may already exist in the server.
+
+Table SellEvent will be dropped on the server.
+
+There is no primary key for the table SellEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table ReserveEvent may already exist in the server.
+
+Table ReserveEvent will be dropped on the server.
+
+There is no primary key for the table ReserveEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Reservation may already exist in the server.
+
+Table Reservation will be dropped on the server.
+
+
+
+Table ClassifyEvent may already exist in the server.
+
+Table ClassifyEvent will be dropped on the server.
+
+There is no primary key for the table ClassifyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Loan may already exist in the server.
+
+Table Loan will be dropped on the server.
+
+
+
+Table Copy may already exist in the server.
+
+Table Copy will be dropped on the server.
+
+
+
+Table BorrowEvent may already exist in the server.
+
+Table BorrowEvent will be dropped on the server.
+
+
+
+Table Member may already exist in the server.
+
+Table Member will be dropped on the server.
+
+
+
+Table CreateEvent may already exist in the server.
+
+Table CreateEvent will be dropped on the server.
+
+
+
+Table DestroyEvent may already exist in the server.
+
+Table DestroyEvent will be dropped on the server.
+
+There is no primary key for the table DestroyEvent.
+
+This table will be deployed as read only and no data will be transferred.
+
+
+
+Table Library may already exist in the server.
+
+Table Library will be dropped on the server.
+
+
+
+==============================================================================
+
+The following are informational messages:
+
+
+
+Quoted identifier is set on
+
+Table CancelEvent will be created on the target server.
+
+
+
+Table EnterEvent will be created on the target server.
+
+
+
+Table LeaveEvent will be created on the target server.
+
+
+
+Table ReturnEvent will be created on the target server.
+
+
+
+Table LoseEvent will be created on the target server.
+
+
+
+Table FetchEvent will be created on the target server.
+
+
+
+Table RenewEvent will be created on the target server.
+
+
+
+Table AcquireEvent will be created on the target server.
+
+
+
+Table SellEvent will be created on the target server.
+
+
+
+Table ReserveEvent will be created on the target server.
+
+
+
+Table Reservation will be created on the target server.
+
+
+
+Table ClassifyEvent will be created on the target server.
+
+
+
+Table Loan will be created on the target server.
+
+
+
+Table Copy will be created on the target server.
+
+
+
+Table BorrowEvent will be created on the target server.
+
+
+
+Table Member will be created on the target server.
+
+
+
+Table CreateEvent will be created on the target server.
+
+
+
+Table DestroyEvent will be created on the target server.
+
+
+
+Table Library will be created on the target server.
+
+
+
+==============================================================================
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:10 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Loan' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Loan"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:15 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Copy' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Copy"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:16 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'BorrowEvent' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "BorrowEvent"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:16 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Member' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Member"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:17 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Library' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Library"
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:17 AM ***************
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Loan' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Loan"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Copy' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Copy"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'BorrowEvent' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "BorrowEvent"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Member' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Member"
+
+
+
+Error: Error Number: 3726 [Microsoft][ODBC SQL Server Driver][SQL Server]Could not drop object 'Library' because it is referenced by a FOREIGN KEY constraint.
+
+SQL:
+
+
+
+DROP TABLE "Library"
+
+
+
+Error: Error Number: 2714 [Microsoft][ODBC SQL Server Driver][SQL Server]There is already an object named 'JV__0001Loan' in the database.
+
+SQL:
+
+
+
+
+ALTER TABLE "Loan" ADD CONSTRAINT "JV__0001Loan"
+
+FOREIGN KEY ("FKMember") REFERENCES 
+
+"Member" ("PKMember")
+
+
+***************************************************************
+***************** Server Deployment on 5/21/2012 12:59:55 AM ***************
+The following are informational messages:
+
+
+
+Quoted identifier is set on
+
+Table CancelEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table EnterEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table LeaveEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table ReturnEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table LoseEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table FetchEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table RenewEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table AcquireEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table SellEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table ReserveEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table Reservation needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table ClassifyEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table Loan needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table Copy needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table BorrowEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table Member needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table CreateEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table DestroyEvent needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+Table Library needs to be altered on the server, as there may be defaults or RI constraints being generated on the table. Please see the RuleDDL.sql and DDL.sql for details.
+
+
+
+
+
+==============================================================================
+***************************************************************

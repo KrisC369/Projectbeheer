@@ -85,10 +85,19 @@ public abstract class AcquireEventBaseImpl extends  DataObject
 		c.setCaption("");
 		t.addColumn( c );
 	
+		c = new VSMetaColumn("FKLibrary", DataConst.BIGINT);	
+		c.setAlterability(false);
+		c.setNullability(VSMetaColumn.columnNullable);
+		c.setCaption("");
+		t.addColumn( c );
+	
 		
 		
 		// Register a foreign key from  to Copy.
 		t.addForeignKeyColumn( "Foreign Key To Copy", "FKCopy" );
+	
+		// Register a foreign key from  to Library.
+		t.addForeignKeyColumn( "Foreign Key To Library", "FKLibrary" );
 	
 		
 		
@@ -115,6 +124,8 @@ public abstract class AcquireEventBaseImpl extends  DataObject
 
 	//{{COMPONENT_RULES
 	
+
+
 
 
 
@@ -408,6 +419,7 @@ protected void insert() throws ServerException
 
 	// Do the parent checks.
 	this.parentCheckFor_Copy();
+	this.parentCheckFor_Library();
 
 
 	// Do Column Validation Checks
@@ -446,9 +458,14 @@ protected void update() throws ServerException
 	{		
 		raiseException("Attribute 'FKCopy' in Object AcquireEvent is not Alterable. Error Column: <AcquireEvent>.<FKCopy>");
 	}
+	if ( getGlobalNestLevel() == 1 && isAltered("FKLibrary") && !isUpdatedAfterInsert() )
+	{		
+		raiseException("Attribute 'FKLibrary' in Object AcquireEvent is not Alterable. Error Column: <AcquireEvent>.<FKLibrary>");
+	}
 
 	// Do the parent checks.
 	this.parentCheckFor_Copy();
+	this.parentCheckFor_Library();
 
 	// Set the formulae values at this point
 	this.setFormulaValues();
@@ -485,6 +502,7 @@ protected void delete() throws ServerException
 	// Remove myself from the parent cache.
 	// Do the parent checks.
 	removeMeFromCopyCache();
+	removeMeFromLibraryCache();
 
 	// Do Column Validation Checks
 	this.columnValidationCheck();
@@ -565,10 +583,50 @@ public void columnValidationCheck()
 	}
 	finally { if (  tr != null ) tr.end( tr_id ); }
 	}
+	protected void parentCheckFor_Library()
+	{
+	IVSTrace tr = null;  long tr_id = 0;
+	if ( VSTrace.IS_ON ) {
+		tr = VSTrace.get(); 
+		tr_id = tr.beg(logger);
+		tr.set(VST_CATEGORY,VST_RULE).set(VST_ACTION_NAME,"parentCheckFor_Library").set(VST_OBJECT_NAME,"AcquireEvent");
+	}
+	
+	try {
+	
+	LibraryImpl	parent = null;
+	boolean		ParentKeyChanged = false;
+	boolean		OrphanChildParenting;
+	if (( isInserted() || isUpdated() ) && ( 
+	(isChanged("FKLibrary"))
+ ) &&
+	((!isNull("FKLibrary")) ))
+	{
+		// This would cause the row to be dropped from the old parent if it exist.
+		removeMeFromLibraryCache();
+		parent = this.getLibrary();
+			
+		if ( parent == null )
+		{
+			raiseException("Library not found for AcquireEvent. Error Column: <AcquireEvent>.<FKLibrary>");
+		}
+		else
+		{
+			// Add myself to the new parent cache.
+			parent.updateCacheForAcquireEvent(this, false);
+		}
+		
+	}
+		
+	
+	}
+	finally { if (  tr != null ) tr.end( tr_id ); }
+	}
 
 
 
 
+	
 	
 
 	
@@ -596,6 +654,21 @@ public void removeMeFromCopyCache()
 	if (getSession().getTransactionInfo().isInCache(CopyImpl.getMetaQuery(), searchReq))
 	{
 		CopyBaseImpl	parent = this.getOldCopy();
+		parent.updateCacheForAcquireEvent(this, true);
+	}
+}
+public void removeMeFromLibraryCache()
+{
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "Library";
+	param.fieldName = "PKLibrary";
+	param.value = getData("FKLibrary").getPreviousString();
+	searchReq.add(param);
+	if (getSession().getTransactionInfo().isInCache(LibraryImpl.getMetaQuery(), searchReq))
+	{
+		LibraryBaseImpl	parent = this.getOldLibrary();
 		parent.updateCacheForAcquireEvent(this, true);
 	}
 }
@@ -630,6 +703,36 @@ public	void	setCopy(CopyImpl parentObj)
 	this.setFKCopy(parentObj.getPKCopy());
 }
 
+/**	  
+* <br>
+* method to get the Library object for this AcquireEvent
+* this method currently does not support additional conditional params.
+* @return Object : the  parent object Library for this AcquireEvent.
+*/
+public	LibraryImpl	getLibrary()
+{
+	LibraryImpl parent = null;
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "Library";
+	param.fieldName = "PKLibrary";
+	param.value = getData("FKLibrary").getString();
+	searchReq.add(param);
+	parent = (LibraryImpl)(LibraryBaseImpl.getObjectByKey(searchReq ,getSession()));
+	return parent;
+}
+
+/**	  
+* <br>
+* method to set the Library object for this AcquireEvent.
+* @param Object : the  parent object Library for this AcquireEvent.
+*/
+public	void	setLibrary(LibraryImpl parentObj)
+{
+	this.setFKLibrary(parentObj.getPKLibrary());
+}
+
 
 /**	  
 * <br>
@@ -648,6 +751,25 @@ public	CopyImpl	getOldCopy()
 	param.value = getData("FKCopy").getPreviousString();
 	searchReq.add(param);
 	parent = (CopyImpl)(CopyBaseImpl.getObjectByKey(searchReq ,getSession()));
+	return parent;
+}
+/**	  
+* <br>
+* method to get the old Library object for this AcquireEvent
+* this method currently does not support additional conditional params.
+* @return Object : the  old parent object Library for this AcquireEvent.
+*/
+public	LibraryImpl	getOldLibrary()
+{
+	LibraryImpl parent = null;
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+	param = new Parameter();
+	param.objName = "Library";
+	param.fieldName = "PKLibrary";
+	param.value = getData("FKLibrary").getPreviousString();
+	searchReq.add(param);
+	parent = (LibraryImpl)(LibraryBaseImpl.getObjectByKey(searchReq ,getSession()));
 	return parent;
 }
 
@@ -786,6 +908,40 @@ public	CopyImpl	getOldCopy()
 	public String	getOldAuthor()
 	{
 	return getData("Author").getPreviousString();
+	}
+
+	/**	  
+	* <br>
+	* method to get the FKLibrary attribute for the AcquireEvent
+	* @return long : the  value of the attribute FKLibrary as long.
+	*/
+	public long	getFKLibrary() 
+	{
+	return getData("FKLibrary").getlong();
+	}
+
+	/**	  
+	* <br>
+	* method to set the FKLibrary attribute for the AcquireEvent
+	* @param long : value of the attribute FKLibrary as long.
+	* @return nothing
+	*/
+	public void	setFKLibrary(long value)
+	{
+	// The code to do convertion from the primitive data
+	// to the one which can be stored goes here.
+	Data dataVal = getData("FKLibrary");
+	dataVal.setlong(value);
+	}
+
+	/**	  
+	* <br>
+	* method to get the old FKLibrary attribute for the AcquireEvent
+	* @return long : the  value of the old attribute FKLibrary as long.
+	*/
+	public long	getOldFKLibrary()
+	{
+	return getData("FKLibrary").getPreviouslong();
 	}
 
 	/**	  

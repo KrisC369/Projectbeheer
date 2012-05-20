@@ -22,4 +22,10 @@ Men kan deze events ook een andere opmaak geven, indien gewenst, om de gebruiker
 Bij deze voorstelling zijn er wel nog enkel problemen die opgelost dienen te worden voordat een volledige mechanische transformatie van merode naar een applicatie (inclusief gebruikersinterface) mogelijk is. 
 Wanneer men de events afhankelijk maakt van hun parent objecten, moet er rekening gehouden worden met het feit dat voor creatie events er nog geen parent object bestaat om een detail view voor te openen. 
 Het is op die manier dus niet onmiddellijk mogelijk om een creatie event aan te maken zonder eerst ook een passend parent object aan te maken, ook al is de java code in de service implementatie hier wel voor aanwezig. 
-Dit probleem is in de huidige versie van de voorbeeld oplossing nog niet opgelost.
+Dit probleem is in de huidige versie van de oplossing nog niet opgelost.
+
+Een mogelijke reden voor dit probleem is het feit dat de create events gekoppeld zijn aan de bijbehorende business objecten als kind en ouder. Conceptueel is het echter logischer
+om de create events op hetzelfde niveau te plaatsen als de business objecten die ze aanmaken. Op deze manier kan men beter de create events relateren aan de parent van de parent.
+Bijvoorbeeld: de enter event hoort een child te zijn van member. In onze oplossing is het echter beter te plaatsen als een child van library (dat op zijn beurt de parent is van member).
+Op deze manier is het create event object niet direct afhankelijk van member en mogelijk in staat om een member object zonder problemen te cre\"eren. 
+Wegens tijdgebrek is deze mogelijke oplossing voor het probleem niet meer verder uitgewerkt geraakt.

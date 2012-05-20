@@ -48,29 +48,15 @@ public abstract class LibraryV2Base extends PLSApp implements java.io.Serializab
 		try
 		{
 
-			PageNavigation StartPageNav = new PageNavigation();
-			StartPageNav.setParentApp( this );
-			StartPageNav.setTargetPageName(getPackageName() + ".pLibrary");
-			StartPageNav.setInitialAddMode(false);
-			StartPageNav.setInitialQueryMode(false);
-        
-			String devWhere = "";
-		
-			if (getQueryStringParams() != null) {
-				String params = getQueryStringParams().getProperty("dev_where", "");
-				if (devWhere.length() != 0){
-					if (params.length() != 0)
-						devWhere = devWhere + " AND " + params;
-				}
+				String startPage = null;
+				if (getPackageName() != null && getPackageName().length() != 0)
+					startPage = getPackageName() + "." + getStartPageName();
 				else
-					devWhere = params;
-			}
-
-			StartPageNav.setDevWhere(devWhere);
-	
-			StartPageNav.setOrderBy("");
-			StartPageNav.setTargetPageCaption("");
-			StartPageNav.setTargetName("");
+					startPage = getStartPageName();
+				PageNavigation StartPageNav = new PageNavigation(null, startPage);
+				StartPageNav.setParentApp(this);
+        			StartPageNav.setTargetFramePageName(getPackageName() + "." + "FramesetPage");
+				StartPageNav.setTargetName("Startup");
 			StartPageNav.setName("StartPageNav");
 			p = StartPageNav.startPage();
 			p.setSessionId(sessionID);
@@ -101,7 +87,7 @@ public abstract class LibraryV2Base extends PLSApp implements java.io.Serializab
 	//{{APP_OTHERS
 	public String getDefaultStartPageName()
 	{
-		return "pLibrary";
+		return "StartupPage";
 	}
 	
 	public String getDefaultPackageName()

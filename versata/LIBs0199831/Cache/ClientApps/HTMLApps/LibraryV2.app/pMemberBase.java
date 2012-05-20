@@ -45,7 +45,7 @@ abstract class pMemberBase extends versata.pdx.html.VSPagePDX implements java.io
 		    T1Member.setMaxRowsPerFetch(16);
 			T1Member.setSaveMode(T1Member.SAVE_IMMEDIATE);
 		add(T1Member);
-		    				T2Library.Init("T2Library", T1Member, "Library", "", "", "[PKLibrary] = [?FKLibrary]", "", "PKLibrary, amountOfMembers, amountOfCopies, Name, City, PhoneNumber, WebAddress",getPackageName() + ".genericPick", this);
+		    				T2Library.Init("T2Library", T1Member, "Library", "", "", "[PKLibrary] = [?FKLibrary]", "", "PKLibrary, amountOfMembers, amountOfCopies, Name, City, PhoneNumber, WebAddress, LibraryState",getPackageName() + ".genericPick", this);
 			T2Library.setParentTableAlias("");
 		        
 		add(T2Library);

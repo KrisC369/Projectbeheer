@@ -24,6 +24,8 @@
 		<Form>pLibrary</Form>
 		<Form>pMember</Form>
 		<Form>pCopy</Form>
+		<Form>pEnterEvent</Form>
+		<Form>FramesetPage</Form>
 	</Forms>
 	<SourceFiles>
 	</SourceFiles>

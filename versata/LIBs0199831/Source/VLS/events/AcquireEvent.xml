@@ -119,6 +119,23 @@
 				ValidationType="Condition"
 			/>
 		</Attribute>
+		<Attribute
+			Name="FKLibrary"
+			PreventUserUpdates="True"
+			ValueRequired="False"
+			LayoutByDefault="True"
+			Persistent="True"
+			>
+			<DataType
+				DataType="Long"
+			/>
+			<Derivation
+				DerivationType="None"
+			/>
+			<Validation
+				ValidationType="Condition"
+			/>
+		</Attribute>
 	</Attributes>
 	<Indexes></Indexes>
 	<SingularCaption><![CDATA[*]]></SingularCaption>

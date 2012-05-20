@@ -328,6 +328,10 @@ protected void insert() throws ServerException
 	this.childCascadeFor_Member();
 	// Child Cascade for Role pribrary)-CreateEvent(CreateEvent): Library->>CreateEvent
 	this.childCascadeFor_CreateEvent();
+	// Child Cascade for Role pribrary)-EnterEvent(EnterEvent): Library->>EnterEvent
+	this.childCascadeFor_EnterEvent();
+	// Child Cascade for Role pribrary)-AcquireEvent(AcquireEvent): Library->>AcquireEvent
+	this.childCascadeFor_AcquireEvent();
 	// Child Cascade for Role pribrary)-DestroyEvent(DestroyEvent): Library->>DestroyEvent
 	this.childCascadeFor_DestroyEvent();
 	// Child Cascade for Role pribrary)-Copy(Copy): Library->>Copy
@@ -397,6 +401,10 @@ protected void update() throws ServerException
 	this.childCascadeFor_Member();
 	// Child Cascade for Role pribrary)-CreateEvent(CreateEvent): Library->>CreateEvent
 	this.childCascadeFor_CreateEvent();
+	// Child Cascade for Role pribrary)-EnterEvent(EnterEvent): Library->>EnterEvent
+	this.childCascadeFor_EnterEvent();
+	// Child Cascade for Role pribrary)-AcquireEvent(AcquireEvent): Library->>AcquireEvent
+	this.childCascadeFor_AcquireEvent();
 	// Child Cascade for Role pribrary)-DestroyEvent(DestroyEvent): Library->>DestroyEvent
 	this.childCascadeFor_DestroyEvent();
 	// Child Cascade for Role pribrary)-Copy(Copy): Library->>Copy
@@ -429,6 +437,10 @@ protected void delete() throws ServerException
 	this.childCascadeFor_Member();
 	// Child Cascade for Role pribrary)-CreateEvent(CreateEvent): Library->>CreateEvent
 	this.childCascadeFor_CreateEvent();
+	// Child Cascade for Role pribrary)-EnterEvent(EnterEvent): Library->>EnterEvent
+	this.childCascadeFor_EnterEvent();
+	// Child Cascade for Role pribrary)-AcquireEvent(AcquireEvent): Library->>AcquireEvent
+	this.childCascadeFor_AcquireEvent();
 	// Child Cascade for Role pribrary)-DestroyEvent(DestroyEvent): Library->>DestroyEvent
 	this.childCascadeFor_DestroyEvent();
 	// Child Cascade for Role pribrary)-Copy(Copy): Library->>Copy
@@ -552,6 +564,102 @@ public void columnValidationCheck()
 				if ( PKeyChanged )
 				{
 					raiseException("Update Rejected because there are CreateEvent found for Library");
+				}
+				
+			}
+		}
+	}				
+	finally { if (  tr != null ) tr.end( tr_id );}
+	}
+	protected void childCascadeFor_EnterEvent()
+	{
+	IVSTrace tr = null;  long tr_id = 0;
+	if ( VSTrace.IS_ON ) {
+		tr = VSTrace.get(); 
+		tr_id = tr.beg(logger);
+		tr.set(VST_CATEGORY,VST_RULE).set(VST_ACTION_NAME,"childCascadeFor_EnterEvent").set(VST_OBJECT_NAME,"Library");
+	}
+	
+	try 
+	{		
+	boolean PKeyChanged = false;
+	boolean ReplChanged = false;
+	Enumeration	children;
+	// First find out if the Primary key has changed.
+	if (( isUpdated() == true ) &&
+	( (isChanged("PKLibrary")) ))
+		PKeyChanged = true;
+	else
+		PKeyChanged = false;
+	
+
+    // Now do the Cascade.
+    if (isDeleted())
+    {
+      // no need to load all children into cache for a delete
+      children = getOldEnterEvent(false);
+      if ( children.hasMoreElements() ) // There are children found
+      {
+				raiseException("Delete Rejected because there are EnterEvent found for Library");
+      }       
+    }
+    else if ( PKeyChanged || ReplChanged )
+	{
+		children = getOldEnterEvent();
+		if ( children.hasMoreElements() ) // There are children found
+		{
+				// This is the case for an Update.
+				if ( PKeyChanged )
+				{
+					raiseException("Update Rejected because there are EnterEvent found for Library");
+				}
+				
+			}
+		}
+	}				
+	finally { if (  tr != null ) tr.end( tr_id );}
+	}
+	protected void childCascadeFor_AcquireEvent()
+	{
+	IVSTrace tr = null;  long tr_id = 0;
+	if ( VSTrace.IS_ON ) {
+		tr = VSTrace.get(); 
+		tr_id = tr.beg(logger);
+		tr.set(VST_CATEGORY,VST_RULE).set(VST_ACTION_NAME,"childCascadeFor_AcquireEvent").set(VST_OBJECT_NAME,"Library");
+	}
+	
+	try 
+	{		
+	boolean PKeyChanged = false;
+	boolean ReplChanged = false;
+	Enumeration	children;
+	// First find out if the Primary key has changed.
+	if (( isUpdated() == true ) &&
+	( (isChanged("PKLibrary")) ))
+		PKeyChanged = true;
+	else
+		PKeyChanged = false;
+	
+
+    // Now do the Cascade.
+    if (isDeleted())
+    {
+      // no need to load all children into cache for a delete
+      children = getOldAcquireEvent(false);
+      if ( children.hasMoreElements() ) // There are children found
+      {
+				raiseException("Delete Rejected because there are AcquireEvent found for Library");
+      }       
+    }
+    else if ( PKeyChanged || ReplChanged )
+	{
+		children = getOldAcquireEvent();
+		if ( children.hasMoreElements() ) // There are children found
+		{
+				// This is the case for an Update.
+				if ( PKeyChanged )
+				{
+					raiseException("Update Rejected because there are AcquireEvent found for Library");
 				}
 				
 			}
@@ -739,6 +847,86 @@ public Enumeration getCreateEvent()
 	else
 	{
 		return (CreateEventBaseImpl.getObjects(searchReq ,getSession()));
+	}
+}
+private ObjectHashtable EnterEventCache = null;
+
+/**	  
+* <br>
+* method to retrieve the EnterEvent objects for this Library
+* this method currently does not support additional conditional params.
+* @return Enumeration : the Enumeration of EnterEvent objects.
+*/
+public Enumeration getEnterEvent()
+{
+	if (!getSession().getProperty("NoCacheEnterEvent").equals("true"))
+	{
+		if ( EnterEventCache != null ) return EnterEventCache.elements();
+	}
+	
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+
+	param = new Parameter();
+	param.objName = "EnterEvent";
+	param.fieldName = "FKLibrary";
+	param.value = getData("PKLibrary").getString();
+	searchReq.add(param);
+	if (!getSession().getProperty("NoCacheEnterEvent").equals("true"))
+	{
+		EnterEventCache = new ObjectHashtable();
+		for (Enumeration e = (EnterEventBaseImpl.getObjects(searchReq ,getSession())); e.hasMoreElements();)
+		{
+			DataObject cacheBO = (DataObject)e.nextElement();
+			DataRow row = cacheBO.getRow();
+			Vector pkey = row.getPkeyParams();
+			EnterEventCache.put(pkey,cacheBO);								
+		}
+		return (EnterEventCache.elements());
+	}
+	else
+	{
+		return (EnterEventBaseImpl.getObjects(searchReq ,getSession()));
+	}
+}
+private ObjectHashtable AcquireEventCache = null;
+
+/**	  
+* <br>
+* method to retrieve the AcquireEvent objects for this Library
+* this method currently does not support additional conditional params.
+* @return Enumeration : the Enumeration of AcquireEvent objects.
+*/
+public Enumeration getAcquireEvent()
+{
+	if (!getSession().getProperty("NoCacheAcquireEvent").equals("true"))
+	{
+		if ( AcquireEventCache != null ) return AcquireEventCache.elements();
+	}
+	
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+
+	param = new Parameter();
+	param.objName = "AcquireEvent";
+	param.fieldName = "FKLibrary";
+	param.value = getData("PKLibrary").getString();
+	searchReq.add(param);
+	if (!getSession().getProperty("NoCacheAcquireEvent").equals("true"))
+	{
+		AcquireEventCache = new ObjectHashtable();
+		for (Enumeration e = (AcquireEventBaseImpl.getObjects(searchReq ,getSession())); e.hasMoreElements();)
+		{
+			DataObject cacheBO = (DataObject)e.nextElement();
+			DataRow row = cacheBO.getRow();
+			Vector pkey = row.getPkeyParams();
+			AcquireEventCache.put(pkey,cacheBO);								
+		}
+		return (AcquireEventCache.elements());
+	}
+	else
+	{
+		return (AcquireEventBaseImpl.getObjects(searchReq ,getSession()));
 	}
 }
 private ObjectHashtable DestroyEventCache = null;
@@ -962,6 +1150,142 @@ public Enumeration	getOldCreateEvent()
 
 /**	  
 * <br>
+* method to retrieve the old EnterEvent objects for this Library
+* old EnterEvent objects would be different from the new ones usualy if
+* the Library has a primary key change.
+* @param cache     : true if the relationship cache is to be used.
+                *                    it will result in all objects being fetched into
+                *                    memory (if they have not been cached yet).
+* @return Enumeration : the Enumeration of old EnterEvent objects.
+*/
+  public Enumeration getOldEnterEvent(boolean cache)
+  {
+    String oldCacheProperty = getSession().getProperty("NoCacheEnterEvent");
+    if (cache)
+      getSession().setProperty("NoCacheEnterEvent", "false");
+    else
+      getSession().setProperty("NoCacheEnterEvent", "true");   
+    
+    try {
+      return getOldEnterEvent();
+    } finally {                     
+        getSession().setProperty("NoCacheEnterEvent", oldCacheProperty);                    
+    }			
+  }
+
+
+    /**	  
+* <br>
+* method to retrieve the old EnterEvent objects for this Library
+* old EnterEvent objects would be different from the new ones usualy if
+* the Library has a primary key change.
+* this method currently does not support additional conditional params.
+* @return Enumeration : the Enumeration of old EnterEvent objects.
+*/
+public Enumeration	getOldEnterEvent()
+{
+	if (!getSession().getProperty("NoCacheEnterEvent").equals("true"))
+	{
+		if ( EnterEventCache != null ) return EnterEventCache.elements();
+	}
+
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+
+	param = new Parameter();
+	param.objName = "EnterEvent";
+	param.fieldName = "FKLibrary";
+	param.value = getData("PKLibrary").getPreviousString();
+	searchReq.add(param);
+	if (!getSession().getProperty("NoCacheEnterEvent").equals("true"))
+	{
+		EnterEventCache = new ObjectHashtable();
+		for (Enumeration e = (EnterEventBaseImpl.getObjects(searchReq ,getSession())); e.hasMoreElements();)
+		{
+			DataObject cacheBO = (DataObject)e.nextElement();
+			DataRow row = cacheBO.getRow();
+			Vector pkey = row.getPkeyParams();
+			EnterEventCache.put(pkey,cacheBO);								
+		}
+		return (EnterEventCache.elements());
+	}
+	else
+	{
+		return (EnterEventBaseImpl.getObjects(searchReq ,getSession()));
+	}
+}
+
+
+/**	  
+* <br>
+* method to retrieve the old AcquireEvent objects for this Library
+* old AcquireEvent objects would be different from the new ones usualy if
+* the Library has a primary key change.
+* @param cache     : true if the relationship cache is to be used.
+                *                    it will result in all objects being fetched into
+                *                    memory (if they have not been cached yet).
+* @return Enumeration : the Enumeration of old AcquireEvent objects.
+*/
+  public Enumeration getOldAcquireEvent(boolean cache)
+  {
+    String oldCacheProperty = getSession().getProperty("NoCacheAcquireEvent");
+    if (cache)
+      getSession().setProperty("NoCacheAcquireEvent", "false");
+    else
+      getSession().setProperty("NoCacheAcquireEvent", "true");   
+    
+    try {
+      return getOldAcquireEvent();
+    } finally {                     
+        getSession().setProperty("NoCacheAcquireEvent", oldCacheProperty);                    
+    }			
+  }
+
+
+    /**	  
+* <br>
+* method to retrieve the old AcquireEvent objects for this Library
+* old AcquireEvent objects would be different from the new ones usualy if
+* the Library has a primary key change.
+* this method currently does not support additional conditional params.
+* @return Enumeration : the Enumeration of old AcquireEvent objects.
+*/
+public Enumeration	getOldAcquireEvent()
+{
+	if (!getSession().getProperty("NoCacheAcquireEvent").equals("true"))
+	{
+		if ( AcquireEventCache != null ) return AcquireEventCache.elements();
+	}
+
+	SearchRequest searchReq = new SearchRequest();
+	Parameter param = null;
+
+	param = new Parameter();
+	param.objName = "AcquireEvent";
+	param.fieldName = "FKLibrary";
+	param.value = getData("PKLibrary").getPreviousString();
+	searchReq.add(param);
+	if (!getSession().getProperty("NoCacheAcquireEvent").equals("true"))
+	{
+		AcquireEventCache = new ObjectHashtable();
+		for (Enumeration e = (AcquireEventBaseImpl.getObjects(searchReq ,getSession())); e.hasMoreElements();)
+		{
+			DataObject cacheBO = (DataObject)e.nextElement();
+			DataRow row = cacheBO.getRow();
+			Vector pkey = row.getPkeyParams();
+			AcquireEventCache.put(pkey,cacheBO);								
+		}
+		return (AcquireEventCache.elements());
+	}
+	else
+	{
+		return (AcquireEventBaseImpl.getObjects(searchReq ,getSession()));
+	}
+}
+
+
+/**	  
+* <br>
 * method to retrieve the old DestroyEvent objects for this Library
 * old DestroyEvent objects would be different from the new ones usualy if
 * the Library has a primary key change.
@@ -1125,6 +1449,36 @@ public void updateCacheForCreateEvent(CreateEventBaseImpl child, boolean remove)
 		}
 	}
 }
+public void updateCacheForEnterEvent(EnterEventBaseImpl child, boolean remove)
+{
+	if ( EnterEventCache == null ) return;
+	if ( child != null ) {
+		if ( remove ) {
+			if ( EnterEventCache.containsKey(child.getRow().getPkeyParams()) )
+				EnterEventCache.remove(child.getRow().getPkeyParams());
+		}
+		else {
+			// Add only if it is not in the cache.
+			if ( ! EnterEventCache.containsKey(child.getRow().getPkeyParams()) )
+				EnterEventCache.put(child.getRow().getPkeyParams(), child);
+		}
+	}
+}
+public void updateCacheForAcquireEvent(AcquireEventBaseImpl child, boolean remove)
+{
+	if ( AcquireEventCache == null ) return;
+	if ( child != null ) {
+		if ( remove ) {
+			if ( AcquireEventCache.containsKey(child.getRow().getPkeyParams()) )
+				AcquireEventCache.remove(child.getRow().getPkeyParams());
+		}
+		else {
+			// Add only if it is not in the cache.
+			if ( ! AcquireEventCache.containsKey(child.getRow().getPkeyParams()) )
+				AcquireEventCache.put(child.getRow().getPkeyParams(), child);
+		}
+	}
+}
 public void updateCacheForDestroyEvent(DestroyEventBaseImpl child, boolean remove)
 {
 	if ( DestroyEventCache == null ) return;
@@ -1164,6 +1518,8 @@ public void invalidateNonTransactionCaches()
  
   MemberCache = null;
   CreateEventCache = null;
+  EnterEventCache = null;
+  AcquireEventCache = null;
   DestroyEventCache = null;
   CopyCache = null;
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE Form SYSTEM "Form.dtd">
+<Form
+	DTDVersion="05.06.00"
+	TargetLanguage="HTML"
+	Archetype="DefaultStartupFrameset"
+	PositionTop="17"
+	PositionLeft="343"
+	PositionWidth="150"
+	PositionHeight="44"
+	IsAddedAfterGen="False"
+	HasCustomFormLayout="False"
+	ObjectsUnusedByFormLayout="False"
+	External="False"
+	NoDataForm="True"
+	ClassName="VSPage"
+	ObjectsRemovedFromLayout="False"
+	HTMLFileCheckSum="-50547160"
+	>
+	<FormCaption><![CDATA[FramesetPage]]></FormCaption>
+</Form>

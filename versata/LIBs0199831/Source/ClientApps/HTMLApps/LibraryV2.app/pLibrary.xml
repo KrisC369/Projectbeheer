@@ -15,7 +15,7 @@
 	NoDataForm="False"
 	ClassName="versata.pdx.html.VSPagePDX"
 	ObjectsRemovedFromLayout="False"
-	HTMLFileCheckSum="-640638660"
+	HTMLFileCheckSum="-529286841"
 	>
 	<FormCaption><![CDATA[Library]]></FormCaption>
 	<ArchetypeExtendedProperties>
@@ -111,6 +111,7 @@
 				<RSDefaultAttribute ID="5" Name="City" />
 				<RSDefaultAttribute ID="6" Name="PhoneNumber" />
 				<RSDefaultAttribute ID="7" Name="WebAddress" />
+				<RSDefaultAttribute ID="8" Name="LibraryState" />
 			</DefaultAttributes>
 			<ScalerAttributes>
 				<RSAttribute Name="PKLibrary" Displayed="True" UnPlaced="False" />
@@ -120,6 +121,7 @@
 				<RSAttribute Name="City" Displayed="True" UnPlaced="False" />
 				<RSAttribute Name="PhoneNumber" Displayed="True" UnPlaced="False" />
 				<RSAttribute Name="WebAddress" Displayed="True" UnPlaced="False" />
+				<RSAttribute Name="LibraryState" Displayed="True" UnPlaced="False" />
 			</ScalerAttributes>
 		</RSAttributesMeta>
 		<ArchetypeExtendedProperties>
@@ -331,6 +333,9 @@
 					<RSDefaultAttribute ID="6" Name="City" />
 					<RSDefaultAttribute ID="7" Name="Country" />
 					<RSDefaultAttribute ID="8" Name="MobileNumber" />
+					<RSDefaultAttribute ID="9" Name="MemberState" />
+					<RSDefaultAttribute ID="10" Name="CurrentLoans" />
+					<RSDefaultAttribute ID="11" Name="CurrentReservations" />
 				</DefaultAttributes>
 				<GridAttributes>
 					<RSAttribute Name="PKMember" Displayed="True" UnPlaced="False" />
@@ -341,6 +346,9 @@
 					<RSAttribute Name="City" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="Country" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="MobileNumber" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="MemberState" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentLoans" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentReservations" Displayed="True" UnPlaced="False" />
 				</GridAttributes>
 			</RSAttributesMeta>
 			<ArchetypeExtendedProperties>
@@ -505,6 +513,9 @@
 					<RSDefaultAttribute ID="4" Name="Title" />
 					<RSDefaultAttribute ID="5" Name="Author" />
 					<RSDefaultAttribute ID="6" Name="ISBN" />
+					<RSDefaultAttribute ID="7" Name="CopyState" />
+					<RSDefaultAttribute ID="8" Name="CurrentLoans" />
+					<RSDefaultAttribute ID="9" Name="CurrentReservations" />
 				</DefaultAttributes>
 				<GridAttributes>
 					<RSAttribute Name="PKCopy" Displayed="True" UnPlaced="False" />
@@ -513,6 +524,9 @@
 					<RSAttribute Name="Title" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="Author" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="ISBN" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CopyState" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentLoans" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="CurrentReservations" Displayed="True" UnPlaced="False" />
 				</GridAttributes>
 			</RSAttributesMeta>
 			<ArchetypeExtendedProperties>

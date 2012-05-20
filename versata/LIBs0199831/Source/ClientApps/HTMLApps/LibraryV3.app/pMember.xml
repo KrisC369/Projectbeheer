@@ -10,7 +10,7 @@
 	PositionHeight="44"
 	IsAddedAfterGen="False"
 	HasCustomFormLayout="False"
-	ObjectsUnusedByFormLayout="False"
+	ObjectsUnusedByFormLayout="True"
 	External="False"
 	NoDataForm="False"
 	ClassName="versata.pdx.html.VSPagePDX"
@@ -1045,6 +1045,7 @@
 					<RSDefaultAttribute ID="7" Name="Country" />
 					<RSDefaultAttribute ID="8" Name="MobileNumber" />
 					<RSDefaultAttribute ID="9" Name="TimeStamp" />
+					<RSDefaultAttribute ID="10" Name="FKLibrary" />
 				</DefaultAttributes>
 				<GridAttributes>
 					<RSAttribute Name="PKEnterEvent" Displayed="True" UnPlaced="False" />
@@ -1056,6 +1057,7 @@
 					<RSAttribute Name="Country" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="MobileNumber" Displayed="True" UnPlaced="False" />
 					<RSAttribute Name="TimeStamp" Displayed="True" UnPlaced="False" />
+					<RSAttribute Name="FKLibrary" Displayed="True" UnPlaced="True" />
 				</GridAttributes>
 			</RSAttributesMeta>
 			<ArchetypeExtendedProperties>
