@@ -1,4 +1,4 @@
 Projectbeheer
 =============
 
-Repo voor projectebeheer vak project
+Vak Projectbeheer: Project repository.
